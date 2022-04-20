@@ -3,6 +3,8 @@ package commons;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AbstractPage {
 
@@ -33,7 +35,6 @@ public class AbstractPage {
 	
 	// web element
 	
-	WebElement element;
 	
 	public void clickToElement(WebDriver driver, String locator) {
 		element = driver.findElement(By.xpath(locator));
@@ -42,9 +43,24 @@ public class AbstractPage {
 	
 	public void sendkeyToElement(WebDriver driver, String locator, String value) {
 		element = driver.findElement(By.xpath(locator));
-		element.clear();
 		element.sendKeys(value);
 	}
 	
+	public boolean isDisplayElement(WebDriver driver, String locator) {
+		element = driver.findElement(By.xpath(locator));
+		return element.isDisplayed();
+	}
 	
+	public void waitToElementInvisibleIconLoading(WebDriver driver) {
+		waitExplicit = new WebDriverWait(driver, 30);
+		waitExplicit.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@class='w-loading-overlay']//*[name()='svg']")));
+	}
+	
+	public void waitToElementVisible(WebDriver driver, String locator) {
+		waitExplicit = new WebDriverWait(driver, 30);
+		waitExplicit.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
+	}
+	
+	WebElement element;
+	WebDriverWait waitExplicit;
 }
