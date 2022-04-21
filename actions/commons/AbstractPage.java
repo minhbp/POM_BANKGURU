@@ -56,9 +56,24 @@ public class AbstractPage {
 		waitExplicit.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@class='w-loading-overlay']//*[name()='svg']")));
 	}
 	
+	public void waitToElementVisibleIconLoading(WebDriver driver) {
+		waitExplicit = new WebDriverWait(driver, 30);
+		waitExplicit.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='w-loading-overlay']//*[name()='svg']")));
+	}
+	
+	public void waitToElementInvisible(WebDriver driver, String locator) {
+		waitExplicit = new WebDriverWait(driver, 30);
+		waitExplicit.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(locator)));
+	}
+	
 	public void waitToElementVisible(WebDriver driver, String locator) {
 		waitExplicit = new WebDriverWait(driver, 30);
 		waitExplicit.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
+	}
+	
+	public void waitToEnableButton(WebDriver driver, String locator) {
+		waitExplicit = new WebDriverWait(driver, 30);
+		waitExplicit.until(ExpectedConditions.elementToBeClickable(By.xpath(locator)));
 	}
 	
 	WebElement element;

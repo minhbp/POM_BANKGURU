@@ -12,21 +12,23 @@ import org.testng.annotations.Test;
 
 import commons.AbstractPage;
 import pageObjects.LoginPageObject;
+import pageObjects.NewProjectObject;
+import pageObjects.RegisterPageObject;
+import pageObjects.ShowtimePageObject;
 
 public class Level_03_LP_Registration_Page_Object_Pattern extends AbstractPage {
 	WebDriver driver;
 	WebDriverWait explicitWait;
 
-	String link, email, password;
-	String title, subtitle;
-	
 	public LoginPageObject loginPage;
+	public NewProjectObject newProject;
+	public ShowtimePageObject showtimePage;
+	public RegisterPageObject registerPage;
 
 	@BeforeClass
 	public void beforeClass() {
 		System.setProperty("webdriver.chrome.driver", "D:\\WEBDRIVER_API_MinhDV\\browser\\chromedriver.exe");
 		driver = new ChromeDriver();
-		
 
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		explicitWait = new WebDriverWait(driver, 20);
@@ -36,13 +38,6 @@ public class Level_03_LP_Registration_Page_Object_Pattern extends AbstractPage {
 //		driver.manage().window().setSize(d);
 		driver.manage().window().maximize();
 
-		link = "https://admin.webinaris.co/login.html"; // link login
-		email = "minhbp252+101@gmail.com"; // email login
-		password = "queenb72"; // password login
-		title = "Selenium "; // title project
-		subtitle = "Internal title Autumation Minh test"; // internal title project
-		
-		driver.get("https://admin.webinaris.co/login.html");
 	}
 
 	public int randomNumber() {
@@ -51,117 +46,58 @@ public class Level_03_LP_Registration_Page_Object_Pattern extends AbstractPage {
 	}
 
 	@Test
-	public void LoginWebinaris() {
-		
-		loginPage = new LoginPageObject();
+	public void TC_01_Login() {
 
+		loginPage = new LoginPageObject(driver);
 		loginPage.getLoginPageUrl();
-
 		loginPage.setLanguage();
-		
 		loginPage.inputEmailTextbox();
-		
 		loginPage.inputPasswordTextbox();
-
 		loginPage.clickButtonLogin();
 
 	}
 
-	public void new_b050() throws Exception {
-//		driver.get("https://app.webinaris.co/new-webinar");
-		openAnyUrl(driver, "https://app.webinaris.co/new-webinar");
+	@Test
+	public void TC_02_New_Project() throws Exception {
 
-//		driver.findElement(By.xpath("//p[contains(text(),'The perfect solution for recurring marketing event')]"))
-//				.isDisplayed();
-		isDisplayElement(driver, "//p[contains(text(),'The perfect solution for recurring marketing event')]");
+		newProject = new NewProjectObject(driver);
+		newProject.getNewProjectPageUrl();
+		newProject.inputTitleProject();
+		newProject.inputSubTitleProject();
+		newProject.clickButtonCreate();
+		newProject.waitLoadingIconInvisible();
 
-//		driver.findElement(By.xpath("//input[@id='nameTxt']")).sendKeys(title);
-		sendkeyToElement(driver, "//input[@id='nameTxt']", title + randomNumber());
-
-		
-//		driver.findElement(By.xpath("//input[@id='internalTxt']")).sendKeys(subtitle);
-		sendkeyToElement(driver, "//input[@id='internalTxt']", subtitle + randomNumber());
-
-//		driver.findElement(By.xpath("//button[normalize-space()='Create webinar']")).click();
-		clickToElement(driver, "//button[normalize-space()='Create webinar']");
-
-//		driver.findElement(By.xpath("//p[contains(text(),'Set your webinar title and choose a video for your')]"))
-//				.isDisplayed();
-		isDisplayElement(driver, "//p[contains(text(),'Set your webinar title and choose a video for your')]");
-
-		delay(1);
-//		driver.findElement(By.xpath("//body/div[@id='app']/div/div/div/div/button[@type='button']/span/i[1]")).click();
-		clickToElement(driver, "//body/div[@id='app']/div/div/div/div/button[@type='button']/span/i[1]");
 	}
 
-	//@Test
-	public void TC_02() throws Exception {
-//		Login();
-		new_b050();
-		delay(1);
+	@Test
+	public void TC_03_Setting_Showtimes() throws Exception {
 
-		String getURL = getCurrentPageUrl(driver); // lấy ra URL hiện tại
-		String fb050 = getURL.substring(31); // lấy ra fb050 từ URL
+		showtimePage = new ShowtimePageObject(driver);
+		showtimePage.clickShowtimeMenu();
+		showtimePage.clickOption();
+		showtimePage.clickOptionMyself();
+		showtimePage.clickOption60Minutes();
+		showtimePage.clickOption5Minutes();
+		showtimePage.clickOptionNo();
+		showtimePage.clickOptionYes();
+		showtimePage.clickButtonSave();
 
-		// showtimes
-//		driver.findElement(By.xpath("//span[normalize-space()='Showtimes']")).click();
-		clickToElement(driver, "//span[normalize-space()='Showtimes']");
+	}
 
-//		driver.findElement(By.xpath("//p[normalize-space()='Set the showtimes for your webinar.']")).isDisplayed();
-		isDisplayElement(driver, "//p[normalize-space()='Set the showtimes for your webinar.']");
-		delay(1);
-
-//		driver.findElement(By.xpath("(//div)[95]")).click();
-		clickToElement(driver, "(//div)[95]");
-		delay(1);
-
-//		driver.findElement(By.xpath("//div[contains(text(),'I create the showtimes myself')]")).click();
-		clickToElement(driver, "//div[contains(text(),'I create the showtimes myself')]");
-
-//		driver.findElement(By.xpath("//div[contains(text(),'Every 60 minutes (recommended)')]")).click();
-		clickToElement(driver, "//div[contains(text(),'Every 60 minutes (recommended)')]");
-
-//		driver.findElement(By.xpath("//div[contains(text(),'Every 5 minutes')]")).click();
-		clickToElement(driver, "//div[contains(text(),'Every 5 minutes')]");
-
-//		driver.findElement(By.xpath("//div[contains(text(),'No (recommended)')]")).click();
-		clickToElement(driver, "//div[contains(text(),'No (recommended)')]");
-
-//		driver.findElement(By.xpath("//div[contains(text(),'Yes')]")).click();
-		clickToElement(driver, "//div[contains(text(),'Yes')]");
-
-//		driver.findElement(By.xpath("//div[@class='_btns']//button[@type='button']")).click();
-		clickToElement(driver, "//div[@class='_btns']//button[@type='button']");
-
-		waitToElementInvisibleIconLoading(driver);
-
-//		driver.get("https://20071.webinaris.co/" + fb050 + "/selenium.html?mode=N&v=4");
+	@Test
+	public void TC_04_Register() {
+		
+		String urlBasicSetting = getCurrentPageUrl(driver);
+		String fb050 = urlBasicSetting.substring(35);
 		openAnyUrl(driver, "https://20071.webinaris.co/" + fb050 + "/selenium.html?mode=N&v=4");
-
-		waitToElementInvisibleIconLoading(driver);
-
-		// data regist
-		String Fname = "Minh";
-		String Lname = "252";
-		String EmailReg = "minhbp252+" + randomNumber() + "@gmail.com";
-
-//		driver.findElement(By.xpath("//span[@class='header-context']")).click();
-		clickToElement(driver, "//span[@class='header-context']");
-
-//		driver.findElement(By.xpath("//input[@placeholder='First name']")).sendKeys(Fname);
-		sendkeyToElement(driver, "//input[@placeholder='First name']", Fname);
-
-//		driver.findElement(By.xpath("//input[@placeholder='Last name']")).sendKeys(Lname);
-		sendkeyToElement(driver, "//input[@placeholder='Last name']", Lname);
-
-//		driver.findElement(By.xpath("//input[@placeholder='E-mail address']")).sendKeys(EmailReg);
-		sendkeyToElement(driver, "//input[@placeholder='E-mail address']", EmailReg);
-
-//		driver.findElement(By.xpath("//span[@class='btn-text']")).click();
-		clickToElement(driver, "//span[@class='btn-text']");
-
-		waitToElementInvisibleIconLoading(driver);
-
+		
+		registerPage = new RegisterPageObject(driver);
+		registerPage.clickButton();
+		registerPage.inputFirtname();
+		registerPage.inputLastname();
+		registerPage.inputEmail();
+		registerPage.clickButtonSubmit();
+		
 	}
 
 	public void delay(int x) throws Exception {

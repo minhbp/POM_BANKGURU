@@ -2,7 +2,8 @@
 <suite parallel="false" name="Suite">
   <test name="Test">
     <classes>
-      <class name="queenb.webinaris.account.Viewer_Registration_LP"/>
+      <!--  <class name="queenb.webinaris.account.Viewer_Registration_LP"/> -->
+      <class name="queenb.webinaris.account.Level_03_Account_Upload_File"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
