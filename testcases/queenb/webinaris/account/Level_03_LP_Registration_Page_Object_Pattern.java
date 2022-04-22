@@ -49,12 +49,7 @@ public class Level_03_LP_Registration_Page_Object_Pattern extends AbstractPage {
 	public void TC_01_Login() {
 
 		loginPage = new LoginPageObject(driver);
-		loginPage.getLoginPageUrl();
-		loginPage.setLanguage();
-		loginPage.inputEmailTextbox();
-		loginPage.inputPasswordTextbox();
-		loginPage.clickButtonLogin();
-
+		loginPage.login();
 	}
 
 	@Test

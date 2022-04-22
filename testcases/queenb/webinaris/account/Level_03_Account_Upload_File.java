@@ -38,12 +38,7 @@ public class Level_03_Account_Upload_File extends AbstractPage {
 	@Test
 	public void TC_01_Login() {
 		loginPage = new LoginPageObject(driver);
-		loginPage.getLoginPageUrl();
-		loginPage.setLanguage();
-		loginPage.inputEmailTextbox();
-		loginPage.inputPasswordTextbox();
-		loginPage.clickButtonLogin();
-		loginPage.isDisplayText();
+		loginPage.login();
 	}
 
 	@Test
@@ -52,7 +47,7 @@ public class Level_03_Account_Upload_File extends AbstractPage {
 		uploadPage.getUploadUrl();
 		uploadPage.clickNewFileButton();
 		uploadPage.clickVideoButton();
-		uploadPage.clickVideoSoucreButton();
+		uploadPage.clickVideoSourceButton();
 		uploadPage.newVideoLyser();
 		uploadPage.clickIconLoadingDuration();
 		uploadPage.clickButtonSave();
@@ -64,7 +59,7 @@ public class Level_03_Account_Upload_File extends AbstractPage {
 		uploadPage.getUploadUrl();
 		uploadPage.clickNewFileButton();
 		uploadPage.clickVideoButton();
-		uploadPage.clickVideoSoucreButton();
+		uploadPage.clickVideoSourceButton();
 		uploadPage.newVimeo();
 		uploadPage.clickIconLoadingDuration();
 		uploadPage.clickButtonSave();
@@ -76,7 +71,7 @@ public class Level_03_Account_Upload_File extends AbstractPage {
 		uploadPage.getUploadUrl();
 		uploadPage.clickNewFileButton();
 		uploadPage.clickVideoButton();
-		uploadPage.clickVideoSoucreButton();
+		uploadPage.clickVideoSourceButton();
 		uploadPage.newMp4();
 		uploadPage.clickIconLoadingDuration();
 		uploadPage.clickButtonSave();
@@ -90,7 +85,7 @@ public class Level_03_Account_Upload_File extends AbstractPage {
 		uploadPage.clickVideoButton();
 		uploadPage.uploadVideoLocal();
 	}
-	
+
 	@Test
 	public void TC_06_Upload_Image() {
 		uploadPage = new UploadPageObject(driver);

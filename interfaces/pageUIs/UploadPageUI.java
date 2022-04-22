@@ -24,16 +24,16 @@ public class UploadPageUI {
 	public static final String VIDEO_SOUCRE_STYLE = "(//div[@class='v-select__slot'])[3]";
 
 	public static final String VIDEO_SOUCRE_STYLE_VIDEOLYSER = "//div[contains(text(),'Videolyser')]";
-	public static final String VIDEO_SOUCRE_INPUT_VIDEOLYSER_NAME = VIDEOLYSER_NAME;
-	public static final String VIDEO_SOUCRE_INPUT_VIDEOLYSER_URL = VIDEOLYSER_LINK;
+	public static final String VIDEO_SOUCRE_INPUT_VIDEOLYSER_NAME_TXT = VIDEOLYSER_NAME;
+	public static final String VIDEO_SOUCRE_INPUT_VIDEOLYSER_URL_TXT = VIDEOLYSER_LINK;
 
 	public static final String VIDEO_SOUCRE_STYLE_VIMEO = "//div[@class='v-list-item__title'][normalize-space()='Vimeo']";
-	public static final String VIDEO_SOUCRE_INPUT_VIMEO_NAME = VIMEO_NAME;
-	public static final String VIDEO_SOUCRE_STYLE_VIMEO_URL = VIDEOMEO_LINK;
+	public static final String VIDEO_SOUCRE_INPUT_VIMEO_NAME_TXT = VIMEO_NAME;
+	public static final String VIDEO_SOUCRE_STYLE_VIMEO_URL_TXT = VIDEOMEO_LINK;
 
 	public static final String VIDEO_SOUCRE_STYLE_MP4 = "//div[contains(text(),'mp4 file on custom server')]";
-	public static final String VIDEO_SOUCRE_INPUT_MP4_NAME = MP4_NAME;
-	public static final String VIDEO_SOUCRE_STYLE_MP4_URL = MP4_LINK;
+	public static final String VIDEO_SOUCRE_INPUT_MP4_NAME_TXT = MP4_NAME;
+	public static final String VIDEO_SOUCRE_STYLE_MP4_URL_TXT = MP4_LINK;
 
 	public static final String VIDEO_SOUCRE_URL = "(//input[@type='text'])[6]";
 	public static final String BUTTON_VIDEO_SOUCRE_ICON_LOAD_DURATION = "//i[@class='v-icon notranslate fwbn fwbn-reload theme--light']";

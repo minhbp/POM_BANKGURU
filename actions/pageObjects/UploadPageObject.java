@@ -19,22 +19,25 @@ private WebDriver driverGlobal;
 	
 	public void clickNewFileButton() {
 		waitToElementVisible(driverGlobal, UploadPageUI.BUTTON_NEW_FILE);
+		waitToEnableButton(driverGlobal, UploadPageUI.BUTTON_NEW_FILE);
 		clickToElement(driverGlobal, UploadPageUI.BUTTON_NEW_FILE);
 	}
 	
 	public void clickVideoButton() {
+		waitToElementVisible(driverGlobal, UploadPageUI.BUTTON_VIDEO);
 		waitToEnableButton(driverGlobal, UploadPageUI.BUTTON_VIDEO);
 		clickToElement(driverGlobal, UploadPageUI.BUTTON_VIDEO);
 	}
 	
-	public void clickVideoSoucreButton() {
+	public void clickVideoSourceButton() {
+		waitToElementVisible(driverGlobal, UploadPageUI.BUTTON_VIDEO_SOUCRE);
 		waitToEnableButton(driverGlobal, UploadPageUI.BUTTON_VIDEO_SOUCRE);
 		clickToElement(driverGlobal, UploadPageUI.BUTTON_VIDEO_SOUCRE);
 	}
 	
 	public void newVideoLyser() {
 		waitToElementVisible(driverGlobal, UploadPageUI.VIDEO_SOUCRE_NAME);
-		sendkeyToElement(driverGlobal, UploadPageUI.VIDEO_SOUCRE_NAME, UploadPageUI.VIDEO_SOUCRE_INPUT_VIDEOLYSER_NAME);
+		sendkeyToElement(driverGlobal, UploadPageUI.VIDEO_SOUCRE_NAME, UploadPageUI.VIDEO_SOUCRE_INPUT_VIDEOLYSER_NAME_TXT);
 	
 		waitToElementVisible(driverGlobal, UploadPageUI.VIDEO_SOUCRE_STYLE);
 		clickToElement(driverGlobal, UploadPageUI.VIDEO_SOUCRE_STYLE);
@@ -43,19 +46,19 @@ private WebDriver driverGlobal;
 		clickToElement(driverGlobal, UploadPageUI.VIDEO_SOUCRE_STYLE_VIDEOLYSER);
 	
 		waitToElementVisible(driverGlobal, UploadPageUI.VIDEO_SOUCRE_URL);
-		sendkeyToElement(driverGlobal, UploadPageUI.VIDEO_SOUCRE_URL, UploadPageUI.VIDEO_SOUCRE_INPUT_VIDEOLYSER_URL);
+		sendkeyToElement(driverGlobal, UploadPageUI.VIDEO_SOUCRE_URL, UploadPageUI.VIDEO_SOUCRE_INPUT_VIDEOLYSER_URL_TXT);
 	}
 	public void newVimeo() {
 		waitToElementVisible(driverGlobal, UploadPageUI.VIDEO_SOUCRE_NAME);
-		sendkeyToElement(driverGlobal, UploadPageUI.VIDEO_SOUCRE_NAME, UploadPageUI.VIDEO_SOUCRE_INPUT_VIMEO_NAME);
+		sendkeyToElement(driverGlobal, UploadPageUI.VIDEO_SOUCRE_NAME, UploadPageUI.VIDEO_SOUCRE_INPUT_VIMEO_NAME_TXT);
 	
 		waitToElementVisible(driverGlobal, UploadPageUI.VIDEO_SOUCRE_URL);
-		sendkeyToElement(driverGlobal, UploadPageUI.VIDEO_SOUCRE_URL, UploadPageUI.VIDEO_SOUCRE_STYLE_VIMEO_URL);
+		sendkeyToElement(driverGlobal, UploadPageUI.VIDEO_SOUCRE_URL, UploadPageUI.VIDEO_SOUCRE_STYLE_VIMEO_URL_TXT);
 	}
 	
 	public void newMp4() {
 		waitToElementVisible(driverGlobal, UploadPageUI.VIDEO_SOUCRE_NAME);
-		sendkeyToElement(driverGlobal, UploadPageUI.VIDEO_SOUCRE_NAME, UploadPageUI.VIDEO_SOUCRE_INPUT_MP4_NAME);
+		sendkeyToElement(driverGlobal, UploadPageUI.VIDEO_SOUCRE_NAME, UploadPageUI.VIDEO_SOUCRE_INPUT_MP4_NAME_TXT);
 		
 		waitToElementVisible(driverGlobal, UploadPageUI.VIDEO_SOUCRE_STYLE);
 		clickToElement(driverGlobal, UploadPageUI.VIDEO_SOUCRE_STYLE);
@@ -64,12 +67,7 @@ private WebDriver driverGlobal;
 		clickToElement(driverGlobal, UploadPageUI.VIDEO_SOUCRE_STYLE_MP4);
 	
 		waitToElementVisible(driverGlobal, UploadPageUI.VIDEO_SOUCRE_URL);
-		sendkeyToElement(driverGlobal, UploadPageUI.VIDEO_SOUCRE_URL, UploadPageUI.VIDEO_SOUCRE_STYLE_MP4_URL);
-	}
-	
-	public void newVideoLocal() {
-		waitToEnableButton(driverGlobal, UploadPageUI.BUTTON_VIDEO_UPLOAD_STEP2);
-		
+		sendkeyToElement(driverGlobal, UploadPageUI.VIDEO_SOUCRE_URL, UploadPageUI.VIDEO_SOUCRE_STYLE_MP4_URL_TXT);
 	}
 	
 	public void clickIconLoadingDuration() {
@@ -102,6 +100,7 @@ private WebDriver driverGlobal;
 		waitToElementVisible(driverGlobal, UploadPageUI.VIDEO_UPLOAD_100);
 		waitToElementVisible(driverGlobal, UploadPageUI.UPLOAD_SUCCESS_MESSAGE);
 		waitToElementInvisible(driverGlobal, UploadPageUI.UPLOAD_SUCCESS_MESSAGE);
+		clickToElement(driverGlobal, UploadPageUI.CLOSE_MESSAGE_ICON);
 	}
 	
 	public void deleteVideo() {
