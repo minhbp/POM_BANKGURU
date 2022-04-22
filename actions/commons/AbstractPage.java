@@ -1,6 +1,7 @@
 package commons;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -39,6 +40,12 @@ public class AbstractPage {
 	public void clickToElement(WebDriver driver, String locator) {
 		element = driver.findElement(By.xpath(locator));
 		element.click();
+	}
+	
+	public void clearElement(WebDriver driver, String locator) {
+		element = driver.findElement(By.xpath(locator));
+		element.sendKeys(Keys.CONTROL, "a");
+		element.sendKeys(Keys.DELETE);
 	}
 	
 	public void sendkeyToElement(WebDriver driver, String locator, String value) {

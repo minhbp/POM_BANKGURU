@@ -2,6 +2,8 @@ package queenb.webinaris.account;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -13,7 +15,7 @@ import commons.AbstractPage;
 import pageObjects.LoginPageObject;
 import pageObjects.UploadPageObject;
 
-public class Level_03_Account_Upload_File extends AbstractPage {
+public class Account_Upload_File extends AbstractPage {
 	WebDriver driver;
 	WebDriverWait explicitWait;
 	WebDriverWait waitExplicit;
@@ -28,20 +30,19 @@ public class Level_03_Account_Upload_File extends AbstractPage {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		waitExplicit = new WebDriverWait(driver, 30);
 
-		// driver.manage().window().setPosition(new Point(1020, 0)); // set start point
-		// browser
-		// Dimension d = new Dimension(500, 500); // set width height browser
-		// driver.manage().window().setSize(d);
-		driver.manage().window().maximize();
+		 driver.manage().window().setPosition(new Point(0, 0)); // set start point
+		 Dimension d = new Dimension(960, 1080); // set width height browser
+		 driver.manage().window().setSize(d);
+//		driver.manage().window().maximize();
 	}
 
-	@Test
+	@Test (priority = 1)
 	public void TC_01_Login() {
 		loginPage = new LoginPageObject(driver);
 		loginPage.login();
 	}
 
-	@Test
+	@Test (priority = 2)
 	public void TC_02_Upload_Videolyser() {
 		uploadPage = new UploadPageObject(driver);
 		uploadPage.getUploadUrl();
@@ -53,7 +54,7 @@ public class Level_03_Account_Upload_File extends AbstractPage {
 		uploadPage.clickButtonSave();
 	}
 
-	@Test
+	@Test (priority = 3)
 	public void TC_03_Upload_VimeoM3u8() {
 		uploadPage = new UploadPageObject(driver);
 		uploadPage.getUploadUrl();
@@ -65,7 +66,7 @@ public class Level_03_Account_Upload_File extends AbstractPage {
 		uploadPage.clickButtonSave();
 	}
 
-	@Test
+	@Test (priority = 4)
 	public void TC_04_Upload_VideoMp4() {
 		uploadPage = new UploadPageObject(driver);
 		uploadPage.getUploadUrl();
@@ -77,7 +78,7 @@ public class Level_03_Account_Upload_File extends AbstractPage {
 		uploadPage.clickButtonSave();
 	}
 
-	@Test
+	@Test (priority = 5)
 	public void TC_05_Upload_Local() {
 		uploadPage = new UploadPageObject(driver);
 		uploadPage.getUploadUrl();
@@ -86,7 +87,7 @@ public class Level_03_Account_Upload_File extends AbstractPage {
 		uploadPage.uploadVideoLocal();
 	}
 
-	@Test
+	@Test (priority = 6)
 	public void TC_06_Upload_Image() {
 		uploadPage = new UploadPageObject(driver);
 		uploadPage.getUploadUrl();
@@ -99,7 +100,7 @@ public class Level_03_Account_Upload_File extends AbstractPage {
 		uploadPage.deleteVideo();
 	}
 
-	@Test
+	@Test (priority = 7)
 	public void TC_07_Delete_Videos() {
 		uploadPage = new UploadPageObject(driver);
 		uploadPage.getUploadUrl();

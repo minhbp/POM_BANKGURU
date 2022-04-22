@@ -30,7 +30,6 @@ private WebDriver driverGlobal;
 	}
 	
 	public void clickVideoSourceButton() {
-		waitToElementVisible(driverGlobal, UploadPageUI.BUTTON_VIDEO_SOUCRE);
 		waitToEnableButton(driverGlobal, UploadPageUI.BUTTON_VIDEO_SOUCRE);
 		clickToElement(driverGlobal, UploadPageUI.BUTTON_VIDEO_SOUCRE);
 	}
@@ -99,7 +98,6 @@ private WebDriver driverGlobal;
 		sendkeyToElement(driverGlobal, UploadPageUI.FILE_UPLOAD_DATA, UploadPageUI.FILE_UPLOAD_DATA_LOCAL);
 		waitToElementVisible(driverGlobal, UploadPageUI.VIDEO_UPLOAD_100);
 		waitToElementVisible(driverGlobal, UploadPageUI.UPLOAD_SUCCESS_MESSAGE);
-		waitToElementInvisible(driverGlobal, UploadPageUI.UPLOAD_SUCCESS_MESSAGE);
 		clickToElement(driverGlobal, UploadPageUI.CLOSE_MESSAGE_ICON);
 	}
 	

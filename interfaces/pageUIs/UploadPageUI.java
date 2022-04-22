@@ -19,7 +19,7 @@ public class UploadPageUI {
 	public static final String UPLOAD_PAGE_URL = "https://app.webinaris.co/media";
 	public static final String BUTTON_NEW_FILE = "//button[contains(text(),'New file')]";
 	public static final String BUTTON_VIDEO = "(//span[@class='v-btn__content'][normalize-space()='Continue'])[1]/parent::button";
-	public static final String BUTTON_VIDEO_SOUCRE = "(//span[@class='v-btn__content'][normalize-space()='Continue'])[2]/parent::button";
+	public static final String BUTTON_VIDEO_SOUCRE = "(//button[@type='button'])[4]";
 	public static final String VIDEO_SOUCRE_NAME = "(//input[@type='text'])[4]";
 	public static final String VIDEO_SOUCRE_STYLE = "(//div[@class='v-select__slot'])[3]";
 

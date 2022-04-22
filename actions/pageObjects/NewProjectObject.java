@@ -13,25 +13,18 @@ private WebDriver driverGlobal;
 		driverGlobal = driverLocal;
 	}
 	
-	public void getNewProjectPageUrl() {
+	public void createNewProject() {
 		openAnyUrl(driverGlobal, NewProjectPageUI.NEW_PROJECT_URL);
-	}
 	
-	public void inputTitleProject() {
 		waitToElementVisible(driverGlobal, NewProjectPageUI.NEW_PROJECT_TITLE_TEXTBOX);
 		sendkeyToElement(driverGlobal, NewProjectPageUI.NEW_PROJECT_TITLE_TEXTBOX, NewProjectPageUI.NEW_PROJECT_INPUT_TITLE);
-	}
 	
-	public void inputSubTitleProject() {
 		sendkeyToElement(driverGlobal, NewProjectPageUI.NEW_PROJECT_SUBTITLE_TEXTBOX, NewProjectPageUI.NEW_PROJECT_INPUT_SUBTITLE);
-	}
 	
-	public void clickButtonCreate() {
 		clickToElement(driverGlobal, NewProjectPageUI.NEW_PROJECT_BUTTON);
-	}
 	
-	public void waitLoadingIconInvisible() {
-		waitToElementInvisibleIconLoading(driverGlobal);
+		waitToElementVisible(driverGlobal, NewProjectPageUI.MESSAGE_SUCCESS);
+		clickToElement(driverGlobal, NewProjectPageUI.ICON_CLOSE_MESSAGE);
 	}
 	
 }

@@ -3,6 +3,8 @@ package queenb.webinaris.account;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -16,7 +18,7 @@ import pageObjects.NewProjectObject;
 import pageObjects.RegisterPageObject;
 import pageObjects.ShowtimePageObject;
 
-public class Level_03_LP_Registration_Page_Object_Pattern extends AbstractPage {
+public class Registration_Lp extends AbstractPage {
 	WebDriver driver;
 	WebDriverWait explicitWait;
 
@@ -29,15 +31,13 @@ public class Level_03_LP_Registration_Page_Object_Pattern extends AbstractPage {
 	public void beforeClass() {
 		System.setProperty("webdriver.chrome.driver", "D:\\WEBDRIVER_API_MinhDV\\browser\\chromedriver.exe");
 		driver = new ChromeDriver();
-
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		explicitWait = new WebDriverWait(driver, 20);
-
-//		driver.manage().window().setPosition(new Point(1020, 0)); // set start point browser
-//		Dimension d = new Dimension(500, 500); // set width height browser
-//		driver.manage().window().setSize(d);
-		driver.manage().window().maximize();
-
+		
+		driver.manage().window().setPosition(new Point(1920, 0)); // set start point
+		Dimension d = new Dimension(960, 1080); // set width height browser
+		driver.manage().window().setSize(d);
+//		driver.manage().window().maximize();
 	}
 
 	public int randomNumber() {
@@ -53,15 +53,10 @@ public class Level_03_LP_Registration_Page_Object_Pattern extends AbstractPage {
 	}
 
 	@Test
-	public void TC_02_New_Project() throws Exception {
+	public void TC_02_New_Project() {
 
 		newProject = new NewProjectObject(driver);
-		newProject.getNewProjectPageUrl();
-		newProject.inputTitleProject();
-		newProject.inputSubTitleProject();
-		newProject.clickButtonCreate();
-		newProject.waitLoadingIconInvisible();
-
+		newProject.createNewProject();
 	}
 
 	@Test
@@ -76,7 +71,7 @@ public class Level_03_LP_Registration_Page_Object_Pattern extends AbstractPage {
 		showtimePage.clickOptionNo();
 		showtimePage.clickOptionYes();
 		showtimePage.clickButtonSave();
-
+		Thread.sleep(6000);
 	}
 
 	@Test
@@ -92,11 +87,6 @@ public class Level_03_LP_Registration_Page_Object_Pattern extends AbstractPage {
 		registerPage.inputLastname();
 		registerPage.inputEmail();
 		registerPage.clickButtonSubmit();
-		
-	}
-
-	public void delay(int x) throws Exception {
-		Thread.sleep(x * 1000);
 	}
 
 	@AfterClass
