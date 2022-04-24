@@ -7,33 +7,33 @@ import pageUIs.LoginPageUI;
 
 public class LoginPageObject extends AbstractPage {
 
-	private WebDriver driverGlobal;
+	private WebDriver driver;
 	
-	public LoginPageObject (WebDriver driverLocal) {
-		driverGlobal = driverLocal;
+	public LoginPageObject (WebDriver mappingdriver) {
+		driver = mappingdriver;
 	}
 	
 	public void login() {
-		openAnyUrl(driverGlobal, LoginPageUI.LOGIN_PAGE_URL);
+		openAnyUrl(driver, LoginPageUI.LOGIN_PAGE_URL);
 	
-		waitToElementVisible(driverGlobal, LoginPageUI.LOGIN_LANGUAGE_DE);
-		clickToElement(driverGlobal, LoginPageUI.LOGIN_LANGUAGE_DE);
+		waitToElementVisible(driver, LoginPageUI.LOGIN_LANGUAGE_DE);
+		clickToElement(driver, LoginPageUI.LOGIN_LANGUAGE_DE);
 		
-		waitToElementVisible(driverGlobal, LoginPageUI.LOGIN_LANGUAGE_EN);
-		clickToElement(driverGlobal, LoginPageUI.LOGIN_LANGUAGE_EN);
+		waitToElementVisible(driver, LoginPageUI.LOGIN_LANGUAGE_EN);
+		clickToElement(driver, LoginPageUI.LOGIN_LANGUAGE_EN);
 	
-		waitToElementVisible(driverGlobal, LoginPageUI.EMAIL_TEXTBOX);
-		sendkeyToElement(driverGlobal, LoginPageUI.EMAIL_TEXTBOX, LoginPageUI.EMAIL_ACCOUNT_MINH101);
+		waitToElementVisible(driver, LoginPageUI.EMAIL_TEXTBOX);
+		sendkeyToElement(driver, LoginPageUI.EMAIL_TEXTBOX, LoginPageUI.EMAIL_ACCOUNT_MINH101);
 	
-		waitToElementVisible(driverGlobal, LoginPageUI.PASSWORD_TEXTBOX);
-		sendkeyToElement(driverGlobal, LoginPageUI.PASSWORD_TEXTBOX, LoginPageUI.PASSWORD_ACCOUNT_MINH101);
+		waitToElementVisible(driver, LoginPageUI.PASSWORD_TEXTBOX);
+		sendkeyToElement(driver, LoginPageUI.PASSWORD_TEXTBOX, LoginPageUI.PASSWORD_ACCOUNT_MINH101);
 	
-		waitToElementVisible(driverGlobal, LoginPageUI.LOGIN_BUTTON);
-		clickToElement(driverGlobal, LoginPageUI.LOGIN_BUTTON);
+		waitToElementVisible(driver, LoginPageUI.LOGIN_BUTTON);
+		clickToElement(driver, LoginPageUI.LOGIN_BUTTON);
 
-		waitToElementInvisibleIconLoading(driverGlobal);
+		waitToElementInvisibleIconLoading(driver);
 	
-		waitToElementVisible(driverGlobal, LoginPageUI.LOGIN_TEXT);
+		waitToElementVisible(driver, LoginPageUI.LOGIN_TEXT);
 	}
 	
 }

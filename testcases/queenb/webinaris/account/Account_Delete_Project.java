@@ -29,7 +29,7 @@ public class Account_Delete_Project {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		waitExplicit = new WebDriverWait(driver, 10);
 
-		driver.manage().window().setPosition(new Point(2880, 0)); // set start point
+		driver.manage().window().setPosition(new Point(0, 0)); // set start point
 		Dimension d = new Dimension(960, 1080); // set width height browser
 		driver.manage().window().setSize(d);
 //		driver.manage().window().maximize();
@@ -37,6 +37,7 @@ public class Account_Delete_Project {
 		loginPage = new LoginPageObject(driver);
 		deletePage = new DeletePageObject(driver);
 		loginPage.login();
+		
 	}
 	
 	@Test

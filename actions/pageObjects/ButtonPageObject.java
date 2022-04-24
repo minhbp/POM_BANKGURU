@@ -6,118 +6,118 @@ import commons.AbstractPage;
 import pageUIs.ButtonPageUI;
 
 public class ButtonPageObject extends AbstractPage {
-private WebDriver driverGlobal;
+private WebDriver driver;
 	
-	public ButtonPageObject (WebDriver driverLocal) {
-		driverGlobal = driverLocal;
+	public ButtonPageObject (WebDriver mappingdriver) {
+		driver = mappingdriver;
 	}
 	
 	public void clickMenuButton() {
-		waitToElementVisible(driverGlobal, ButtonPageUI.MENU_BUTTON);
-		clickToElement(driverGlobal, ButtonPageUI.MENU_BUTTON);
+		waitToElementVisible(driver, ButtonPageUI.MENU_BUTTON);
+		clickToElement(driver, ButtonPageUI.MENU_BUTTON);
 	}
 	
 	public void clickNewButton() {
-		waitToElementVisible(driverGlobal, ButtonPageUI.NEW_BUTTON);
-		waitToEnableButton(driverGlobal, ButtonPageUI.NEW_BUTTON);
-		clickToElement(driverGlobal, ButtonPageUI.NEW_BUTTON);
+		waitToElementVisible(driver, ButtonPageUI.NEW_BUTTON);
+		waitToEnableButton(driver, ButtonPageUI.NEW_BUTTON);
+		clickToElement(driver, ButtonPageUI.NEW_BUTTON);
 	}
 	
 	public void inputNameTop() {
-		waitToElementVisible(driverGlobal, ButtonPageUI.NAME_TXT);
-		sendkeyToElement(driverGlobal, ButtonPageUI.NAME_TXT, ButtonPageUI.NAME_TOP);
+		waitToElementVisible(driver, ButtonPageUI.NAME_TXT);
+		sendkeyToElement(driver, ButtonPageUI.NAME_TXT, ButtonPageUI.NAME_TOP);
 	}
 	
 	public void inputNameBottom() {
-		waitToElementVisible(driverGlobal, ButtonPageUI.NAME_TXT);
-		sendkeyToElement(driverGlobal, ButtonPageUI.NAME_TXT, ButtonPageUI.NAME_BOTTOM);
+		waitToElementVisible(driver, ButtonPageUI.NAME_TXT);
+		sendkeyToElement(driver, ButtonPageUI.NAME_TXT, ButtonPageUI.NAME_BOTTOM);
 	}
 	
 	public void inputNameFullScreen() {
-		waitToElementVisible(driverGlobal, ButtonPageUI.NAME_TXT);
-		sendkeyToElement(driverGlobal, ButtonPageUI.NAME_TXT, ButtonPageUI.NAME_FULLSCREEN);
+		waitToElementVisible(driver, ButtonPageUI.NAME_TXT);
+		sendkeyToElement(driver, ButtonPageUI.NAME_TXT, ButtonPageUI.NAME_FULLSCREEN);
 	}
 	
 	public void inputNameTopRight() {
-		waitToElementVisible(driverGlobal, ButtonPageUI.NAME_TXT);
-		sendkeyToElement(driverGlobal, ButtonPageUI.NAME_TXT, ButtonPageUI.NAME_TOP_RIGHT);
+		waitToElementVisible(driver, ButtonPageUI.NAME_TXT);
+		sendkeyToElement(driver, ButtonPageUI.NAME_TXT, ButtonPageUI.NAME_TOP_RIGHT);
 	}
 	
 	public void inputNameTransparent() {
-		waitToElementVisible(driverGlobal, ButtonPageUI.NAME_TXT);
-		sendkeyToElement(driverGlobal, ButtonPageUI.NAME_TXT, ButtonPageUI.NAME_TRANSPARENT);
+		waitToElementVisible(driver, ButtonPageUI.NAME_TXT);
+		sendkeyToElement(driver, ButtonPageUI.NAME_TXT, ButtonPageUI.NAME_TRANSPARENT);
 	}
 
 	public void inputTargetUrl() {
-		waitToElementVisible(driverGlobal, ButtonPageUI.TARGET_URL_TXT);
-		sendkeyToElement(driverGlobal, ButtonPageUI.TARGET_URL_TXT, ButtonPageUI.BUTTON_URL_TARGET);
+		waitToElementVisible(driver, ButtonPageUI.TARGET_URL_TXT);
+		sendkeyToElement(driver, ButtonPageUI.TARGET_URL_TXT, ButtonPageUI.BUTTON_URL_TARGET);
 	}
 	
 	public void clickPositionTop() {
-		waitToElementVisible(driverGlobal, ButtonPageUI.POSITION_TOP);
-		clickToElement(driverGlobal, ButtonPageUI.POSITION_TOP);
+		waitToElementVisible(driver, ButtonPageUI.POSITION_TOP);
+		clickToElement(driver, ButtonPageUI.POSITION_TOP);
 	}
 	
 	public void clickPositionBottom() {
-		waitToElementVisible(driverGlobal, ButtonPageUI.POSITION_BOTTOM);
-		clickToElement(driverGlobal, ButtonPageUI.POSITION_BOTTOM);
+		waitToElementVisible(driver, ButtonPageUI.POSITION_BOTTOM);
+		clickToElement(driver, ButtonPageUI.POSITION_BOTTOM);
 	}
 	
 	public void clickPositionFullscreen() {
-		waitToElementVisible(driverGlobal, ButtonPageUI.POSITION_FULLSCREEN);
-		clickToElement(driverGlobal, ButtonPageUI.POSITION_FULLSCREEN);
+		waitToElementVisible(driver, ButtonPageUI.POSITION_FULLSCREEN);
+		clickToElement(driver, ButtonPageUI.POSITION_FULLSCREEN);
 	}
 	
 	public void clickPositionTopRight() {
-		waitToElementVisible(driverGlobal, ButtonPageUI.POSITION_TOP_RIGHT);
-		clickToElement(driverGlobal, ButtonPageUI.POSITION_TOP_RIGHT);
+		waitToElementVisible(driver, ButtonPageUI.POSITION_TOP_RIGHT);
+		clickToElement(driver, ButtonPageUI.POSITION_TOP_RIGHT);
 	}
 	
 	public void clickPositionTransparent() {
-		waitToElementVisible(driverGlobal, ButtonPageUI.POSITION_TRANSPARENT);
-		clickToElement(driverGlobal, ButtonPageUI.POSITION_TRANSPARENT);
+		waitToElementVisible(driver, ButtonPageUI.POSITION_TRANSPARENT);
+		clickToElement(driver, ButtonPageUI.POSITION_TRANSPARENT);
 	}
 
 	public void clickStartTime() {
-		waitToElementVisible(driverGlobal, ButtonPageUI.TIME_START_OPEN_POPUP);
-		clickToElement(driverGlobal, ButtonPageUI.TIME_START_OPEN_POPUP);
+		waitToElementVisible(driver, ButtonPageUI.TIME_START_OPEN_POPUP);
+		clickToElement(driver, ButtonPageUI.TIME_START_OPEN_POPUP);
 	}
 	
 	public void clickEndTime() {
-		waitToElementVisible(driverGlobal, ButtonPageUI.TIME_END_OPEN_POPUP);
-		clickToElement(driverGlobal, ButtonPageUI.TIME_END_OPEN_POPUP);
+		waitToElementVisible(driver, ButtonPageUI.TIME_END_OPEN_POPUP);
+		clickToElement(driver, ButtonPageUI.TIME_END_OPEN_POPUP);
 	}
 	
 	public void setStartTime(String h, String m, String s) {
-		waitToElementVisible(driverGlobal, ButtonPageUI.TIME_HOUSES);
-		sendkeyToElement(driverGlobal, ButtonPageUI.TIME_HOUSES, h);
-		sendkeyToElement(driverGlobal, ButtonPageUI.TIME_MINUTES, m);
-		sendkeyToElement(driverGlobal, ButtonPageUI.TIME_SECONDS, s);
+		waitToElementVisible(driver, ButtonPageUI.TIME_HOUSES);
+		sendkeyToElement(driver, ButtonPageUI.TIME_HOUSES, h);
+		sendkeyToElement(driver, ButtonPageUI.TIME_MINUTES, m);
+		sendkeyToElement(driver, ButtonPageUI.TIME_SECONDS, s);
 	}
 	
 	public void setEndTime(String h, String m, String s) {
-		waitToElementVisible(driverGlobal, ButtonPageUI.TIME_HOUSES);
-		sendkeyToElement(driverGlobal, ButtonPageUI.TIME_HOUSES, h);
-		sendkeyToElement(driverGlobal, ButtonPageUI.TIME_MINUTES, m);
-		sendkeyToElement(driverGlobal, ButtonPageUI.TIME_SECONDS, s);
+		waitToElementVisible(driver, ButtonPageUI.TIME_HOUSES);
+		sendkeyToElement(driver, ButtonPageUI.TIME_HOUSES, h);
+		sendkeyToElement(driver, ButtonPageUI.TIME_MINUTES, m);
+		sendkeyToElement(driver, ButtonPageUI.TIME_SECONDS, s);
 	}
 	
 	public void clickSaveTime() {
-		waitToElementVisible(driverGlobal, ButtonPageUI.SAVE_TIME);
-		clickToElement(driverGlobal,ButtonPageUI.SAVE_TIME);
+		waitToElementVisible(driver, ButtonPageUI.SAVE_TIME);
+		clickToElement(driver,ButtonPageUI.SAVE_TIME);
 	}
 	
 	public void clearAndInputTextButton(String textButton) {
-		clearElement(driverGlobal, ButtonPageUI.BUTTON_TEXT_TXT);
-		sendkeyToElement(driverGlobal, ButtonPageUI.BUTTON_TEXT_TXT, textButton);
+		clearElement(driver, ButtonPageUI.BUTTON_TEXT_TXT);
+		sendkeyToElement(driver, ButtonPageUI.BUTTON_TEXT_TXT, textButton);
 	}
 	
 	public void clickSaveButton() {
-		waitToEnableButton(driverGlobal, ButtonPageUI.BUTTON_SAVE);
-		clickToElement(driverGlobal,ButtonPageUI.BUTTON_SAVE);
+		waitToEnableButton(driver, ButtonPageUI.BUTTON_SAVE);
+		clickToElement(driver,ButtonPageUI.BUTTON_SAVE);
 		
-		waitToElementVisible(driverGlobal, ButtonPageUI.MESSAGE_SUCCESS);
-		clickToElement(driverGlobal, ButtonPageUI.ICON_CLOSE_MESSAGE);
+		waitToElementVisible(driver, ButtonPageUI.MESSAGE_SUCCESS);
+		clickToElement(driver, ButtonPageUI.ICON_CLOSE_MESSAGE);
 	}
 	
 	

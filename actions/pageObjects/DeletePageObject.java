@@ -7,30 +7,30 @@ import pageUIs.DeleteProjectPageUI;
 
 public class DeletePageObject extends AbstractPage{
 
-private WebDriver driverGlobal;
+private WebDriver driver;
 	
-	public DeletePageObject (WebDriver driverLocal) {
-		driverGlobal = driverLocal;
+	public DeletePageObject (WebDriver mappingdriver) {
+		driver = mappingdriver;
 	}
 	
 	public void deleteProject() {
-		openAnyUrl(driverGlobal, DeleteProjectPageUI.MY_WEBINAR_URL);
+		openAnyUrl(driver, DeleteProjectPageUI.MY_WEBINAR_URL);
 		
-		waitToElementVisible(driverGlobal, DeleteProjectPageUI.OPTIONS_CLICK);
-		clickToElement(driverGlobal, DeleteProjectPageUI.OPTIONS_CLICK);
+		waitToElementVisible(driver, DeleteProjectPageUI.OPTIONS_CLICK);
+		clickToElement(driver, DeleteProjectPageUI.OPTIONS_CLICK);
 		
-		waitToElementVisible(driverGlobal, DeleteProjectPageUI.OPTION_DELETE);
-		clickToElement(driverGlobal, DeleteProjectPageUI.OPTION_DELETE);
+		waitToElementVisible(driver, DeleteProjectPageUI.OPTION_DELETE);
+		clickToElement(driver, DeleteProjectPageUI.OPTION_DELETE);
 		
-		waitToElementVisible(driverGlobal, DeleteProjectPageUI.INPUT_TEXTBOX);
-		clickToElement(driverGlobal, DeleteProjectPageUI.INPUT_TEXTBOX);
+		waitToElementVisible(driver, DeleteProjectPageUI.INPUT_TEXTBOX);
+		clickToElement(driver, DeleteProjectPageUI.INPUT_TEXTBOX);
 		
-		waitToElementVisible(driverGlobal, DeleteProjectPageUI.CONFIRM_BUTTON);
-		clickToElement(driverGlobal, DeleteProjectPageUI.CONFIRM_BUTTON);
+		waitToElementVisible(driver, DeleteProjectPageUI.CONFIRM_BUTTON);
+		clickToElement(driver, DeleteProjectPageUI.CONFIRM_BUTTON);
 		
-		waitToElementVisible(driverGlobal, DeleteProjectPageUI.SUCCESS_MESSAGE);
-		clickToElement(driverGlobal, DeleteProjectPageUI.SUCCESS_MESSAGE);
-		clickToElement(driverGlobal, DeleteProjectPageUI.CLOSE_MESSAGE_ICON);
+		waitToElementVisible(driver, DeleteProjectPageUI.SUCCESS_MESSAGE);
+		clickToElement(driver, DeleteProjectPageUI.SUCCESS_MESSAGE);
+		clickToElement(driver, DeleteProjectPageUI.CLOSE_MESSAGE_ICON);
 		
 	}
 }

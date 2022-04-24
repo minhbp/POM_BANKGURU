@@ -47,21 +47,18 @@ public class Registration_Lp extends AbstractPage {
 
 	@Test
 	public void TC_01_Login() {
-
 		loginPage = new LoginPageObject(driver);
 		loginPage.login();
 	}
 
 	@Test
 	public void TC_02_New_Project() {
-
 		newProject = new NewProjectObject(driver);
 		newProject.createNewProject();
 	}
 
 	@Test
 	public void TC_03_Setting_Showtimes() throws Exception {
-
 		showtimePage = new ShowtimePageObject(driver);
 		showtimePage.clickShowtimeMenu();
 		showtimePage.clickOption();

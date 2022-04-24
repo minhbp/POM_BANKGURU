@@ -7,24 +7,27 @@ import pageUIs.NewProjectPageUI;
 
 public class NewProjectObject extends AbstractPage{
 
-private WebDriver driverGlobal;
+private WebDriver driver;
 	
-	public NewProjectObject (WebDriver driverLocal) {
-		driverGlobal = driverLocal;
+	public NewProjectObject (WebDriver mappingdriver) {
+		driver = mappingdriver;
 	}
 	
 	public void createNewProject() {
-		openAnyUrl(driverGlobal, NewProjectPageUI.NEW_PROJECT_URL);
+		openAnyUrl(driver, NewProjectPageUI.NEW_PROJECT_URL);
 	
-		waitToElementVisible(driverGlobal, NewProjectPageUI.NEW_PROJECT_TITLE_TEXTBOX);
-		sendkeyToElement(driverGlobal, NewProjectPageUI.NEW_PROJECT_TITLE_TEXTBOX, NewProjectPageUI.NEW_PROJECT_INPUT_TITLE);
+		waitToElementVisible(driver, NewProjectPageUI.NEW_PROJECT_TITLE_TEXTBOX);
+		sendkeyToElement(driver, NewProjectPageUI.NEW_PROJECT_TITLE_TEXTBOX, NewProjectPageUI.NEW_PROJECT_INPUT_TITLE);
 	
-		sendkeyToElement(driverGlobal, NewProjectPageUI.NEW_PROJECT_SUBTITLE_TEXTBOX, NewProjectPageUI.NEW_PROJECT_INPUT_SUBTITLE);
+		sendkeyToElement(driver, NewProjectPageUI.NEW_PROJECT_SUBTITLE_TEXTBOX, NewProjectPageUI.NEW_PROJECT_INPUT_SUBTITLE);
 	
-		clickToElement(driverGlobal, NewProjectPageUI.NEW_PROJECT_BUTTON);
+		clickToElement(driver, NewProjectPageUI.NEW_PROJECT_BUTTON);
 	
-		waitToElementVisible(driverGlobal, NewProjectPageUI.MESSAGE_SUCCESS);
-		clickToElement(driverGlobal, NewProjectPageUI.ICON_CLOSE_MESSAGE);
+		waitToElementVisible(driver, NewProjectPageUI.MESSAGE_SUCCESS);
+		clickToElement(driver, NewProjectPageUI.ICON_CLOSE_MESSAGE);
+		
+		waitToElementVisibleIconLoading(driver);
+		waitToElementInvisibleIconLoading(driver);
 	}
 	
 }
