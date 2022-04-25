@@ -11,17 +11,17 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import pageObjects.DeletePageObject;
+import pageObjects.ClonePageObject;
 import pageObjects.LoginPageObject;
 
-public class Account_Delete_Project {
+public class Account_Clone_Project {
 
 	WebDriver driver;
 	WebDriverWait explicitWait;
 	WebDriverWait waitExplicit;
 
 	public LoginPageObject loginPage;
-	public DeletePageObject deletePage;
+	public ClonePageObject clonePage;
 
 	@BeforeClass
 	public void beforeClass() throws Exception {
@@ -36,18 +36,18 @@ public class Account_Delete_Project {
 		driver.manage().window().maximize();
 
 		loginPage = new LoginPageObject(driver);
-		deletePage = new DeletePageObject(driver);
+		clonePage = new ClonePageObject(driver);
 		loginPage.login();
-
 	}
 
 	@Test
 	public void delProject() throws Exception {
-		deletePage.getMyWebinar();
-
-		for (int i = 0, n = 3; i < n; i++) {
-			deletePage.deleteProject();
-		}
+		clonePage.getMyWebinar();
+		clonePage.clickNewProject();
+		clonePage.clickCloneProject();
+		clonePage.clickOpenListProjects();
+		clonePage.selectFirstProject();
+		clonePage.clickButtonClone();
 	}
 
 	@AfterClass

@@ -19,7 +19,7 @@ private WebDriver driver;
 	
 	public void deleteProject() throws Exception {
 		waitToElementVisible(driver, DeleteProjectPageUI.AUTO_TITLE);
-		Thread.sleep(1000);
+		Thread.sleep(500);
 		
 		waitToElementVisible(driver, DeleteProjectPageUI.OPTIONS_CLICK);
 		clickToElement(driver, DeleteProjectPageUI.OPTIONS_CLICK);

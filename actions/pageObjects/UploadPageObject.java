@@ -96,7 +96,6 @@ public class UploadPageObject extends AbstractPage {
 	public void uploadImage(String urlImageLocal) {
 		waitToElementVisible(driver, UploadPageUI.FILE_UPLOAD_LABEL);
 		sendkeyToElement(driver, UploadPageUI.FILE_UPLOAD_DATA, urlImageLocal);
-		waitToElementVisible(driver, UploadPageUI.VIDEO_UPLOAD_100);
 		waitToElementVisible(driver, UploadPageUI.UPLOAD_SUCCESS_MESSAGE);
 		clickToElement(driver, UploadPageUI.CLOSE_MESSAGE_ICON);
 	}

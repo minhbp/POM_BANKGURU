@@ -14,18 +14,18 @@ import org.testng.annotations.Test;
 import commons.AbstractPage;
 import pageObjects.LoginPageObject;
 import pageObjects.NewProjectObject;
-import pageObjects.PresenterPageObject;
+import pageObjects.EmailsPageObject;
 
-public class Project_Presenter_Setting extends AbstractPage{
+public class Project_Mail_Sender_Setting extends AbstractPage{
 	WebDriver driver;
 	WebDriverWait explicitWait;
 	WebDriverWait waitExplicit;
 
 	public LoginPageObject loginPage;
 	public NewProjectObject newProject;
-	public PresenterPageObject presenterPage;
+	public EmailsPageObject emailsPage;
 	
-	String namePresenter, urlImage;
+	String nameSender, mailAddress;
 	
 	@BeforeClass
 	public void beforeClass() throws Exception {
@@ -39,12 +39,12 @@ public class Project_Presenter_Setting extends AbstractPage{
 		driver.manage().window().setSize(d);
 		driver.manage().window().maximize();
 		
-		namePresenter = "Lionel Messi";
-		urlImage = "D:\\images\\img01.jpg";
+		nameSender = "Lionel Messi";
+		mailAddress = "minhbp252+213232@gmail.com";
 		
 		loginPage = new LoginPageObject(driver);
 		newProject = new NewProjectObject(driver);
-		presenterPage = new PresenterPageObject(driver);
+		emailsPage = new EmailsPageObject(driver);
 
 		loginPage.login();
 		newProject.createNewProject();
@@ -52,16 +52,42 @@ public class Project_Presenter_Setting extends AbstractPage{
 	}
 	
 	@Test
-	public void selectPresenter() {
-		presenterPage.clickPresenterMenu();
-		presenterPage.clearPresenterName();
-		presenterPage.inputPresenterName(namePresenter);
-		presenterPage.clickSelectImage();
-		presenterPage.inputUrlImage(urlImage);
-		presenterPage.clickConfirm();
+	public void TC_01_Setting_Mail_Sender() {
+		emailsPage.clickEmailMenu();
+		emailsPage.clickSenderMenu();
+		emailsPage.clearNameSender();
+		emailsPage.inputNameSender(nameSender);
+		emailsPage.clearMailAddress();
+		emailsPage.inputMailAddress(mailAddress);
+		emailsPage.clickConfirmButton();
 	}
 	
-
+	@Test
+	public void TC_02_Setting_Mail_Setting() {
+		emailsPage.clickSettingMenu();
+		emailsPage.clickDoiOptions();
+		emailsPage.selectDoiIsNo();
+		emailsPage.clickReRegistrationOptions();
+		emailsPage.selectReRegistrationisYes();
+		emailsPage.clickConfirmButton();
+	}
+	
+	@Test
+	public void TC_03_Delete_Email_Template() {
+		emailsPage.clickEmailEmailMenu();
+		emailsPage.clickOptionMailLoginInfo();
+		emailsPage.clickDeleteOption();
+		emailsPage.clickConfirmDelete();
+	}
+	
+	@Test
+	public void TC_04_Load_Email_Template() {
+		emailsPage.clickNewEmailButton();
+		emailsPage.clickSelectTemplateButotn();
+		emailsPage.clickLoadTemplateButton();
+		emailsPage.clickSave();
+	}
+	
 	@AfterClass
 	public void afterClass() {
 		driver.close();

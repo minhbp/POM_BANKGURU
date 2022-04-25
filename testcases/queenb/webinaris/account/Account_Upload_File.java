@@ -37,7 +37,7 @@ public class Account_Upload_File extends AbstractPage {
 		driver.manage().window().setPosition(new Point(0, 0)); // set start point
 		Dimension d = new Dimension(960, 1080); // set width height browser
 		driver.manage().window().setSize(d);
-//		driver.manage().window().maximize();
+		driver.manage().window().maximize();
 
 		VIDEOLYSER_NAME = "video lyser " + randomNumber();
 		VIDEOLYSER_LINK = "https://www.videolyser.de/m3u8/26588638.m3u8";

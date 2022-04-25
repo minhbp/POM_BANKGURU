@@ -32,10 +32,10 @@ public class Project_Buttons_Setting extends AbstractPage {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		waitExplicit = new WebDriverWait(driver, 10);
 
-		driver.manage().window().setPosition(new Point(960, 0)); // set start point
+		driver.manage().window().setPosition(new Point(0, 0)); // set start point
 		Dimension d = new Dimension(960, 1080); // set width height browser
 		driver.manage().window().setSize(d);
-//		driver.manage().window().maximize();
+		driver.manage().window().maximize();
 
 		loginPage = new LoginPageObject(driver);
 		newProject = new NewProjectObject(driver);
@@ -60,15 +60,11 @@ public class Project_Buttons_Setting extends AbstractPage {
 		buttonPage.setEndTime("0", "5", "0");
 		buttonPage.clickSaveTime();
 		buttonPage.clearAndInputTextButton("Automation testing");
-		Thread.sleep(5000);
 		buttonPage.clickSaveButton();
-
-		Thread.sleep(5000);
 	}
 
 	@Test
 	public void TC_02_New_Button_Bottom() {
-		buttonPage.clickMenuButton();
 		buttonPage.clickNewButton();
 		buttonPage.inputNameBottom();
 		buttonPage.inputTargetUrl();
@@ -85,7 +81,6 @@ public class Project_Buttons_Setting extends AbstractPage {
 
 	@Test
 	public void TC_03_New_Button_FullScreen() {
-		buttonPage.clickMenuButton();
 		buttonPage.clickNewButton();
 		buttonPage.inputNameFullScreen();
 		buttonPage.inputTargetUrl();
@@ -102,7 +97,6 @@ public class Project_Buttons_Setting extends AbstractPage {
 
 	@Test
 	public void TC_04_New_Button_Top_Right() {
-		buttonPage.clickMenuButton();
 		buttonPage.clickNewButton();
 		buttonPage.inputNameTopRight();
 		buttonPage.inputTargetUrl();
@@ -119,7 +113,6 @@ public class Project_Buttons_Setting extends AbstractPage {
 
 	@Test
 	public void TC_05_New_Button_Transparent() {
-		buttonPage.clickMenuButton();
 		buttonPage.clickNewButton();
 		buttonPage.inputNameTransparent();
 		buttonPage.inputTargetUrl();

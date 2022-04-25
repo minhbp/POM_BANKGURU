@@ -34,10 +34,10 @@ public class Project_Pages_Settings extends AbstractPage {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		waitExplicit = new WebDriverWait(driver, 10);
 
-		driver.manage().window().setPosition(new Point(960, 0)); // set start point
+		driver.manage().window().setPosition(new Point(0, 0)); // set start point
 		Dimension d = new Dimension(960, 1080); // set width height browser
 		driver.manage().window().setSize(d);
-//		driver.manage().window().maximize();
+		driver.manage().window().maximize();
 		
 		customLpUrl = "https://translate.google.com/{partner-city}/{partner-email}/{partner-email}/{partner-firstname}/{partner-lastname}/{partner-id}/{partner-phone}/{partner-street}/{partner-website}/{partner-zipcode}";
 		customConffirmUrl = "https://docs.google.com/spreadsheets/d/1WPxsinkefeCPxqpQXMLabEydIMh11FZpjSR5qDPf9Yo/edit#gid=0";

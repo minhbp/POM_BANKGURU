@@ -34,10 +34,10 @@ public class Registration_Lp extends AbstractPage {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		explicitWait = new WebDriverWait(driver, 20);
 		
-		driver.manage().window().setPosition(new Point(1920, 0)); // set start point
+		driver.manage().window().setPosition(new Point(0, 0)); // set start point
 		Dimension d = new Dimension(960, 1080); // set width height browser
 		driver.manage().window().setSize(d);
-//		driver.manage().window().maximize();
+		driver.manage().window().maximize();
 	}
 
 	public int randomNumber() {
