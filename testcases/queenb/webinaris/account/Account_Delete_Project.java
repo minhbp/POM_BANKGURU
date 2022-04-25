@@ -7,6 +7,7 @@ import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -18,10 +19,10 @@ public class Account_Delete_Project {
 	WebDriver driver;
 	WebDriverWait explicitWait;
 	WebDriverWait waitExplicit;
-	
+
 	public LoginPageObject loginPage;
 	public DeletePageObject deletePage;
-	
+
 	@BeforeClass
 	public void beforeClass() throws Exception {
 		System.setProperty("webdriver.chrome.driver", "D:\\WEBDRIVER_API_MinhDV\\browser\\chromedriver.exe");
@@ -37,11 +38,20 @@ public class Account_Delete_Project {
 		loginPage = new LoginPageObject(driver);
 		deletePage = new DeletePageObject(driver);
 		loginPage.login();
-		
+
 	}
-	
+
 	@Test
-	public void delProject() {
-		deletePage.deleteProject();
+	public void delProject() throws Exception {
+		deletePage.getMyWebinar();
+
+		for (int i = 0, n = 5; i < n; i++) {
+			deletePage.deleteProject();
+		}
+	}
+
+	@AfterClass
+	public void afterClass() {
+		driver.close();
 	}
 }

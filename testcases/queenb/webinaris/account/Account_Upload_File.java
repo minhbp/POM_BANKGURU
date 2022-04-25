@@ -64,7 +64,7 @@ public class Account_Upload_File extends AbstractPage {
 	}
 
 	@Test
-	public void TC_02_Upload_Videolyser() {
+	public void TC_02_Upload_Videolyser() throws Exception {
 		uploadPage = new UploadPageObject(driver);
 		uploadPage.getUploadUrl();
 		uploadPage.clickNewFileButton();
@@ -79,7 +79,7 @@ public class Account_Upload_File extends AbstractPage {
 	}
 
 	@Test
-	public void TC_03_Upload_VimeoM3u8() {
+	public void TC_03_Upload_VimeoM3u8() throws Exception {
 		uploadPage = new UploadPageObject(driver);
 		uploadPage.getUploadUrl();
 		uploadPage.clickNewFileButton();
@@ -92,7 +92,7 @@ public class Account_Upload_File extends AbstractPage {
 	}
 
 	@Test
-	public void TC_04_Upload_VideoMp4() {
+	public void TC_04_Upload_VideoMp4() throws Exception {
 		uploadPage = new UploadPageObject(driver);
 		uploadPage.getUploadUrl();
 		uploadPage.clickNewFileButton();
@@ -107,7 +107,7 @@ public class Account_Upload_File extends AbstractPage {
 	}
 
 	@Test
-	public void TC_05_Upload_Local() {
+	public void TC_05_Upload_Local() throws Exception {
 		uploadPage = new UploadPageObject(driver);
 		uploadPage.getUploadUrl();
 		uploadPage.clickNewFileButton();
@@ -116,7 +116,7 @@ public class Account_Upload_File extends AbstractPage {
 	}
 
 	@Test
-	public void TC_06_Upload_Image() {
+	public void TC_06_Upload_Image() throws Exception {
 		uploadPage = new UploadPageObject(driver);
 		uploadPage.getUploadUrl();
 		uploadPage.clickNewFileButton();

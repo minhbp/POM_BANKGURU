@@ -36,9 +36,6 @@ private WebDriver driver;
 	public void clickButtonSubmit() {
 		waitToElementVisible(driver, RegisterPageUI.REGISTER_PAGE_SUBMIT_BUTTON);
 		clickToElement(driver, RegisterPageUI.REGISTER_PAGE_SUBMIT_BUTTON);
-		
-		waitToElementVisibleIconLoading(driver);
-		waitToElementInvisibleIconLoading(driver);
 	}
 	
 	

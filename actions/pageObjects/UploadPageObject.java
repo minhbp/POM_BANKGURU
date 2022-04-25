@@ -17,22 +17,25 @@ public class UploadPageObject extends AbstractPage {
 		openAnyUrl(driver, UploadPageUI.UPLOAD_PAGE_URL);
 	}
 
-	public void clickNewFileButton() {
+	public void clickNewFileButton() throws Exception {
 		waitToElementVisible(driver, UploadPageUI.BUTTON_NEW_FILE);
 		waitToEnableButton(driver, UploadPageUI.BUTTON_NEW_FILE);
 		clickToElement(driver, UploadPageUI.BUTTON_NEW_FILE);
+		Thread.sleep(1000);
 	}
 
-	public void clickVideoButton() {
+	public void clickVideoButton() throws Exception {
 		waitToElementVisible(driver, UploadPageUI.BUTTON_VIDEO);
 		waitToEnableButton(driver, UploadPageUI.BUTTON_VIDEO);
 		clickToElement(driver, UploadPageUI.BUTTON_VIDEO);
 		waitToEnableButton(driver, UploadPageUI.BUTTON_VIDEO_SOUCRE);
+		Thread.sleep(1000);
 	}
 
-	public void clickVideoSourceButton() {
+	public void clickVideoSourceButton() throws Exception {
 		waitToEnableButton(driver, UploadPageUI.BUTTON_VIDEO_SOUCRE);
 		clickToElement(driver, UploadPageUI.BUTTON_VIDEO_SOUCRE);
+		Thread.sleep(1000);
 	}
 
 	public void inputNameVideo(String nameVideo) {
@@ -40,9 +43,10 @@ public class UploadPageObject extends AbstractPage {
 		sendkeyToElement(driver, UploadPageUI.VIDEO_SOUCRE_NAME, nameVideo);
 	}
 
-	public void clickSourceStyle() {
+	public void clickSourceStyle() throws Exception {
 		waitToElementVisible(driver, UploadPageUI.VIDEO_SOUCRE_STYLE);
 		clickToElement(driver, UploadPageUI.VIDEO_SOUCRE_STYLE);
+		Thread.sleep(1000);
 	}
 
 	public void selectVimeo() {

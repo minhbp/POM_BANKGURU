@@ -13,8 +13,13 @@ private WebDriver driver;
 		driver = mappingdriver;
 	}
 	
-	public void deleteProject() {
+	public void getMyWebinar() {
 		openAnyUrl(driver, DeleteProjectPageUI.MY_WEBINAR_URL);
+	}
+	
+	public void deleteProject() throws Exception {
+		waitToElementVisible(driver, DeleteProjectPageUI.AUTO_TITLE);
+		Thread.sleep(1000);
 		
 		waitToElementVisible(driver, DeleteProjectPageUI.OPTIONS_CLICK);
 		clickToElement(driver, DeleteProjectPageUI.OPTIONS_CLICK);
@@ -23,9 +28,9 @@ private WebDriver driver;
 		clickToElement(driver, DeleteProjectPageUI.OPTION_DELETE);
 		
 		waitToElementVisible(driver, DeleteProjectPageUI.INPUT_TEXTBOX);
-		clickToElement(driver, DeleteProjectPageUI.INPUT_TEXTBOX);
+		sendkeyToElement(driver, DeleteProjectPageUI.INPUT_TEXTBOX, "webinaris");
 		
-		waitToElementVisible(driver, DeleteProjectPageUI.CONFIRM_BUTTON);
+		waitToEnableButton(driver, DeleteProjectPageUI.CONFIRM_BUTTON);
 		clickToElement(driver, DeleteProjectPageUI.CONFIRM_BUTTON);
 		
 		waitToElementVisible(driver, DeleteProjectPageUI.SUCCESS_MESSAGE);

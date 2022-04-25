@@ -10,4 +10,5 @@ public class DeleteProjectPageUI {
 	
 	public static final String SUCCESS_MESSAGE = "//span[normalize-space()='Awesome - that worked!']";
 	public static final String CLOSE_MESSAGE_ICON = "//i[@class='v-icon notranslate fwbn fwbn-cancel theme--dark']";
+	public static final String AUTO_TITLE = "(//p[contains(text(),'Auto webinars')])";
 }
