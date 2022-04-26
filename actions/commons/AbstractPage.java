@@ -1,5 +1,7 @@
 package commons;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -87,6 +89,11 @@ public class AbstractPage {
 	public void scrollToElement(WebDriver driver, String locator) {
 		element = driver.findElement(By.xpath(locator));
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+	}
+	
+	public int countItemDropdown(WebDriver driver, String locator) {
+		List<WebElement> allItem = driver.findElements(By.xpath(locator));
+		return allItem.size();
 	}
 	
 	WebElement element;

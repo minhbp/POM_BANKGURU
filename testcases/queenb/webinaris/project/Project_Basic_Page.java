@@ -1,4 +1,4 @@
-package queenb.webinaris.account;
+package queenb.webinaris.project;
 
 import java.util.concurrent.TimeUnit;
 
@@ -12,19 +12,20 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import commons.AbstractPage;
+import pageObjects.BasicPageObject;
 import pageObjects.LoginPageObject;
 import pageObjects.NewProjectObject;
-import pageObjects.PollPageObject;
 
-public class Project_Polls_Setting extends AbstractPage {
-
+public class Project_Basic_Page extends AbstractPage {
 	WebDriver driver;
 	WebDriverWait explicitWait;
 	WebDriverWait waitExplicit;
-	
+
 	public LoginPageObject loginPage;
 	public NewProjectObject newProject;
-	public PollPageObject pollPage;
+	public BasicPageObject basicPage;
+	
+	String titleProject, subtitleProject;
 	
 	@BeforeClass
 	public void beforeClass() throws Exception {
@@ -37,37 +38,26 @@ public class Project_Polls_Setting extends AbstractPage {
 		Dimension d = new Dimension(960, 1080); // set width height browser
 		driver.manage().window().setSize(d);
 		driver.manage().window().maximize();
-
+		
+		titleProject = "21343243";
+		subtitleProject = "ds fr 234r23cdsf 23  sd";
+		
 		loginPage = new LoginPageObject(driver);
 		newProject = new NewProjectObject(driver);
-		pollPage = new PollPageObject(driver);
+		basicPage = new BasicPageObject(driver);
 
 		loginPage.login();
 		newProject.createNewProject();
 		Thread.sleep(2000);
-		pollPage.clickPollMenu();
 	}
 	
 	@Test
-	public void TC_01_New_Poll_01() {
-		pollPage.newPoll("Poll test 01", "0", "0", "0",
-				"0", "5", "0", 
-				"0", "5", "0", 
-				"0", "30", "0", 
-				"em ăn cơm chưa?",
-				"chưa", "20", 
-				"vẫn chưa nhưng đáp án khác", "80");
-	}
-	@Test
-	
-	public void TC_02_New_Poll_02() {
-		pollPage.newPoll("Poll test 02", "0", "5", "0",
-				"0", "15", "3", 
-				"0", "15", "40", 
-				"0", "45", "50", 
-				"nhà em có chó không?",
-				"có nhưng nó không cắn đâu", "35", 
-				"vẫn có và vẫn không cắn đâu", "65");
+	public void settingBasic() {
+		basicPage.clearTitle();
+		basicPage.inputTitle(titleProject);
+		basicPage.clearSubTitle();
+		basicPage.inputSubTitle(subtitleProject);
+		basicPage.clickConfirm();
 	}
 	
 	@AfterClass
@@ -75,5 +65,3 @@ public class Project_Polls_Setting extends AbstractPage {
 		driver.close();
 	}
 }
-
-

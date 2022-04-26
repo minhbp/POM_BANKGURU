@@ -1,4 +1,4 @@
-package queenb.webinaris.account;
+package queenb.webinaris.project;
 
 import java.util.concurrent.TimeUnit;
 

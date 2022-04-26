@@ -1,4 +1,4 @@
-package queenb.webinaris.account;
+package queenb.webinaris.project;
 
 import java.util.concurrent.TimeUnit;
 
@@ -12,20 +12,20 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import commons.AbstractPage;
-import pageObjects.BasicPageObject;
 import pageObjects.LoginPageObject;
 import pageObjects.NewProjectObject;
+import pageObjects.PresenterPageObject;
 
-public class Project_Basic_Page extends AbstractPage {
+public class Project_Presenter_Setting extends AbstractPage{
 	WebDriver driver;
 	WebDriverWait explicitWait;
 	WebDriverWait waitExplicit;
 
 	public LoginPageObject loginPage;
 	public NewProjectObject newProject;
-	public BasicPageObject basicPage;
+	public PresenterPageObject presenterPage;
 	
-	String titleProject, subtitleProject;
+	String namePresenter, urlImage;
 	
 	@BeforeClass
 	public void beforeClass() throws Exception {
@@ -39,12 +39,12 @@ public class Project_Basic_Page extends AbstractPage {
 		driver.manage().window().setSize(d);
 		driver.manage().window().maximize();
 		
-		titleProject = "21343243";
-		subtitleProject = "ds fr 234r23cdsf 23  sd";
+		namePresenter = "Lionel Messi";
+		urlImage = "D:\\images\\img01.jpg";
 		
 		loginPage = new LoginPageObject(driver);
 		newProject = new NewProjectObject(driver);
-		basicPage = new BasicPageObject(driver);
+		presenterPage = new PresenterPageObject(driver);
 
 		loginPage.login();
 		newProject.createNewProject();
@@ -52,14 +52,16 @@ public class Project_Basic_Page extends AbstractPage {
 	}
 	
 	@Test
-	public void settingBasic() {
-		basicPage.clearTitle();
-		basicPage.inputTitle(titleProject);
-		basicPage.clearSubTitle();
-		basicPage.inputSubTitle(subtitleProject);
-		basicPage.clickConfirm();
+	public void selectPresenter() {
+		presenterPage.clickPresenterMenu();
+		presenterPage.clearPresenterName();
+		presenterPage.inputPresenterName(namePresenter);
+		presenterPage.clickSelectImage();
+		presenterPage.inputUrlImage(urlImage);
+		presenterPage.clickConfirm();
 	}
 	
+
 	@AfterClass
 	public void afterClass() {
 		driver.close();

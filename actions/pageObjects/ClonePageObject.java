@@ -48,4 +48,22 @@ private WebDriver driver;
 		clickToElement(driver, ClonePageUI.CLOSE_MESSAGE_ICON);
 	}
 	
+	public void clickEnterCodeButton() {
+		waitToEnableButton(driver, ClonePageUI.ENTER_CODE_WEBINAR_BUTTON);
+		clickToElement(driver, ClonePageUI.ENTER_CODE_WEBINAR_BUTTON);
+	}
+	
+	public void inputCode(String code) {
+		waitToEnableButton(driver, ClonePageUI.COPY_BUTTON);
+		sendkeyToElement(driver, ClonePageUI.CODE_TEXTBOX, code);
+	}
+	
+	public void clickCopy() {
+		waitToEnableButton(driver, ClonePageUI.COPY_BUTTON);
+		clickToElement(driver, ClonePageUI.COPY_BUTTON);
+		
+		waitToElementVisible(driver, ClonePageUI.SUCCESS_MESSAGE);
+		clickToElement(driver, ClonePageUI.CLOSE_MESSAGE_ICON);
+	}
+	
 }

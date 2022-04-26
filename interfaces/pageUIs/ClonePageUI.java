@@ -5,6 +5,10 @@ public class ClonePageUI {
 	public static final String MY_WEBINAR_URL = "https://app.webinaris.co/videos";
 	public static final String NEW_WEBINAR_BUTTON = "//button[normalize-space()='New auto webinar']";
 	public static final String CLONE_WEBINAR_BUTTON = "//span[normalize-space()='Select webinar']";
+	public static final String ENTER_CODE_WEBINAR_BUTTON = "//span[normalize-space()='Enter code']/parent::button";
+	public static final String CODE_TEXTBOX = "(//input[@type='text'])[3]";
+	public static final String COPY_BUTTON = "//span[normalize-space()='Copy']/parent::button";
+	
 	public static final String OPEN_LIST_PROJECTS = "(//div[@class='v-select__selections'])[2]";
 	public static final String FIRST_PROJECT = "(//div[@class='v-list-item__content'])/child::div";
 	public static final String BUTTON_CLONE = "//span[normalize-space()='Clone']/parent::button";

@@ -17,25 +17,22 @@ public class UploadPageObject extends AbstractPage {
 		openAnyUrl(driver, UploadPageUI.UPLOAD_PAGE_URL);
 	}
 
-	public void clickNewFileButton() throws Exception {
+	public void clickNewFileButton() {
 		waitToElementVisible(driver, UploadPageUI.BUTTON_NEW_FILE);
 		waitToEnableButton(driver, UploadPageUI.BUTTON_NEW_FILE);
 		clickToElement(driver, UploadPageUI.BUTTON_NEW_FILE);
-		Thread.sleep(1000);
 	}
 
 	public void clickVideoButton() throws Exception {
-		waitToElementVisible(driver, UploadPageUI.BUTTON_VIDEO);
 		waitToEnableButton(driver, UploadPageUI.BUTTON_VIDEO);
+		Thread.sleep(500);
 		clickToElement(driver, UploadPageUI.BUTTON_VIDEO);
-		waitToEnableButton(driver, UploadPageUI.BUTTON_VIDEO_SOUCRE);
-		Thread.sleep(1000);
 	}
 
 	public void clickVideoSourceButton() throws Exception {
 		waitToEnableButton(driver, UploadPageUI.BUTTON_VIDEO_SOUCRE);
+		Thread.sleep(500);
 		clickToElement(driver, UploadPageUI.BUTTON_VIDEO_SOUCRE);
-		Thread.sleep(1000);
 	}
 
 	public void inputNameVideo(String nameVideo) {
@@ -43,24 +40,20 @@ public class UploadPageObject extends AbstractPage {
 		sendkeyToElement(driver, UploadPageUI.VIDEO_SOUCRE_NAME, nameVideo);
 	}
 
-	public void clickSourceStyle() throws Exception {
+	public void clickSourceStyle() {
 		waitToElementVisible(driver, UploadPageUI.VIDEO_SOUCRE_STYLE);
 		clickToElement(driver, UploadPageUI.VIDEO_SOUCRE_STYLE);
+	}
+
+	public void selectVideolyser() throws Exception {
+		waitToElementVisible(driver, UploadPageUI.VIDEO_SOUCRE_STYLE_VIDEOLYSER);
 		Thread.sleep(1000);
-	}
-
-	public void selectVimeo() {
-		waitToElementVisible(driver, UploadPageUI.VIDEO_SOUCRE_STYLE_VIDEOLYSER);
 		clickToElement(driver, UploadPageUI.VIDEO_SOUCRE_STYLE_VIDEOLYSER);
 	}
 
-	public void selectVideolyser() {
-		waitToElementVisible(driver, UploadPageUI.VIDEO_SOUCRE_STYLE_VIDEOLYSER);
-		clickToElement(driver, UploadPageUI.VIDEO_SOUCRE_STYLE_VIDEOLYSER);
-	}
-
-	public void selectVideoMp4() {
+	public void selectVideoMp4() throws Exception {
 		waitToElementVisible(driver, UploadPageUI.VIDEO_SOUCRE_STYLE_MP4);
+		Thread.sleep(1000);
 		clickToElement(driver, UploadPageUI.VIDEO_SOUCRE_STYLE_MP4);
 	}
 

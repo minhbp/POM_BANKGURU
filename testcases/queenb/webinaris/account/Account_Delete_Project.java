@@ -42,10 +42,10 @@ public class Account_Delete_Project {
 	}
 
 	@Test
-	public void delProject() throws Exception {
+	public void TC_01_delProject() throws Exception {
 		deletePage.getMyWebinar();
 
-		for (int i = 0, n = 2; i < n; i++) {
+		for (int i = 0, n = 1; i < n; i++) {
 			deletePage.deleteProject();
 		}
 	}

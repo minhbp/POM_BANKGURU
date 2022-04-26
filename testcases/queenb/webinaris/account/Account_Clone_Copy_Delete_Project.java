@@ -11,22 +11,20 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import commons.AbstractPage;
+import pageObjects.ClonePageObject;
+import pageObjects.DeletePageObject;
 import pageObjects.LoginPageObject;
-import pageObjects.NewProjectObject;
-import pageObjects.PresenterPageObject;
 
-public class Project_Presenter_Setting extends AbstractPage{
+public class Account_Clone_Copy_Delete_Project {
+
 	WebDriver driver;
 	WebDriverWait explicitWait;
 	WebDriverWait waitExplicit;
 
 	public LoginPageObject loginPage;
-	public NewProjectObject newProject;
-	public PresenterPageObject presenterPage;
-	
-	String namePresenter, urlImage;
-	
+	public ClonePageObject clonePage;
+	public DeletePageObject deletePage;
+
 	@BeforeClass
 	public void beforeClass() throws Exception {
 		System.setProperty("webdriver.chrome.driver", "D:\\WEBDRIVER_API_MinhDV\\browser\\chromedriver.exe");
@@ -38,29 +36,40 @@ public class Project_Presenter_Setting extends AbstractPage{
 		Dimension d = new Dimension(960, 1080); // set width height browser
 		driver.manage().window().setSize(d);
 		driver.manage().window().maximize();
-		
-		namePresenter = "Lionel Messi";
-		urlImage = "D:\\images\\img01.jpg";
-		
-		loginPage = new LoginPageObject(driver);
-		newProject = new NewProjectObject(driver);
-		presenterPage = new PresenterPageObject(driver);
 
+		loginPage = new LoginPageObject(driver);
+		clonePage = new ClonePageObject(driver);
+		deletePage = new DeletePageObject(driver);
 		loginPage.login();
-		newProject.createNewProject();
-		Thread.sleep(2000);
+	}
+
+	@Test
+	public void TC_01_Clone_Project() throws Exception {
+		clonePage.getMyWebinar();
+		clonePage.clickNewProject();
+		clonePage.clickCloneProject();
+		clonePage.clickOpenListProjects();
+		clonePage.selectFirstProject();
+		clonePage.clickButtonClone();
 	}
 	
 	@Test
-	public void selectPresenter() {
-		presenterPage.clickPresenterMenu();
-		presenterPage.clearPresenterName();
-		presenterPage.inputPresenterName(namePresenter);
-		presenterPage.clickSelectImage();
-		presenterPage.inputUrlImage(urlImage);
-		presenterPage.clickConfirm();
+	public void TC_02_Copy_Project() throws Exception {
+		clonePage.getMyWebinar();
+		clonePage.clickNewProject();
+		clonePage.clickEnterCodeButton();
+		clonePage.inputCode("11AC258A6C52E110");
+		clonePage.clickCopy();
 	}
 	
+	@Test
+	public void TC_03_delProject() throws Exception {
+		deletePage.getMyWebinar();
+
+		for (int i = 0, n = 2; i < n; i++) {
+			deletePage.deleteProject();
+		}
+	}
 
 	@AfterClass
 	public void afterClass() {
