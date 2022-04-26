@@ -16,7 +16,7 @@ import pageObjects.LoginPageObject;
 import pageObjects.NewProjectObject;
 import pageObjects.EmailsPageObject;
 
-public class Project_Mail_Sender_Setting extends AbstractPage{
+public class Project_Mail_Setting extends AbstractPage{
 	WebDriver driver;
 	WebDriverWait explicitWait;
 	WebDriverWait waitExplicit;
@@ -81,7 +81,7 @@ public class Project_Mail_Sender_Setting extends AbstractPage{
 	}
 	
 	@Test
-	public void TC_04_Load_Email_Template() {
+	public void TC_04_Load_Email_Template() throws Exception {
 		emailsPage.clickNewEmailButton();
 		emailsPage.clickSelectTemplateButotn();
 		emailsPage.clickLoadTemplateButton();

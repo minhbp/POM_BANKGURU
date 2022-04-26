@@ -11,18 +11,23 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import pageObjects.DeletePageObject;
+import commons.AbstractPage;
 import pageObjects.LoginPageObject;
+import pageObjects.NewProjectObject;
+import pageObjects.TrackingPageObject;
 
-public class Account_Delete_Project {
+public class Project_Tracking_Code_Setting extends AbstractPage {
 
 	WebDriver driver;
 	WebDriverWait explicitWait;
 	WebDriverWait waitExplicit;
-
+	
 	public LoginPageObject loginPage;
-	public DeletePageObject deletePage;
-
+	public NewProjectObject newProject;
+	public TrackingPageObject trackingPage;
+	
+	String nameTracking, headcode, bodycodeafter, bodycodebefore;
+	
 	@BeforeClass
 	public void beforeClass() throws Exception {
 		System.setProperty("webdriver.chrome.driver", "D:\\WEBDRIVER_API_MinhDV\\browser\\chromedriver.exe");
@@ -34,22 +39,35 @@ public class Account_Delete_Project {
 		Dimension d = new Dimension(960, 1080); // set width height browser
 		driver.manage().window().setSize(d);
 		driver.manage().window().maximize();
+		
+		nameTracking = "tracking 01";
+		headcode = "<script>alert('headcode');</script>";
+		bodycodeafter = "<script>alert('bodycodeafter');</script>";
+		bodycodebefore = "<script>alert('bodycodebefore');</script>";
 
 		loginPage = new LoginPageObject(driver);
-		deletePage = new DeletePageObject(driver);
+		newProject = new NewProjectObject(driver);
+		trackingPage = new TrackingPageObject(driver);
+
 		loginPage.login();
-
+		newProject.createNewProject();
+		Thread.sleep(2000);
 	}
-
+	
 	@Test
-	public void delProject() throws Exception {
-		deletePage.getMyWebinar();
-
-		for (int i = 0, n = 2; i < n; i++) {
-			deletePage.deleteProject();
-		}
+	public void TC_01_New_Tracking_Code() {
+		trackingPage.clickExpertMenu();
+		trackingPage.clickTrackingMenu();
+		trackingPage.clickNewTrackingButton();
+		trackingPage.inputTrackingName(nameTracking);
+		trackingPage.clickEvent();
+		trackingPage.selectEvetnOpenRegistrationPage();
+		trackingPage.inputTrackingBeforeHead(headcode);
+		trackingPage.inputTrackingAfterBody(bodycodeafter);
+		trackingPage.inputTrackingBeforeBody(bodycodebefore);
+		trackingPage.clickSaveButton();
 	}
-
+	
 	@AfterClass
 	public void afterClass() {
 		driver.close();

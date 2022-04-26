@@ -29,4 +29,5 @@ public class EmailsPageUI {
 	public static final String SELECT_TEMPLATE_BUTTON = "//span[normalize-space()='Select template']/parent::button";
 	public static final String LOAD_TEMPLATE_BUTTON = "//span[normalize-space()='Load template']/parent::button";
 	public static final String SAVE_BUTTON = "//button[contains(text(),'Save')]";
+	public static final String TITLE_LOAD_TEMPLATE = "//div[contains(text(),'Load template (recommended)')]";
 }

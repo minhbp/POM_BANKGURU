@@ -5,7 +5,6 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -86,10 +85,8 @@ public class AbstractPage {
 	}
 
 	public void scrollToElement(WebDriver driver, String locator) {
-		Actions actions = new Actions(driver);
 		element = driver.findElement(By.xpath(locator));
-		actions.moveToElement(element);
-		actions.perform();
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 	}
 	
 	WebElement element;

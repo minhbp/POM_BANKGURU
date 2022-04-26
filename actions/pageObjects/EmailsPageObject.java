@@ -101,9 +101,10 @@ private WebDriver driver;
 		clickToElement(driver, EmailsPageUI.SELECT_TEMPLATE_BUTTON);
 	}
 	
-	public void clickLoadTemplateButton() {
+	public void clickLoadTemplateButton() throws Exception {
 		waitToElementVisible(driver, EmailsPageUI.LOAD_TEMPLATE_BUTTON);
 		scrollToElement(driver, EmailsPageUI.LOAD_TEMPLATE_BUTTON);
+		Thread.sleep(500);
 		clickToElement(driver, EmailsPageUI.LOAD_TEMPLATE_BUTTON);
 	}
 	

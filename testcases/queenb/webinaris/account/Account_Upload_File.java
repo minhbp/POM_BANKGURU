@@ -128,7 +128,7 @@ public class Account_Upload_File extends AbstractPage {
 		uploadPage.deleteVideo();
 	}
 
-	@Test(priority = 7)
+	@Test
 	public void TC_07_Delete_Videos() {
 		uploadPage = new UploadPageObject(driver);
 		uploadPage.getUploadUrl();
