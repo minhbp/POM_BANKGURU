@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Suite2" verbose="1">
+	<test name="all-tests">
+		<packages>
+			<package name="queenb.webinaris.account" />
+			<package name="queenb.webinaris.project" />
+		</packages>
+	</test>
+</suite>

@@ -66,9 +66,24 @@ public class PagesSettingObject extends AbstractPage {
 		waitToElementVisible(driver, PagesSettingPageUI.PAGES_SETTINGS_MY_OWN_COMPLETE_WEBSITE_URL_TXT);
 		sendkeyToElement(driver, PagesSettingPageUI.PAGES_SETTINGS_MY_OWN_COMPLETE_WEBSITE_URL_TXT, urlComplete);
 	}
-
+	
+	public void clickLogoMenu() {
+		waitToElementVisible(driver, PagesSettingPageUI.LOGO_MENU);
+		clickToElement(driver, PagesSettingPageUI.LOGO_MENU);
+	}
+	
+	public void clickSelectButton() {
+		waitToEnableButton(driver, PagesSettingPageUI.SELECT_LOGO_BUTTON);
+		clickToElement(driver, PagesSettingPageUI.SELECT_LOGO_BUTTON);
+	}
+	
+	public void inputUrlLogoLocal(String urlLogo) {
+		waitToEnableButton(driver, PagesSettingPageUI.NEW_FILE_BUTTON);
+		sendkeyToElement(driver, PagesSettingPageUI.LOCATOR_FILE, urlLogo);
+	}
+	
 	public void clickConfirm() {
-		waitToElementVisible(driver, PagesSettingPageUI.CONFIRM_BUTTTON);
+		waitToEnableButton(driver, PagesSettingPageUI.CONFIRM_BUTTTON);
 		clickToElement(driver, PagesSettingPageUI.CONFIRM_BUTTTON);
 		
 		waitToElementVisible(driver, PagesSettingPageUI.MESSAGE_SUCCESS);

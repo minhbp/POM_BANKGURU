@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 import commons.AbstractPage;
 import pageUIs.NewProjectPageUI;
+import pageUIs.PagesSettingPageUI;
 
 public class NewProjectObject extends AbstractPage{
 
@@ -26,8 +27,7 @@ private WebDriver driver;
 		waitToElementVisible(driver, NewProjectPageUI.MESSAGE_SUCCESS);
 		clickToElement(driver, NewProjectPageUI.ICON_CLOSE_MESSAGE);
 		
-		waitToElementVisibleIconLoading(driver);
-		waitToElementInvisibleIconLoading(driver);
+		waitToEnableButton(driver, PagesSettingPageUI.CONFIRM_BUTTTON);
 	}
 	
 }

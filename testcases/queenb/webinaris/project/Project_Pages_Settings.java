@@ -15,6 +15,7 @@ import commons.AbstractPage;
 import pageObjects.LoginPageObject;
 import pageObjects.NewProjectObject;
 import pageObjects.PagesSettingObject;
+import pageUIs.PagesSettingPageUI;
 
 public class Project_Pages_Settings extends AbstractPage {
 	WebDriver driver;
@@ -25,7 +26,7 @@ public class Project_Pages_Settings extends AbstractPage {
 	public NewProjectObject newProject;
 	public PagesSettingObject settingPage;
 	
-	String customLpUrl, customConffirmUrl, customCompleteUrl;
+	String customLpUrl, customConffirmUrl, customCompleteUrl, urlLogo;
 	
 	@BeforeClass
 	public void beforeClass() throws Exception {
@@ -42,6 +43,7 @@ public class Project_Pages_Settings extends AbstractPage {
 		customLpUrl = "https://translate.google.com/{partner-city}/{partner-email}/{partner-email}/{partner-firstname}/{partner-lastname}/{partner-id}/{partner-phone}/{partner-street}/{partner-website}/{partner-zipcode}";
 		customConffirmUrl = "https://docs.google.com/spreadsheets/d/1WPxsinkefeCPxqpQXMLabEydIMh11FZpjSR5qDPf9Yo/edit#gid=0";
 		customCompleteUrl = "https://zingnews.vn/123";
+		urlLogo = "D:\\images\\luoi.jpg";
 
 		loginPage = new LoginPageObject(driver);
 		newProject = new NewProjectObject(driver);
@@ -53,7 +55,7 @@ public class Project_Pages_Settings extends AbstractPage {
 	}
 	
 	@Test
-	public void selectPageMyOwn() throws Exception {
+	public void TC_01_selectPageMyOwn() throws Exception {
 		System.out.println("Step 01: clickPagesMenu");
 		settingPage.clickPagesMenu();
 		
@@ -94,6 +96,16 @@ public class Project_Pages_Settings extends AbstractPage {
 		settingPage.inputUrlComplete(customCompleteUrl);
 		
 		System.out.println("Step 14: clickConfirm");
+		settingPage.clickConfirm();
+	}
+	
+	@Test
+	public void TC_02_Setting_Logo() {
+		settingPage.clickLogoMenu();
+		settingPage.clickSelectButton();
+		settingPage.inputUrlLogoLocal(urlLogo);
+		waitToElementVisible(driver, PagesSettingPageUI.MESSAGE_SUCCESS);
+		clickToElement(driver, PagesSettingPageUI.ICON_CLOSE_MESSAGE);
 		settingPage.clickConfirm();
 	}
 	

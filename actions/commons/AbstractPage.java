@@ -90,12 +90,12 @@ public class AbstractPage {
 		element = driver.findElement(By.xpath(locator));
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 	}
-	
+
 	public int countItemDropdown(WebDriver driver, String locator) {
 		List<WebElement> allItem = driver.findElements(By.xpath(locator));
 		return allItem.size();
 	}
-	
+
 	WebElement element;
 	WebDriverWait waitExplicit;
 

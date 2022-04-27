@@ -16,8 +16,14 @@ public class PagesSettingPageUI {
 	public static final String PAGES_SETTINGS_MY_OWN_LP_WEBSITE_URL_TXT = "(//input[@type='text'])[3]";
 	public static final String PAGES_SETTINGS_MY_OWN_CONFIRM_WEBSITE_URL_TXT = "(//input[@type='text'])[5]";
 	public static final String PAGES_SETTINGS_MY_OWN_COMPLETE_WEBSITE_URL_TXT = "(//input[@type='text'])[7]";
+	
 	public static final String CONFIRM_BUTTTON = "//button[normalize-space()='Confirm']";
 	public static final String MESSAGE_SUCCESS = "//span[@class='w-snackbar-text']";
 	public static final String ICON_CLOSE_MESSAGE = "//i[@class='v-icon notranslate fwbn fwbn-cancel theme--dark']";
+	
+	public static final String LOGO_MENU = "//span[normalize-space()='Logo']";
+	public static final String SELECT_LOGO_BUTTON = "//p[normalize-space()='Recommended resolution: 200x200 px']/parent::div/child::button";
+	public static final String NEW_FILE_BUTTON = "//span[normalize-space()='New file']/parent::button";
+	public static final String LOCATOR_FILE = "//input[@accept='image/*']";
 	
 }
