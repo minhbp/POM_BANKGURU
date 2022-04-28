@@ -34,6 +34,7 @@ public class LoginPageObject extends AbstractPage {
 		waitToElementInvisibleIconLoading(driver);
 	
 		waitToElementVisible(driver, LoginPageUI.LOGIN_TEXT);
+		
 	}
 	
 }

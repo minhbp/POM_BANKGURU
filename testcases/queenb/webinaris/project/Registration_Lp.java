@@ -52,9 +52,10 @@ public class Registration_Lp extends AbstractPage {
 	}
 
 	@Test
-	public void TC_02_New_Project() {
+	public void TC_02_New_Project() throws Exception {
 		newProject = new NewProjectObject(driver);
 		newProject.createNewProject();
+		Thread.sleep(2000);
 	}
 
 	@Test

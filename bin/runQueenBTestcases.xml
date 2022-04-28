@@ -1,28 +1,28 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite thread-count="4" name="webinaris" parallel="tests">
+<suite thread-count="1" name="webinaris" parallel="tests">
 
-	<test name="upload file, image">
+	<test name="expert setting">
 		<classes>
 			<class name="queenb.webinaris.account.Account_Upload_File" />
 		</classes>
 	</test>
 
-	<test name="setting button">
+	<test name="setting email">
 		<classes>
-			<class name="queenb.webinaris.account.Project_Buttons_Setting" />
+			<class name="queenb.webinaris.project.Registration_Lp" />
 		</classes>
 	</test>
 
-	<test name="register">
+	<test name="setting button">
 		<classes>
-			<class name="queenb.webinaris.account.Registration_Lp" />
+			<class name="queenb.webinaris.project.Project_Buttons_Setting" />
 		</classes>
 	</test>
 	
 	<test name="setting poll">
 		<classes>
-			<class name="queenb.webinaris.account.Project_Polls_Setting" />
+			<class name="queenb.webinaris.project.Project_Polls_Setting" />
 		</classes>
 	</test>
 	

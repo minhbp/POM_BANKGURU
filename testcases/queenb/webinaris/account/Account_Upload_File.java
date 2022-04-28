@@ -16,7 +16,7 @@ import commons.AbstractPage;
 import pageObjects.LoginPageObject;
 import pageObjects.UploadPageObject;
 
-public class Account_Upload_File extends AbstractPage {
+public class Account_Upload_File extends AbstractPage{
 	WebDriver driver;
 	WebDriverWait explicitWait;
 	WebDriverWait waitExplicit;
@@ -50,6 +50,7 @@ public class Account_Upload_File extends AbstractPage {
 
 		LOCAL_VIDEO_LINK = "D:\\videos\\123.mp4";
 		LOCAL_IMG_LINK = "D:\\images\\img01.jpg";
+		
 	}
 
 	public static int randomNumber() {
@@ -57,7 +58,7 @@ public class Account_Upload_File extends AbstractPage {
 		return random.nextInt(9999);
 	}
 
-	@Test
+//	@Test
 	public void TC_01_Login() {
 		loginPage = new LoginPageObject(driver);
 		loginPage.login();
