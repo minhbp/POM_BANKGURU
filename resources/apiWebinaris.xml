@@ -1,0 +1,35 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite thread-count="5" name="webinaris" parallel="tests">
+
+	<test name="default 3 showtimes">
+		<classes>
+			<class name="queenb.webinaris.api.API_Get_3_Optimized_Showtimes" />
+		</classes>
+	</test>
+
+	<test name="default 5 showtimes">
+		<classes>
+			<class name="queenb.webinaris.api.API_Get_5_Optimized_Showtimes" />
+		</classes>
+	</test>
+
+	<test name="default 7 showtimes">
+		<classes>
+			<class name="queenb.webinaris.api.API_Get_7_Optimized_Showtimes" />
+		</classes>
+	</test>
+	
+	<test name="get list showtimes">
+		<classes>
+			<class name="queenb.webinaris.api.API_Get_List_Showtimes" />
+		</classes>
+	</test>
+	
+	<test name="api normal">
+		<classes>
+			<class name="queenb.webinaris.api.API_Normal" />
+		</classes>
+	</test>
+	
+</suite>

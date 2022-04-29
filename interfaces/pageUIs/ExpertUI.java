@@ -141,9 +141,52 @@ public class ExpertUI {
 	public static final String REPORTS_MENU = "//span[normalize-space()='Reports']";
 	public static final String ICON_CLOSE_RECORD_DEFAULT = "//button[@class='v-icon notranslate remove-notify v-icon--link fwbn fwbn-delete-circle theme--light']";
 	public static final String NEW_REPORT_BUTTON = "//span[normalize-space()='New recipient']/parent::button";
+	public static final String EMAIL_REPORT_TEXTBOX = "(//input[@type='text'])[3]";
+	public static final String REPORT_REGIST_CHECKBOX = "(//input[@role='checkbox'])[1]/parent::div";
+	public static final String REPORT_LOGIN_CHECKBOX = "(//input[@role='checkbox'])[2]/parent::div";
+	public static final String REPORT_LOGOUT_CHECKBOX = "(//input[@role='checkbox'])[3]/parent::div";
+	public static final String REPORT_SINGLE_CHAT_CHECKBOX = "(//input[@role='checkbox'])[4]/parent::div";
+	public static final String REPORT_ALL_CHAT_CHECKBOX = "(//input[@role='checkbox'])[5]/parent::div";
+	public static final String REPORT_SUMMARY_CHECKBOX = "(//input[@role='checkbox'])[6]/parent::div";
+	public static final String REPORT_REPLAY_CHAT_CHECKBOX = "(//input[@role='checkbox'])[7]/parent::div";
 	
+	// facebook share image
 	public static final String FACEBOOK_SHARE_IMAGE_MENU = "//span[normalize-space()='Facebook share image']";
+	public static final String SELECT_FACEBOOK_IMAGE_BUTTON = "//span[normalize-space()='Select image']";
+	public static final String SELECT_IMAGE_BUTTON = "(//span[contains(text(),'Select')])[3]/parent::button";
+	
+	// list participant
 	public static final String LIST_PARTICIPANTS_MENU = "//span[normalize-space()='List of participants']";
+	public static final String LIST_PARTICIPANTS_STYLE = "(//div[@class='v-select__selections'])[1]";
+	public static final String LIST_PARTICIPANTS_STYLE_FULL_LIST = "//div[@class='v-list-item__title'][normalize-space()='Full list of participants (recommended)']";
+	public static final String FULL_LIST_NAMES = "(//div[@class='v-select__selections'])[2]";
+	public static final String FULL_LIST_NAMES_FULL_NAME = "//div[@class='v-list-item__title'][normalize-space()='Full name']";
+	public static final String FULL_LIST_NAMES_FULL_FIRSTNAME_ONLY = "//div[contains(text(),'First name only')]";
+	public static final String FULL_LIST_NAMES_FULL_LASTNAME_ONLY = "//div[@class='v-list-item__title'][normalize-space()='Last name only']";
+	public static final String FULL_LIST_NAMES_FULL_NICKNAME = "//div[contains(text(),'Anonymous nicknames')]";
+	public static final String FULL_LIST_TYPE = "(//div[@class='v-select__selections'])[3]";
+	public static final String FULL_LIST_TYPE_FAKE_VIEWER_ONLY = "//div[@class='v-list-item__title'][normalize-space()='Fictional participants only']";
+	public static final String FULL_LIST_TYPE_REAL_VIEWER_ONLY = "//div[contains(text(),'Real participants only')]";
+	public static final String FULL_LIST_TYPE_ALL_VIEWER = "//div[contains(text(),'Real and fictional participants')]";
+	public static final String FULL_LIST_NUMBER_VIEWERS = "//input[@class='w-input']";
+	public static final String FULL_LIST_GENDER = "(//div[@class='v-select__selections'])[4]";
+	public static final String FULL_LIST_GENDER_ALL = "//div[@class='v-list-item__title'][normalize-space()='Male and female']";
+	public static final String FULL_LIST_FEMALE_ONLY = "//div[contains(text(),'Female only')]";
+	public static final String FULL_LIST_MALE_ONLY = "//div[contains(text(),'Male only')]";
+	public static final String FULL_LIST_LANGUAGE = "(//div[@class='v-select__selections'])[5]";
+	public static final String FULL_LIST_LANGUAGE_GERMANY = "//div[@class='v-list-item__title'][normalize-space()='Germany']";
+	public static final String FULL_LIST_LANGUAGE_UK = "//div[contains(text(),'United Kingdom')]";
+	public static final String FULL_LIST_LANGUAGE_FRANCE = "//div[contains(text(),'France')]";
+	public static final String FULL_LIST_LANGUAGE_ITALY = "//div[contains(text(),'Italy')]";
+	public static final String FULL_LIST_LANGUAGE_VIETNAM = "//div[contains(text(),'Vietnam')]";
+	public static final String FULL_LIST_LANGUAGE_POLAND = "//div[contains(text(),'Poland')]";
+	public static final String FULL_LIST_LANGUAGE_SPAIN = "//div[contains(text(),'Spain')]";
+	
+	public static final String LIST_PARTICIPANTS_STYLE_NO = "//div[contains(text(),'No list of participants')]";
+	public static final String LIST_PARTICIPANTS_STYLE_ONLY_NUMBER = "//div[@class='v-list-item__title'][normalize-space()='Just the number, no names']";
+	
+	
+	
 	public static final String LEGAL_TEXTS_MENU = "//span[normalize-space()='Legal texts']";
 	public static final String REGISTRATION_NOTES_MENU = "//span[normalize-space()='Registration notes']";
 	public static final String COOKIE_BANNER_MENU = "//span[normalize-space()='Cookie banner']";

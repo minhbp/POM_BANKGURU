@@ -67,9 +67,22 @@ public class Project_Mail_Setting extends AbstractPage{
 		emailsPage.clickSettingMenu();
 		emailsPage.clickDoiOptions();
 		emailsPage.selectDoiIsNo();
+		emailsPage.clickConfirmButton();
+		
+		emailsPage.clickDoiOptions();
+		emailsPage.selectDoiIsYes();
+		emailsPage.clickSave();
+		emailsPage.clickDoiOptions();
+		emailsPage.selectDoiForUnsubcribe();
+		emailsPage.clickSave();
+		
 		emailsPage.clickReRegistrationOptions();
 		emailsPage.selectReRegistrationisYes();
-		emailsPage.clickConfirmButton();
+		emailsPage.clickSave();
+		emailsPage.clickReRegistrationOptions();
+		emailsPage.selectReRegistrationisNo();
+		emailsPage.clickSave();
+		
 	}
 	
 	@Test

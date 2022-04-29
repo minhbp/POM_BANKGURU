@@ -452,13 +452,6 @@ public class ExpertPageObject extends AbstractPage {
 		clickToElement(driver, ExpertUI.REGION_DATE_FORMAT_OPTION_7);
 	}
 	
-	public void clickSave() {
-		waitToEnableButton(driver, ExpertUI.BUTTON_SAVE);
-		clickToElement(driver, ExpertUI.BUTTON_SAVE);
-
-		waitToElementVisible(driver, ExpertUI.MESSAGE_SUCCESS);
-		clickToElement(driver, ExpertUI.ICON_CLOSE_MESSAGE);
-	}
 	// end Region
 
 	// start webianr details
@@ -699,8 +692,227 @@ public class ExpertPageObject extends AbstractPage {
 		waitToElementVisible(driver, ExpertUI.PARTICIPANT_MAXIMUM_500);
 		clickToElement(driver, ExpertUI.PARTICIPANT_MAXIMUM_500);
 	}
+	// end participant
 	
-
+	// start reports
+	public void clickReportMenu() {
+		waitToElementVisible(driver, ExpertUI.REPORTS_MENU);
+		clickToElement(driver, ExpertUI.REPORTS_MENU);
+	}
+	
+	public void clickIconeDelete() {
+		waitToElementVisible(driver, ExpertUI.ICON_CLOSE_RECORD_DEFAULT);
+		clickToElement(driver, ExpertUI.ICON_CLOSE_RECORD_DEFAULT);
+	}
+	
+	public void clickNewReport() {
+		waitToElementVisible(driver, ExpertUI.NEW_REPORT_BUTTON);
+		clickToElement(driver, ExpertUI.NEW_REPORT_BUTTON);
+	}
+	
+	public void clearAndInputEmailReport(String emailReport) {
+		waitToElementVisible(driver, ExpertUI.EMAIL_REPORT_TEXTBOX);
+		clearElement(driver, ExpertUI.EMAIL_REPORT_TEXTBOX);
+		sendkeyToElement(driver, ExpertUI.EMAIL_REPORT_TEXTBOX, emailReport);
+	}
+	
+	public void selectAllReports() {
+		clickToElement(driver, ExpertUI.REPORT_LOGIN_CHECKBOX);
+		clickToElement(driver, ExpertUI.REPORT_LOGOUT_CHECKBOX);
+		clickToElement(driver, ExpertUI.REPORT_SINGLE_CHAT_CHECKBOX);
+		clickToElement(driver, ExpertUI.REPORT_ALL_CHAT_CHECKBOX);
+	}
+	
+	public void unselectAllReports() {
+		clickToElement(driver, ExpertUI.REPORT_REGIST_CHECKBOX);
+		clickToElement(driver, ExpertUI.REPORT_LOGIN_CHECKBOX);
+		clickToElement(driver, ExpertUI.REPORT_LOGOUT_CHECKBOX);
+		clickToElement(driver, ExpertUI.REPORT_SINGLE_CHAT_CHECKBOX);
+		clickToElement(driver, ExpertUI.REPORT_ALL_CHAT_CHECKBOX);
+		clickToElement(driver, ExpertUI.REPORT_SUMMARY_CHECKBOX);
+		clickToElement(driver, ExpertUI.REPORT_REPLAY_CHAT_CHECKBOX);
+	}
+	// end reports
+	
+	//start facebook share imgae
+	public void clickFacebookMenu() {
+		waitToElementVisible(driver, ExpertUI.FACEBOOK_SHARE_IMAGE_MENU);
+		clickToElement(driver, ExpertUI.FACEBOOK_SHARE_IMAGE_MENU);
+	}
+	
+	public void clickSelectFacebookImageButton() {
+		waitToElementVisible(driver, ExpertUI.SELECT_FACEBOOK_IMAGE_BUTTON);
+		clickToElement(driver, ExpertUI.SELECT_FACEBOOK_IMAGE_BUTTON);
+	}
+	
+	public void selectlImageLocal() {
+		waitToEnableButton(driver, ExpertUI.SELECT_IMAGE_BUTTON);
+		clickToElement(driver, ExpertUI.SELECT_IMAGE_BUTTON);
+	}
+	//end facebook share image
+	
+	// start list of participant
+	public void clickListOfParticipantMenu() {
+		waitToElementVisible(driver, ExpertUI.LIST_PARTICIPANTS_MENU);
+		clickToElement(driver, ExpertUI.LIST_PARTICIPANTS_MENU);
+	}
+	
+	public void clickListOfParticipantStyle() {
+		waitToElementVisible(driver, ExpertUI.LIST_PARTICIPANTS_STYLE);
+		clickToElement(driver, ExpertUI.LIST_PARTICIPANTS_STYLE);
+	}
+	
+	public void selectListOfParticipantStyleFullList() {
+		waitToElementVisible(driver, ExpertUI.LIST_PARTICIPANTS_STYLE_FULL_LIST);
+		clickToElement(driver, ExpertUI.LIST_PARTICIPANTS_STYLE_FULL_LIST);
+	}
+	
+	public void selectListOfParticipantStyleNoList() {
+		waitToElementVisible(driver, ExpertUI.LIST_PARTICIPANTS_STYLE_NO);
+		clickToElement(driver, ExpertUI.LIST_PARTICIPANTS_STYLE_NO);
+	}
+	
+	public void selectListOfParticipantStyleOnlyNumber() {
+		waitToElementVisible(driver, ExpertUI.LIST_PARTICIPANTS_STYLE_ONLY_NUMBER);
+		clickToElement(driver, ExpertUI.LIST_PARTICIPANTS_STYLE_ONLY_NUMBER);
+	}
+	
+	public void clickListOfParticipantName() {
+		waitToElementVisible(driver, ExpertUI.FULL_LIST_NAMES);
+		clickToElement(driver, ExpertUI.FULL_LIST_NAMES);
+	}
+	
+	public void selectListOfParticipantFullName() {
+		waitToElementVisible(driver, ExpertUI.FULL_LIST_NAMES_FULL_NAME);
+		clickToElement(driver, ExpertUI.FULL_LIST_NAMES_FULL_NAME);
+	}
+	
+	public void selectListOfParticipantFullFirstName() {
+		waitToElementVisible(driver, ExpertUI.FULL_LIST_NAMES_FULL_FIRSTNAME_ONLY);
+		clickToElement(driver, ExpertUI.FULL_LIST_NAMES_FULL_FIRSTNAME_ONLY);
+	}
+	
+	public void selectListOfParticipantLastName() {
+		waitToElementVisible(driver, ExpertUI.FULL_LIST_NAMES_FULL_LASTNAME_ONLY);
+		clickToElement(driver, ExpertUI.FULL_LIST_NAMES_FULL_LASTNAME_ONLY);
+	}
+	
+	public void selectListOfParticipantNickName() {
+		waitToElementVisible(driver, ExpertUI.FULL_LIST_NAMES_FULL_NICKNAME);
+		clickToElement(driver, ExpertUI.FULL_LIST_NAMES_FULL_NICKNAME);
+	}
+	
+	
+	
+	public void clickListOfParticipantType() {
+		waitToElementVisible(driver, ExpertUI.FULL_LIST_TYPE);
+		clickToElement(driver, ExpertUI.FULL_LIST_TYPE);
+	}
+	
+	public void selectListOfParticipantFakeViewer() {
+		waitToElementVisible(driver, ExpertUI.FULL_LIST_TYPE_FAKE_VIEWER_ONLY);
+		clickToElement(driver, ExpertUI.FULL_LIST_TYPE_FAKE_VIEWER_ONLY);
+	}
+	
+	public void selectListOfParticipantRealViewer() {
+		waitToElementVisible(driver, ExpertUI.FULL_LIST_TYPE_REAL_VIEWER_ONLY);
+		clickToElement(driver, ExpertUI.FULL_LIST_TYPE_REAL_VIEWER_ONLY);
+	}
+	
+	public void selectListOfParticipantAllViewer() {
+		waitToElementVisible(driver, ExpertUI.FULL_LIST_TYPE_ALL_VIEWER);
+		clickToElement(driver, ExpertUI.FULL_LIST_TYPE_ALL_VIEWER);
+	}
+	
+	public void inputNumberViewers(String numberViewer) {
+		waitToElementVisible(driver, ExpertUI.FULL_LIST_NUMBER_VIEWERS);
+		clearElement(driver, ExpertUI.FULL_LIST_NUMBER_VIEWERS);
+		sendkeyToElement(driver, ExpertUI.FULL_LIST_NUMBER_VIEWERS, numberViewer);
+	}
+	
+	
+	
+	
+	public void clickListOfParticipantGender() {
+		waitToElementVisible(driver, ExpertUI.FULL_LIST_GENDER);
+		clickToElement(driver, ExpertUI.FULL_LIST_GENDER);
+	}
+	
+	public void selectGenderAll() {
+		waitToElementVisible(driver, ExpertUI.FULL_LIST_GENDER_ALL);
+		clickToElement(driver, ExpertUI.FULL_LIST_GENDER_ALL);
+	}
+	
+	public void selectGenderFemale() {
+		waitToElementVisible(driver, ExpertUI.FULL_LIST_FEMALE_ONLY);
+		clickToElement(driver, ExpertUI.FULL_LIST_FEMALE_ONLY);
+	}
+	
+	public void selectGenderMale() {
+		waitToElementVisible(driver, ExpertUI.FULL_LIST_MALE_ONLY);
+		clickToElement(driver, ExpertUI.FULL_LIST_MALE_ONLY);
+	}
+	
+	public void clickListOfParticipantLanguage() {
+		waitToElementVisible(driver, ExpertUI.FULL_LIST_LANGUAGE);
+		clickToElement(driver, ExpertUI.FULL_LIST_LANGUAGE);
+	}
+	
+	public void selectLanguageGermany() {
+		waitToElementVisible(driver, ExpertUI.FULL_LIST_LANGUAGE_GERMANY);
+		clickToElement(driver, ExpertUI.FULL_LIST_LANGUAGE_GERMANY);
+	}
+	
+	public void selectLanguageUk() {
+		waitToElementVisible(driver, ExpertUI.FULL_LIST_LANGUAGE_UK);
+		clickToElement(driver, ExpertUI.FULL_LIST_LANGUAGE_UK);
+	}
+	
+	public void selectLanguageFrance() {
+		waitToElementVisible(driver, ExpertUI.FULL_LIST_LANGUAGE_FRANCE);
+		clickToElement(driver, ExpertUI.FULL_LIST_LANGUAGE_FRANCE);
+	}
+	
+	public void selectLanguageItaly() {
+		waitToElementVisible(driver, ExpertUI.FULL_LIST_LANGUAGE_ITALY);
+		clickToElement(driver, ExpertUI.FULL_LIST_LANGUAGE_ITALY);
+	}
+	
+	public void selectLanguageVietNamViewerList() {
+		waitToElementVisible(driver, ExpertUI.FULL_LIST_LANGUAGE_VIETNAM);
+		clickToElement(driver, ExpertUI.FULL_LIST_LANGUAGE_VIETNAM);
+	}
+	
+	public void selectLanguagePoland() {
+		waitToElementVisible(driver, ExpertUI.FULL_LIST_LANGUAGE_POLAND);
+		clickToElement(driver, ExpertUI.FULL_LIST_LANGUAGE_POLAND);
+	}
+	
+	public void selectLanguageSpain() {
+		waitToElementVisible(driver, ExpertUI.FULL_LIST_LANGUAGE_SPAIN);
+		clickToElement(driver, ExpertUI.FULL_LIST_LANGUAGE_SPAIN);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public void clickSave() {
+		waitToEnableButton(driver, ExpertUI.BUTTON_SAVE);
+		clickToElement(driver, ExpertUI.BUTTON_SAVE);
+		
+		waitToElementVisible(driver, ExpertUI.MESSAGE_SUCCESS);
+		clickToElement(driver, ExpertUI.ICON_CLOSE_MESSAGE);
+	}
 }
 
 

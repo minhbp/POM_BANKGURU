@@ -1,5 +1,6 @@
 package queenb.webinaris.project;
 
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -73,11 +74,13 @@ public class Registration_Lp extends AbstractPage {
 	}
 
 	@Test
-	public void TC_04_Register() {
+	public void TC_04_Register() throws Exception {
 		
 		String urlBasicSetting = getCurrentPageUrl(driver);
 		String fb050 = urlBasicSetting.substring(35);
 		openAnyUrl(driver, "https://20071.webinaris.co/" + fb050 + "/selenium.html?mode=N&v=4");
+		String oldTab = driver.getWindowHandle();
+	    
 		
 		registerPage = new RegisterPageObject(driver);
 		registerPage.clickButton();
@@ -85,6 +88,17 @@ public class Registration_Lp extends AbstractPage {
 		registerPage.inputLastname();
 		registerPage.inputEmail();
 		registerPage.clickButtonSubmit();
+		Thread.sleep(2000);
+		
+		ArrayList<String> newTab = new ArrayList<String>(driver.getWindowHandles());
+	    newTab.remove(oldTab);
+	    // change focus to new tab
+	    driver.switchTo().window(newTab.get(0));
+	    
+	    driver.close();
+	    
+	    driver.switchTo().window(oldTab);
+	    
 	}
 
 	@AfterClass

@@ -55,8 +55,8 @@ public class Project_Expert_Setting extends AbstractPage {
 	public void TC_01_Region_Setting() throws Exception {
 		expertPage.clickExpertMenu();
 		expertPage.clickRegionMenu();
-		
-		for (int i = 1, n = 21; i < n; i++) {
+	
+				for (int i = 1, n = 21; i < n; i++) {
 			expertPage.clickLanguage();
 			scrollToElement(driver, "(//div[@role='option'])[" + i + "]");
 			clickToElement(driver, "(//div[@role='option'])[" + i + "]");
@@ -69,8 +69,8 @@ public class Project_Expert_Setting extends AbstractPage {
 			clickToElement(driver, "(//div[@role='option'])[" + i + "]");
 			expertPage.clickSave();
 		}
-
-/*		expertPage.clickLanguage();
+		/*
+		expertPage.clickLanguage();
 		expertPage.selectLanguageGerman();
 		expertPage.clickSave();
 
@@ -304,7 +304,7 @@ public class Project_Expert_Setting extends AbstractPage {
 		
 		expertPage.clickTimezone();
 		expertPage.selectTimezone40();
-		expertPage.clickSave(); */
+		expertPage.clickSave();  */
 		
 		expertPage.clickTimeFormat();
 		expertPage.selectTimeAmPm();
@@ -474,7 +474,107 @@ public class Project_Expert_Setting extends AbstractPage {
 		expertPage.clickMaximum();
 		expertPage.clickMaximum500();
 		expertPage.clickSave();
+	}
+	
+	@Test
+	public void TC_08_Reports_Setting() {
+		expertPage.clickReportMenu();
+		expertPage.clickIconeDelete();
+		expertPage.clickSave();
+		expertPage.clickNewReport();
+		expertPage.clearAndInputEmailReport("minh0437328@gmail.com");
+		expertPage.selectAllReports();
+		expertPage.clickSave();
+		expertPage.unselectAllReports();
+		expertPage.clickSave();
+	}
+	
+	@Test
+	public void TC_09_Facebook_Image_Setting() {
+		expertPage.clickFacebookMenu();
+		expertPage.clickSelectFacebookImageButton();
+		expertPage.selectlImageLocal();
+		expertPage.clickSave();
+	}
+	
+	@Test
+	public void TC_10_List_Of_Participant_Setting() {
+		expertPage.clickListOfParticipantMenu();
+		expertPage.clickListOfParticipantStyle();
+		expertPage.selectListOfParticipantStyleFullList();
+		expertPage.clickSave();
+		expertPage.clickListOfParticipantStyle();
+		expertPage.selectListOfParticipantStyleNoList();
+		expertPage.clickSave();
+		expertPage.clickListOfParticipantStyle();
+		expertPage.selectListOfParticipantStyleOnlyNumber();
+		expertPage.clickSave();
+		expertPage.clickListOfParticipantStyle();
+		expertPage.selectListOfParticipantStyleFullList();
+		
+		expertPage.clickListOfParticipantName();
+		expertPage.selectListOfParticipantFullName();
+		expertPage.clickSave();
+		expertPage.clickListOfParticipantName();
+		expertPage.selectListOfParticipantFullFirstName();
+		expertPage.clickSave();
+		expertPage.clickListOfParticipantName();
+		expertPage.selectListOfParticipantLastName();
+		expertPage.clickSave();
+		expertPage.clickListOfParticipantName();
+		expertPage.selectListOfParticipantNickName();
+		expertPage.clickSave();
+		
+		expertPage.clickListOfParticipantType();
+		expertPage.selectListOfParticipantFakeViewer();
+		expertPage.clickSave();
+		expertPage.clickListOfParticipantType();
+		expertPage.selectListOfParticipantRealViewer();
+		expertPage.clickSave();
+		expertPage.clickListOfParticipantType();
+		expertPage.selectListOfParticipantAllViewer();
+		expertPage.clickSave();
+		
+		expertPage.inputNumberViewers("987");
 
+		expertPage.clickListOfParticipantGender();
+		expertPage.selectGenderAll();
+		expertPage.clickSave();
+		expertPage.clickListOfParticipantGender();
+		expertPage.selectGenderFemale();
+		expertPage.clickSave();
+		expertPage.clickListOfParticipantGender();
+		expertPage.selectGenderMale();
+		expertPage.clickSave();
+		
+		expertPage.clickListOfParticipantLanguage();
+		expertPage.selectLanguageGermany();
+		expertPage.clickSave();
+		
+		expertPage.clickListOfParticipantLanguage();
+		expertPage.selectLanguageUk();
+		expertPage.clickSave();
+		
+		expertPage.clickListOfParticipantLanguage();
+		expertPage.selectLanguageFrance();
+		expertPage.clickSave();
+		
+		expertPage.clickListOfParticipantLanguage();
+		expertPage.selectLanguageItaly();
+		expertPage.clickSave();
+		
+		expertPage.clickListOfParticipantLanguage();
+		expertPage.selectLanguageVietNamViewerList();
+		expertPage.clickSave();
+		
+		expertPage.clickListOfParticipantLanguage();
+		expertPage.selectLanguagePoland();
+		expertPage.clickSave();
+		
+		expertPage.clickListOfParticipantLanguage();
+		expertPage.selectLanguageSpain();
+		expertPage.clickSave();
+		
 	}
 
 	@AfterClass

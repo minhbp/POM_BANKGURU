@@ -53,7 +53,12 @@ public class AbstractPage {
 		element = driver.findElement(By.xpath(locator));
 		element.sendKeys(value);
 	}
-
+	
+	public void switchBrowser(WebDriver driver, String value) {
+		element = driver.findElement(By.xpath("body"));
+		element.sendKeys(Keys.CONTROL + value);
+	}
+	
 	public boolean isDisplayElement(WebDriver driver, String locator) {
 		element = driver.findElement(By.xpath(locator));
 		return element.isDisplayed();

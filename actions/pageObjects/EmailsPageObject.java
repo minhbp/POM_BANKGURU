@@ -52,6 +52,16 @@ private WebDriver driver;
 		clickToElement(driver, EmailsPageUI.EMAIL_SETTINGS_DOI);
 	}
 	
+	public void selectDoiIsYes() {
+		waitToElementVisible(driver, EmailsPageUI.EMAIL_SETTINGS_DOI_YES);
+		clickToElement(driver, EmailsPageUI.EMAIL_SETTINGS_DOI_YES);
+	}
+	
+	public void selectDoiForUnsubcribe() {
+		waitToElementVisible(driver, EmailsPageUI.EMAIL_SETTINGS_DOI_FOR_UNSUBSCRIBE);
+		clickToElement(driver, EmailsPageUI.EMAIL_SETTINGS_DOI_FOR_UNSUBSCRIBE);
+	}
+	
 	public void selectDoiIsNo() {
 		waitToElementVisible(driver, EmailsPageUI.EMAIL_SETTINGS_DOI_NO);
 		clickToElement(driver, EmailsPageUI.EMAIL_SETTINGS_DOI_NO);
@@ -65,6 +75,11 @@ private WebDriver driver;
 	public void selectReRegistrationisYes() {
 		waitToElementVisible(driver, EmailsPageUI.EMAIL_SETTINGS_RE_INVITATION_YES);
 		clickToElement(driver, EmailsPageUI.EMAIL_SETTINGS_RE_INVITATION_YES);
+	}
+	
+	public void selectReRegistrationisNo() {
+		waitToElementVisible(driver, EmailsPageUI.EMAIL_SETTINGS_RE_INVITATION_NO);
+		clickToElement(driver, EmailsPageUI.EMAIL_SETTINGS_RE_INVITATION_NO);
 	}
 	
 	// Email - Email
