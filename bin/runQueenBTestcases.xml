@@ -2,12 +2,7 @@
 
 <suite thread-count="1" name="webinaris" parallel="tests">
 
-	<test name="expert setting">
-		<classes>
-			<class name="queenb.webinaris.account.Account_Upload_File" />
-		</classes>
-	</test>
-
+	
 	<test name="setting email">
 		<classes>
 			<class name="queenb.webinaris.project.Registration_Lp" />

@@ -29,7 +29,7 @@ public class Project_Expert_Setting extends AbstractPage {
 
 	@BeforeClass
 	public void beforeClass() throws Exception {
-		System.setProperty("webdriver.chrome.driver", "D:\\WEBDRIVER_API_MinhDV\\browser\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", ".\\resources\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		waitExplicit = new WebDriverWait(driver, 10);
@@ -60,14 +60,14 @@ public class Project_Expert_Setting extends AbstractPage {
 			expertPage.clickLanguage();
 			scrollToElement(driver, "(//div[@role='option'])[" + i + "]");
 			clickToElement(driver, "(//div[@role='option'])[" + i + "]");
-			expertPage.clickSave();
+//			expertPage.clickSave();
 		}
 		
 		for (int i = 21, n = 84; i < n; i++) {
 			expertPage.clickTimezone();
 			scrollToElement(driver, "(//div[@role='option'])[" + i + "]");
 			clickToElement(driver, "(//div[@role='option'])[" + i + "]");
-			expertPage.clickSave();
+//			expertPage.clickSave();
 		}
 		/*
 		expertPage.clickLanguage();

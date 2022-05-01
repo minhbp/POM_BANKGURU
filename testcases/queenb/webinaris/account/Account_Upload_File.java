@@ -29,7 +29,7 @@ public class Account_Upload_File extends AbstractPage{
 
 	@BeforeClass
 	public void beforeClass() throws Exception {
-		System.setProperty("webdriver.chrome.driver", "D:\\WEBDRIVER_API_MinhDV\\browser\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", ".\\resources\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		waitExplicit = new WebDriverWait(driver, 30);
