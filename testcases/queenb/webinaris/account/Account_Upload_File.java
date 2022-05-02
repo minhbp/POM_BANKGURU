@@ -1,25 +1,19 @@
 package queenb.webinaris.account;
 
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import commons.AbstractPage;
+import commons.AbstractTest;
 import pageObjects.LoginPageObject;
 import pageObjects.UploadPageObject;
 
-public class Account_Upload_File extends AbstractPage{
+public class Account_Upload_File extends AbstractTest {
 	WebDriver driver;
-	WebDriverWait explicitWait;
-	WebDriverWait waitExplicit;
 
 	public UploadPageObject uploadPage;
 	public LoginPageObject loginPage;
@@ -27,17 +21,11 @@ public class Account_Upload_File extends AbstractPage{
 	String VIDEOLYSER_NAME, VIDEOLYSER_LINK, VIMEO_NAME, VIDEOMEO_LINK, MP4_NAME, MP4_LINK, LOCAL_VIDEO_LINK,
 			LOCAL_IMG_LINK;
 
+	@Parameters("browser")
 	@BeforeClass
-	public void beforeClass() throws Exception {
-		System.setProperty("webdriver.chrome.driver", ".\\resources\\chromedriver.exe");
-		driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		waitExplicit = new WebDriverWait(driver, 30);
+	public void beforeClass(String browserName) throws Exception {
 
-		driver.manage().window().setPosition(new Point(0, 0)); // set start point
-		Dimension d = new Dimension(960, 1080); // set width height browser
-		driver.manage().window().setSize(d);
-		driver.manage().window().maximize();
+		driver = openMultiBrowser(browserName);
 
 		VIDEOLYSER_NAME = "video lyser " + randomNumber();
 		VIDEOLYSER_LINK = "https://www.videolyser.de/m3u8/26588638.m3u8";
@@ -50,7 +38,7 @@ public class Account_Upload_File extends AbstractPage{
 
 		LOCAL_VIDEO_LINK = "D:\\videos\\123.mp4";
 		LOCAL_IMG_LINK = "D:\\images\\img01.jpg";
-		
+
 	}
 
 	public static int randomNumber() {

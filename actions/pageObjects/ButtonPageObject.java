@@ -17,9 +17,10 @@ private WebDriver driver;
 		clickToElement(driver, ButtonPageUI.MENU_BUTTON);
 	}
 	
-	public void clickNewButton() {
+	public void clickNewButton() throws Exception {
 		waitToElementVisible(driver, ButtonPageUI.NEW_BUTTON);
 		waitToEnableButton(driver, ButtonPageUI.NEW_BUTTON);
+		Thread.sleep(500);
 		clickToElement(driver, ButtonPageUI.NEW_BUTTON);
 	}
 	

@@ -1,42 +1,29 @@
 package queenb.webinaris.project;
 
-import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import commons.AbstractPage;
+import commons.AbstractTest;
 import pageObjects.LoginPageObject;
 import pageObjects.NewProjectObject;
 import pageObjects.PollPageObject;
 
-public class Project_Polls_Setting extends AbstractPage {
+public class Project_Polls_Setting extends AbstractTest {
 
 	WebDriver driver;
-	WebDriverWait explicitWait;
-	WebDriverWait waitExplicit;
-	
+
 	public LoginPageObject loginPage;
 	public NewProjectObject newProject;
 	public PollPageObject pollPage;
-	
-	@BeforeClass
-	public void beforeClass() throws Exception {
-		System.setProperty("webdriver.chrome.driver", ".\\resources\\chromedriver.exe");
-		driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		waitExplicit = new WebDriverWait(driver, 10);
 
-		driver.manage().window().setPosition(new Point(0, 0)); // set start point
-		Dimension d = new Dimension(960, 1080); // set width height browser
-		driver.manage().window().setSize(d);
-		driver.manage().window().maximize();
+	@Parameters("browser")
+	@BeforeClass
+	public void beforeClass(String browserName) throws Exception {
+
+		driver = openMultiBrowser(browserName);
 
 		loginPage = new LoginPageObject(driver);
 		newProject = new NewProjectObject(driver);
@@ -47,32 +34,21 @@ public class Project_Polls_Setting extends AbstractPage {
 		Thread.sleep(2000);
 		pollPage.clickPollMenu();
 	}
-	
+
 	@Test
-	public void TC_01_New_Poll_01() {
-		pollPage.newPoll("Poll test 01", "0", "0", "0",
-				"0", "5", "0", 
-				"0", "5", "0", 
-				"0", "30", "0", 
-				"em ăn cơm chưa?",
-				"chưa", "20", 
-				"vẫn chưa nhưng đáp án khác", "80");
+	public void TC_01_New_Poll_01() throws Exception {
+		pollPage.newPoll("Poll test 01", "0", "0", "0", "0", "5", "0", "0", "5", "0", "0", "30", "0", "em ăn cơm chưa?",
+				"chưa", "20", "vẫn chưa nhưng đáp án khác", "80");
 	}
+
 	@Test
-	public void TC_02_New_Poll_02() {
-		pollPage.newPoll("Poll test 02", "0", "5", "0",
-				"0", "15", "3", 
-				"0", "15", "40", 
-				"0", "45", "50", 
-				"nhà em có chó không?",
-				"có nhưng nó không cắn đâu", "35", 
-				"vẫn có và vẫn không cắn đâu", "65");
+	public void TC_02_New_Poll_02() throws Exception {
+		pollPage.newPoll("Poll test 02", "0", "5", "0", "0", "15", "3", "0", "15", "40", "0", "45", "50",
+				"nhà em có chó không?", "có nhưng nó không cắn đâu", "35", "vẫn có và vẫn không cắn đâu", "65");
 	}
-	
+
 	@AfterClass
 	public void afterClass() {
 		driver.close();
 	}
 }
-
-

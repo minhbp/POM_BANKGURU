@@ -1,41 +1,28 @@
 package queenb.webinaris.project;
 
-import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import commons.AbstractPage;
+import commons.AbstractTest;
 import pageObjects.ButtonPageObject;
 import pageObjects.LoginPageObject;
 import pageObjects.NewProjectObject;
 
-public class Project_Buttons_Setting extends AbstractPage {
+public class Project_Buttons_Setting extends AbstractTest {
 	WebDriver driver;
-	WebDriverWait explicitWait;
-	WebDriverWait waitExplicit;
 
 	public LoginPageObject loginPage;
 	public NewProjectObject newProject;
 	public ButtonPageObject buttonPage;
 
+	@Parameters("browser")
 	@BeforeClass
-	public void beforeClass() throws Exception {
-		System.setProperty("webdriver.chrome.driver", ".\\resources\\chromedriver.exe");
-		driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		waitExplicit = new WebDriverWait(driver, 10);
+	public void beforeClass(String browserName) throws Exception {
 
-		driver.manage().window().setPosition(new Point(0, 0)); // set start point
-		Dimension d = new Dimension(960, 1080); // set width height browser
-		driver.manage().window().setSize(d);
-		driver.manage().window().maximize();
+		driver = openMultiBrowser(browserName);
 
 		loginPage = new LoginPageObject(driver);
 		newProject = new NewProjectObject(driver);
@@ -64,7 +51,7 @@ public class Project_Buttons_Setting extends AbstractPage {
 	}
 
 	@Test
-	public void TC_02_New_Button_Bottom() {
+	public void TC_02_New_Button_Bottom() throws Exception {
 		buttonPage.clickNewButton();
 		buttonPage.inputNameBottom();
 		buttonPage.inputTargetUrl();
@@ -80,7 +67,7 @@ public class Project_Buttons_Setting extends AbstractPage {
 	}
 
 	@Test
-	public void TC_03_New_Button_FullScreen() {
+	public void TC_03_New_Button_FullScreen() throws Exception {
 		buttonPage.clickNewButton();
 		buttonPage.inputNameFullScreen();
 		buttonPage.inputTargetUrl();
@@ -96,7 +83,7 @@ public class Project_Buttons_Setting extends AbstractPage {
 	}
 
 	@Test
-	public void TC_04_New_Button_Top_Right() {
+	public void TC_04_New_Button_Top_Right() throws Exception {
 		buttonPage.clickNewButton();
 		buttonPage.inputNameTopRight();
 		buttonPage.inputTargetUrl();
@@ -112,7 +99,7 @@ public class Project_Buttons_Setting extends AbstractPage {
 	}
 
 	@Test
-	public void TC_05_New_Button_Transparent() {
+	public void TC_05_New_Button_Transparent() throws Exception {
 		buttonPage.clickNewButton();
 		buttonPage.inputNameTransparent();
 		buttonPage.inputTargetUrl();

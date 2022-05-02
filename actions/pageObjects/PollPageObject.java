@@ -26,10 +26,10 @@ public class PollPageObject extends AbstractPage {
 			String endResultHour,String endResultMinute, String endResultSecond, 
 			String question, 
 			String answerA, String resultA,
-			String answerB, String resultB) {
+			String answerB, String resultB) throws Exception {
 
-		waitToElementVisible(driver, PollPageUI.BUTTON_NEW_POLL);
 		waitToEnableButton(driver, PollPageUI.BUTTON_NEW_POLL);
+		Thread.sleep(500);
 		clickToElement(driver, PollPageUI.BUTTON_NEW_POLL);
 
 		waitToElementVisible(driver, PollPageUI.NAME_POLL_TXT);

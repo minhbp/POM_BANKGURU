@@ -1,39 +1,27 @@
 package queenb.webinaris.account;
 
-import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import commons.AbstractTest;
 import pageObjects.DeletePageObject;
 import pageObjects.LoginPageObject;
 
-public class Account_Delete_Project {
+public class Account_Delete_Project extends AbstractTest {
 
 	WebDriver driver;
-	WebDriverWait explicitWait;
-	WebDriverWait waitExplicit;
 
 	public LoginPageObject loginPage;
 	public DeletePageObject deletePage;
 
+	@Parameters("browser")
 	@BeforeClass
-	public void beforeClass() throws Exception {
-		System.setProperty("webdriver.chrome.driver", "D:\\WEBDRIVER_API_MinhDV\\browser\\chromedriver.exe");
-		driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		waitExplicit = new WebDriverWait(driver, 10);
+	public void beforeClass(String browserName) throws Exception {
 
-		driver.manage().window().setPosition(new Point(0, 0)); // set start point
-		Dimension d = new Dimension(960, 1080); // set width height browser
-		driver.manage().window().setSize(d);
-		driver.manage().window().maximize();
+		driver = openMultiBrowser(browserName);
 
 		loginPage = new LoginPageObject(driver);
 		deletePage = new DeletePageObject(driver);

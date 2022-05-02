@@ -1,26 +1,19 @@
 package queenb.webinaris.project;
 
-import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import commons.AbstractPage;
+import commons.AbstractTest;
 import pageObjects.LoginPageObject;
 import pageObjects.NewProjectObject;
 import pageObjects.PagesSettingObject;
-import pageUIs.PagesSettingPageUI;
 
-public class Project_Pages_Settings extends AbstractPage {
+public class Project_Pages_Settings extends AbstractTest {
 	WebDriver driver;
-	WebDriverWait explicitWait;
-	WebDriverWait waitExplicit;
+	
 
 	public LoginPageObject loginPage;
 	public NewProjectObject newProject;
@@ -28,17 +21,11 @@ public class Project_Pages_Settings extends AbstractPage {
 	
 	String customLpUrl, customConffirmUrl, customCompleteUrl, urlLogo;
 	
+	@Parameters("browser")
 	@BeforeClass
-	public void beforeClass() throws Exception {
-		System.setProperty("webdriver.chrome.driver", ".\\resources\\chromedriver.exe");
-		driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		waitExplicit = new WebDriverWait(driver, 10);
+	public void beforeClass(String browserName) throws Exception {
 
-		driver.manage().window().setPosition(new Point(0, 0)); // set start point
-		Dimension d = new Dimension(960, 1080); // set width height browser
-		driver.manage().window().setSize(d);
-		driver.manage().window().maximize();
+		driver = openMultiBrowser(browserName);
 		
 		customLpUrl = "https://translate.google.com/{partner-city}/{partner-email}/{partner-email}/{partner-firstname}/{partner-lastname}/{partner-id}/{partner-phone}/{partner-street}/{partner-website}/{partner-zipcode}";
 		customConffirmUrl = "https://docs.google.com/spreadsheets/d/1WPxsinkefeCPxqpQXMLabEydIMh11FZpjSR5qDPf9Yo/edit#gid=0";
@@ -104,8 +91,7 @@ public class Project_Pages_Settings extends AbstractPage {
 		settingPage.clickLogoMenu();
 		settingPage.clickSelectButton();
 		settingPage.inputUrlLogoLocal(urlLogo);
-		waitToElementVisible(driver, PagesSettingPageUI.MESSAGE_SUCCESS);
-		clickToElement(driver, PagesSettingPageUI.ICON_CLOSE_MESSAGE);
+		settingPage.visibleMessage();
 		settingPage.clickConfirm();
 	}
 	

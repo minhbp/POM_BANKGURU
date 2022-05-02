@@ -89,5 +89,9 @@ public class PagesSettingObject extends AbstractPage {
 		waitToElementVisible(driver, PagesSettingPageUI.MESSAGE_SUCCESS);
 		clickToElement(driver, PagesSettingPageUI.ICON_CLOSE_MESSAGE);
 	}
+	public void visibleMessage() {
+	waitToElementVisible(driver, PagesSettingPageUI.MESSAGE_SUCCESS);
+	clickToElement(driver, PagesSettingPageUI.ICON_CLOSE_MESSAGE);
+}
 
 }
