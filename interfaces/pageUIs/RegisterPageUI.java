@@ -20,6 +20,10 @@ public class RegisterPageUI {
 	public static final String REGISTER_INPUT_PAGE_EMAIL = EMAIL_REGISTER;
 	
 	public static final String REGISTER_PAGE_SUBMIT_BUTTON = "//span[@class='btn-text']";
+
+	public static final String CONFIRM_PAGE_TITLE = "//h1[@class='allow-color']";
+	public static final String CONFIRM_PAGE_SUB_TITLE = "//p[@class='allow-bold']";
+	
 	
 	public static int randomNumber() {
 		Random random = new Random();

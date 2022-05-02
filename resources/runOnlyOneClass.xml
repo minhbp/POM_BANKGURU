@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Suite2">
+
+	<test name="run on CHROME">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="queenb.webinaris.api.Api_Get_Showtimes" />
+		</classes>
+	</test>
+	
+</suite>

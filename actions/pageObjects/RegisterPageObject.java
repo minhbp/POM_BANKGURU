@@ -37,5 +37,17 @@ public class RegisterPageObject extends AbstractPage {
 		waitToElementVisible(driver, RegisterPageUI.REGISTER_PAGE_SUBMIT_BUTTON);
 		clickToElement(driver, RegisterPageUI.REGISTER_PAGE_SUBMIT_BUTTON);
 	}
-
+	
+	public String getTitleConfirmPage() {
+		waitToElementVisible(driver, RegisterPageUI.CONFIRM_PAGE_TITLE);
+		return getTextElement(driver, RegisterPageUI.CONFIRM_PAGE_TITLE);
+	}
+	
+	public String getSubTitleConfirmPage() {
+		waitToElementVisible(driver, RegisterPageUI.CONFIRM_PAGE_SUB_TITLE);
+		return getTextElement(driver, RegisterPageUI.CONFIRM_PAGE_SUB_TITLE);
+	}
+	
+	
+	
 }

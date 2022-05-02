@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -82,6 +83,9 @@ public class Registration_Lp extends AbstractTest {
 		newTab.remove(oldTab);
 		// change focus to new tab
 		driver.switchTo().window(newTab.get(0));
+		
+		Assert.assertEquals(registerPage.getTitleConfirmPage(), "One last step");
+		Assert.assertEquals(registerPage.getSubTitleConfirmPage(), "Your place has been reserved temporarily. You now have 15 minutes to complete your registration. To do this, please follow the steps below:");
 
 		driver.close();
 
