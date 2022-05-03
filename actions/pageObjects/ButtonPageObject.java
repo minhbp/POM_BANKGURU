@@ -24,59 +24,18 @@ private WebDriver driver;
 		clickToElement(driver, ButtonPageUI.NEW_BUTTON);
 	}
 	
-	public void inputNameTop() {
+	public void inputNameButton(String nameButton) {
 		waitToElementVisible(driver, ButtonPageUI.NAME_TXT);
-		sendkeyToElement(driver, ButtonPageUI.NAME_TXT, ButtonPageUI.NAME_TOP);
-	}
-	
-	public void inputNameBottom() {
-		waitToElementVisible(driver, ButtonPageUI.NAME_TXT);
-		sendkeyToElement(driver, ButtonPageUI.NAME_TXT, ButtonPageUI.NAME_BOTTOM);
-	}
-	
-	public void inputNameFullScreen() {
-		waitToElementVisible(driver, ButtonPageUI.NAME_TXT);
-		sendkeyToElement(driver, ButtonPageUI.NAME_TXT, ButtonPageUI.NAME_FULLSCREEN);
-	}
-	
-	public void inputNameTopRight() {
-		waitToElementVisible(driver, ButtonPageUI.NAME_TXT);
-		sendkeyToElement(driver, ButtonPageUI.NAME_TXT, ButtonPageUI.NAME_TOP_RIGHT);
-	}
-	
-	public void inputNameTransparent() {
-		waitToElementVisible(driver, ButtonPageUI.NAME_TXT);
-		sendkeyToElement(driver, ButtonPageUI.NAME_TXT, ButtonPageUI.NAME_TRANSPARENT);
+		sendkeyToElement(driver, ButtonPageUI.NAME_TXT, nameButton);
 	}
 
-	public void inputTargetUrl() {
+	public void inputTargetUrl(String urlButtonClick) {
 		waitToElementVisible(driver, ButtonPageUI.TARGET_URL_TXT);
-		sendkeyToElement(driver, ButtonPageUI.TARGET_URL_TXT, ButtonPageUI.BUTTON_URL_TARGET);
+		sendkeyToElement(driver, ButtonPageUI.TARGET_URL_TXT, urlButtonClick);
 	}
 	
-	public void clickPositionTop() {
-		waitToElementVisible(driver, ButtonPageUI.POSITION_TOP);
-		clickToElement(driver, ButtonPageUI.POSITION_TOP);
-	}
-	
-	public void clickPositionBottom() {
-		waitToElementVisible(driver, ButtonPageUI.POSITION_BOTTOM);
-		clickToElement(driver, ButtonPageUI.POSITION_BOTTOM);
-	}
-	
-	public void clickPositionFullscreen() {
-		waitToElementVisible(driver, ButtonPageUI.POSITION_FULLSCREEN);
-		clickToElement(driver, ButtonPageUI.POSITION_FULLSCREEN);
-	}
-	
-	public void clickPositionTopRight() {
-		waitToElementVisible(driver, ButtonPageUI.POSITION_TOP_RIGHT);
-		clickToElement(driver, ButtonPageUI.POSITION_TOP_RIGHT);
-	}
-	
-	public void clickPositionTransparent() {
-		waitToElementVisible(driver, ButtonPageUI.POSITION_TRANSPARENT);
-		clickToElement(driver, ButtonPageUI.POSITION_TRANSPARENT);
+	public void clickPosition(String position) {
+		clickToElement(driver, ButtonPageUI.BUTTON_POSITION, position);
 	}
 
 	public void clickStartTime() {
@@ -89,14 +48,7 @@ private WebDriver driver;
 		clickToElement(driver, ButtonPageUI.TIME_END_OPEN_POPUP);
 	}
 	
-	public void setStartTime(String h, String m, String s) {
-		waitToElementVisible(driver, ButtonPageUI.TIME_HOUSES);
-		sendkeyToElement(driver, ButtonPageUI.TIME_HOUSES, h);
-		sendkeyToElement(driver, ButtonPageUI.TIME_MINUTES, m);
-		sendkeyToElement(driver, ButtonPageUI.TIME_SECONDS, s);
-	}
-	
-	public void setEndTime(String h, String m, String s) {
+	public void setTime(String h, String m, String s) {
 		waitToElementVisible(driver, ButtonPageUI.TIME_HOUSES);
 		sendkeyToElement(driver, ButtonPageUI.TIME_HOUSES, h);
 		sendkeyToElement(driver, ButtonPageUI.TIME_MINUTES, m);
@@ -121,6 +73,12 @@ private WebDriver driver;
 		clickToElement(driver, ButtonPageUI.ICON_CLOSE_MESSAGE);
 	}
 	
+	public void refreshPage() {
+		refreshCurrentPage(driver);
+	}
 	
+	public boolean verifyButton(String buttonName) {
+		return isDisplayElement(driver, ButtonPageUI.VERIFY_BUTTON, buttonName);
+	}
 
 }

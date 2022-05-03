@@ -18,19 +18,19 @@ public class RegisterPageObject extends AbstractPage {
 		clickToElement(driver, RegisterPageUI.REGISTER_PAGE_BUTTON);
 	}
 
-	public void inputFirtname() {
+	public void inputFirtname(String firstName) {
 		waitToElementVisible(driver, RegisterPageUI.REGISTER_PAGE_FIRT_NAME);
-		sendkeyToElement(driver, RegisterPageUI.REGISTER_PAGE_FIRT_NAME, RegisterPageUI.REGISTER_PAGE_INPUT_FIRT_NAME);
+		sendkeyToElement(driver, RegisterPageUI.REGISTER_PAGE_FIRT_NAME, firstName);
 	}
 
-	public void inputLastname() {
+	public void inputLastname(String lastName) {
 		waitToElementVisible(driver, RegisterPageUI.REGISTER_PAGE_LAST_NAME);
-		sendkeyToElement(driver, RegisterPageUI.REGISTER_PAGE_LAST_NAME, RegisterPageUI.REGISTER_PAGE_INPUT_LAST_NAME);
+		sendkeyToElement(driver, RegisterPageUI.REGISTER_PAGE_LAST_NAME, lastName);
 	}
 
-	public void inputEmail() {
+	public void inputEmail(String email) {
 		waitToElementVisible(driver, RegisterPageUI.REGISTER_PAGE_EMAIL);
-		sendkeyToElement(driver, RegisterPageUI.REGISTER_PAGE_EMAIL, RegisterPageUI.REGISTER_INPUT_PAGE_EMAIL);
+		sendkeyToElement(driver, RegisterPageUI.REGISTER_PAGE_EMAIL, email);
 	}
 
 	public void clickButtonSubmit() {

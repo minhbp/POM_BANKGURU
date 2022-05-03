@@ -24,11 +24,14 @@ public class Registration_Lp extends AbstractTest {
 	public ShowtimePageObject showtimePage;
 	public RegisterPageObject registerPage;
 
+	String firstName, lastNam, email;
+
 	@Parameters("browser")
 	@BeforeClass
 	public void beforeClass(String browserName) throws Exception {
 
 		driver = openMultiBrowser(browserName);
+
 	}
 
 	public int randomNumber() {
@@ -66,6 +69,10 @@ public class Registration_Lp extends AbstractTest {
 	@Test
 	public void TC_04_Register() throws Exception {
 
+		firstName = "automation";
+		lastNam = "testing";
+		email = "minhbp252" + randomNumber() + "@gmail.com";
+
 		String urlBasicSetting = getCurrentPageUrl(driver);
 		String fb050 = urlBasicSetting.substring(35);
 		openAnyUrl(driver, "https://20071.webinaris.co/" + fb050 + "/selenium.html?mode=N&v=4");
@@ -73,9 +80,9 @@ public class Registration_Lp extends AbstractTest {
 
 		registerPage = new RegisterPageObject(driver);
 		registerPage.clickButton();
-		registerPage.inputFirtname();
-		registerPage.inputLastname();
-		registerPage.inputEmail();
+		registerPage.inputFirtname(firstName);
+		registerPage.inputLastname(lastNam);
+		registerPage.inputEmail(email);
 		registerPage.clickButtonSubmit();
 		Thread.sleep(2000);
 
@@ -83,9 +90,10 @@ public class Registration_Lp extends AbstractTest {
 		newTab.remove(oldTab);
 		// change focus to new tab
 		driver.switchTo().window(newTab.get(0));
-		
+
 		Assert.assertEquals(registerPage.getTitleConfirmPage(), "One last step");
-		Assert.assertEquals(registerPage.getSubTitleConfirmPage(), "Your place has been reserved temporarily. You now have 15 minutes to complete your registration. To do this, please follow the steps below:");
+		Assert.assertEquals(registerPage.getSubTitleConfirmPage(),
+				"Your place has been reserved temporarily. You now have 15 minutes to complete your registration. To do this, please follow the steps below:");
 
 		driver.close();
 

@@ -22,6 +22,7 @@ public class Project_Actions_Setting extends AbstractTest {
 	public PollPageObject pollPage;
 	public TrackingPageObject trackingPage;
 
+	String nameTop, nameBottom, nameFullScreen, nameTopRight, nameTransparent;
 	String headcode, bodycodeafter, bodycodebefore;
 
 	@Parameters("browser")
@@ -29,6 +30,12 @@ public class Project_Actions_Setting extends AbstractTest {
 	public void beforeClass(String browserName) throws Exception {
 
 		driver = openMultiBrowser(browserName);
+		
+		nameTop = "top 001";
+		nameBottom = "bot 001";
+		nameFullScreen = "full screen 001";
+		nameTopRight = "top right 001";
+		nameTransparent = "transparent 001";
 
 		headcode = "<script>alert('headcode');</script>";
 		bodycodeafter = "<script>alert('bodycodeafter');</script>";
@@ -49,14 +56,14 @@ public class Project_Actions_Setting extends AbstractTest {
 	public void TC_01_New_Button_Top() throws Exception {
 		buttonPage.clickMenuButton();
 		buttonPage.clickNewButton();
-		buttonPage.inputNameTop();
-		buttonPage.inputTargetUrl();
-		buttonPage.clickPositionTop();
+		buttonPage.inputNameButton(nameTop);
+		buttonPage.inputTargetUrl("google.com");
+		buttonPage.clickPosition("Top");
 		buttonPage.clickStartTime();
-		buttonPage.setStartTime("0", "0", "0");
+		buttonPage.setTime("0", "0", "0");
 		buttonPage.clickSaveTime();
 		buttonPage.clickEndTime();
-		buttonPage.setEndTime("0", "5", "0");
+		buttonPage.setTime("0", "5", "0");
 		buttonPage.clickSaveTime();
 		buttonPage.clearAndInputTextButton("Automation testing");
 		buttonPage.clickSaveButton();
@@ -65,14 +72,14 @@ public class Project_Actions_Setting extends AbstractTest {
 	@Test
 	public void TC_02_New_Button_Bottom() throws Exception {
 		buttonPage.clickNewButton();
-		buttonPage.inputNameBottom();
-		buttonPage.inputTargetUrl();
-		buttonPage.clickPositionBottom();
+		buttonPage.inputNameButton(nameBottom);
+		buttonPage.inputTargetUrl("google.com");
+		buttonPage.clickPosition("Bottom");
 		buttonPage.clickStartTime();
-		buttonPage.setStartTime("0", "1", "0");
+		buttonPage.setTime("0", "3", "0");
 		buttonPage.clickSaveTime();
 		buttonPage.clickEndTime();
-		buttonPage.setEndTime("0", "10", "0");
+		buttonPage.setTime("0", "15", "0");
 		buttonPage.clickSaveTime();
 		buttonPage.clearAndInputTextButton("Automation testing");
 		buttonPage.clickSaveButton();
@@ -81,14 +88,14 @@ public class Project_Actions_Setting extends AbstractTest {
 	@Test
 	public void TC_03_New_Button_FullScreen() throws Exception {
 		buttonPage.clickNewButton();
-		buttonPage.inputNameFullScreen();
-		buttonPage.inputTargetUrl();
-		buttonPage.clickPositionFullscreen();
+		buttonPage.inputNameButton(nameFullScreen);
+		buttonPage.inputTargetUrl("google.com");
+		buttonPage.clickPosition("Fullscreen");
 		buttonPage.clickStartTime();
-		buttonPage.setStartTime("0", "5", "0");
+		buttonPage.setTime("0", "0", "0");
 		buttonPage.clickSaveTime();
 		buttonPage.clickEndTime();
-		buttonPage.setEndTime("0", "12", "0");
+		buttonPage.setTime("0", "5", "0");
 		buttonPage.clickSaveTime();
 		buttonPage.clearAndInputTextButton("Automation testing");
 		buttonPage.clickSaveButton();
@@ -97,14 +104,14 @@ public class Project_Actions_Setting extends AbstractTest {
 	@Test
 	public void TC_04_New_Button_Top_Right() throws Exception {
 		buttonPage.clickNewButton();
-		buttonPage.inputNameTopRight();
-		buttonPage.inputTargetUrl();
-		buttonPage.clickPositionTopRight();
+		buttonPage.inputNameButton(nameTopRight);
+		buttonPage.inputTargetUrl("google.com");
+		buttonPage.clickPosition("Top right");
 		buttonPage.clickStartTime();
-		buttonPage.setStartTime("0", "2", "0");
+		buttonPage.setTime("0", "0", "0");
 		buttonPage.clickSaveTime();
 		buttonPage.clickEndTime();
-		buttonPage.setEndTime("0", "7", "0");
+		buttonPage.setTime("0", "5", "0");
 		buttonPage.clickSaveTime();
 		buttonPage.clearAndInputTextButton("Automation testing");
 		buttonPage.clickSaveButton();
@@ -113,16 +120,22 @@ public class Project_Actions_Setting extends AbstractTest {
 	@Test
 	public void TC_05_New_Button_Transparent() throws Exception {
 		buttonPage.clickNewButton();
-		buttonPage.inputNameTransparent();
-		buttonPage.inputTargetUrl();
-		buttonPage.clickPositionTransparent();
+		buttonPage.inputNameButton(nameTransparent);
+		buttonPage.inputTargetUrl("google.com");
+		buttonPage.clickPosition("Transparent");
 		buttonPage.clickStartTime();
-		buttonPage.setStartTime("0", "0", "0");
+		buttonPage.setTime("0", "0", "0");
 		buttonPage.clickSaveTime();
 		buttonPage.clickEndTime();
-		buttonPage.setEndTime("1", "0", "0");
+		buttonPage.setTime("0", "5", "0");
 		buttonPage.clickSaveTime();
 		buttonPage.clickSaveButton();
+//		buttonPage.refreshPage();
+//		buttonPage.verifyButton(nameTop);
+//		buttonPage.verifyButton(nameBottom);
+//		buttonPage.verifyButton(nameFullScreen);
+//		buttonPage.verifyButton(nameTopRight);
+//		buttonPage.verifyButton(nameTransparent);
 	}
 
 	@Test
