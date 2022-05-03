@@ -28,32 +28,8 @@ public class ApiObject extends AbstractPage{
 		openAnyUrl(driver, ApiUI.API_NORMAL_URL);
 	}
 	
-	public boolean isDisplayOK() {
-		return isDisplayElement(driver, ApiUI.OPTIMIZED_SHOWTIMES_NORMAL_OK);
-	}
-	
-	public boolean isDisplayShowtime20h() {
-		return isDisplayElement(driver, ApiUI.OPTIMIZED_SHOWTIMES_20h);
-	}
-	
-	public boolean isDisplayShowtime09h() {
-		return isDisplayElement(driver, ApiUI.OPTIMIZED_SHOWTIMES_09h);
-	}
-	
-	public boolean isDisplayShowtime19h() {
-		return isDisplayElement(driver, ApiUI.OPTIMIZED_SHOWTIMES_19h);
-	}
-	
-	public boolean isDisplayShowtime18h() {
-		return isDisplayElement(driver, ApiUI.OPTIMIZED_SHOWTIMES_18h);
-	}
-	
-	public boolean isDisplayShowtime11h() {
-		return isDisplayElement(driver, ApiUI.OPTIMIZED_SHOWTIMES_11h);
-	}
-	
-	public boolean isDisplayShowtime15h() {
-		return isDisplayElement(driver, ApiUI.OPTIMIZED_SHOWTIMES_15h);
+	public boolean isDisplayShowtime(String house) {
+		return isDisplayElement(driver, ApiUI.DYNAMIC_SHOWTIMES_H, house);
 	}
 	
 }

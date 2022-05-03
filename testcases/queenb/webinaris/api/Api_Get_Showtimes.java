@@ -27,30 +27,30 @@ public class Api_Get_Showtimes extends AbstractTest {
 	@Test
 	public void TC_01_Optimized_3_Showtimes() {
 		api.openUrlApiGet3Showtimes();
-		Assert.assertTrue(api.isDisplayShowtime20h());
+		Assert.assertTrue(api.isDisplayShowtime("20:00"));
 	}
 
 	@Test
 	public void TC_02_Optimized_5_Showtimes() {
 		api.openUrlApiGet5Showtimes();
-		Assert.assertTrue(api.isDisplayShowtime09h());
-		Assert.assertTrue(api.isDisplayShowtime19h());
-		Assert.assertTrue(api.isDisplayShowtime18h());
+		Assert.assertTrue(api.isDisplayShowtime("09:00"));
+		Assert.assertTrue(api.isDisplayShowtime("19:00"));
+		Assert.assertTrue(api.isDisplayShowtime("18:00"));
 	}
 
 	@Test
 	public void TC_03_Optimized_7_Showtimes() {
 		api.openUrlApiGet7Showtimes();
-		Assert.assertTrue(api.isDisplayShowtime11h());
-		Assert.assertTrue(api.isDisplayShowtime19h());
-		Assert.assertTrue(api.isDisplayShowtime20h());
-		Assert.assertTrue(api.isDisplayShowtime15h());
+		Assert.assertTrue(api.isDisplayShowtime("11:00"));
+		Assert.assertTrue(api.isDisplayShowtime("19:00"));
+		Assert.assertTrue(api.isDisplayShowtime("20:00"));
+		Assert.assertTrue(api.isDisplayShowtime("15:00"));
 	}
 	
 	@Test
 	public void TC_04_Api_Normal() {
 		api.openUrlApiNormal();
-		Assert.assertTrue(api.isDisplayOK());
+		Assert.assertTrue(api.isDisplayShowtime("OK"));
 	}
 
 	@AfterClass

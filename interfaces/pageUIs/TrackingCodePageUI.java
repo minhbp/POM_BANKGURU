@@ -16,8 +16,8 @@ public class TrackingCodePageUI {
 	public static final String COOKIES = "(//div[@class='v-input__control'])[3]";
 	public static final String COOKIES_YES = "//div[@class='v-list-item__title'][contains(text(),'Yes - also recommended if you are not entirely sur')]";
 	public static final String COOKIES_NO = "//div[contains(text(),'No')]";
-	public static final String COOKIES_STATISTICS_CHECKBOX = "(//input[@role='checkbox'])[1]";
-	public static final String COOKIES_MARKETING_CHECKBOX = "(//input[@role='checkbox'])[2]";
+	public static final String COOKIES_STATISTICS_CHECKBOX = "(//div[@class='v-input--selection-controls__input'])[1]";
+	public static final String COOKIES_MARKETING_CHECKBOX = "(//div[@class='v-input--selection-controls__input'])[2]";
 	
 	public static final String BEFORE_HEAD_TAG_TEXTAREA = "(//textarea)[1]";
 	public static final String AFTER_BODY_TAG_TEXTAREA = "(//textarea)[2]";
@@ -27,4 +27,6 @@ public class TrackingCodePageUI {
 	
 	public static final String SUCCESS_MESSAGE = "//span[normalize-space()='Awesome - that worked!']";
 	public static final String CLOSE_MESSAGE_ICON = "//i[@class='v-icon notranslate fwbn fwbn-cancel theme--dark']";
+	
+	public static final String VERIFY_TRACKING_CODE = "//p[normalize-space()='%s']";
 }

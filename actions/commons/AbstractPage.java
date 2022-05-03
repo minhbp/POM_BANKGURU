@@ -42,12 +42,12 @@ public class AbstractPage {
 		element = driver.findElement(By.xpath(locator));
 		element.click();
 	}
-	
+
 	public String getTextElement(WebDriver driver, String locator) {
 		element = driver.findElement(By.xpath(locator));
 		return element.getText();
 	}
-	
+
 	public void clearElement(WebDriver driver, String locator) {
 		element = driver.findElement(By.xpath(locator));
 		element.sendKeys(Keys.CONTROL, "a");
@@ -58,13 +58,19 @@ public class AbstractPage {
 		element = driver.findElement(By.xpath(locator));
 		element.sendKeys(value);
 	}
-	
+
 	public void switchBrowser(WebDriver driver, String value) {
 		element = driver.findElement(By.xpath("body"));
 		element.sendKeys(Keys.CONTROL + value);
 	}
-	
+
 	public boolean isDisplayElement(WebDriver driver, String locator) {
+		element = driver.findElement(By.xpath(locator));
+		return element.isDisplayed();
+	}
+
+	public boolean isDisplayElement(WebDriver driver, String locator, String name) {
+		locator = String.format(locator, name);
 		element = driver.findElement(By.xpath(locator));
 		return element.isDisplayed();
 	}

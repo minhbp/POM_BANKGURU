@@ -1,5 +1,4 @@
-/pageObjects/
-/commons/
 /pageUIs/
+/commons/
+/pageObjects/
 /queenb/
-/runOnlyOneClass.xml
