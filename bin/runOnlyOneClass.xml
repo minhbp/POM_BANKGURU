@@ -2,11 +2,10 @@
 
 <suite name="Suite2">
 
-	
 	<test name="run on CHROME">
 		<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="queenb.webinaris.project.Registration_Lp" />
+			<class name="queenb.webinaris.project.Project_Actions_Setting" />
 		</classes>
 	</test>
 	

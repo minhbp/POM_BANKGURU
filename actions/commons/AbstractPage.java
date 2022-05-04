@@ -102,7 +102,13 @@ public class AbstractPage {
 		waitExplicit = new WebDriverWait(driver, 30);
 		waitExplicit.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
 	}
-
+	
+	public void waitToElementVisible(WebDriver driver, String locator, String name) {
+		locator = String.format(locator, name);
+		waitExplicit = new WebDriverWait(driver, 30);
+		waitExplicit.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
+	}
+	
 	public void waitToEnableButton(WebDriver driver, String locator) {
 		waitExplicit = new WebDriverWait(driver, 30);
 		waitExplicit.until(ExpectedConditions.elementToBeClickable(By.xpath(locator)));

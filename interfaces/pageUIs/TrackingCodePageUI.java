@@ -7,11 +7,8 @@ public class TrackingCodePageUI {
 	public static final String NEW_TRACKING_BUTTON = "//span[normalize-space()='New tracking code']";
 	public static final String NAME_TRACKING_TEXTBOX = "(//input[@type='text'])[1]";
 	public static final String EVENT_OPTIONS = "(//div[@class='v-select__selections'])[1]";
-	public static final String OPEN_REGISTRATION_PAGE = "//div[contains(text(),'When opening the registration page')]";
-	public static final String SUBMIT_REGISTRATION_FORM = "//div[contains(text(),'When submitting the registration form')]";
-	public static final String OPEN_COMFIRMATION_PAGE = "//div[contains(text(),'When opening the Confirmation Required page')]";
-	public static final String OPEN_COMPLETED_PAGE = "//div[contains(text(),'When opening the Registration Completed page')]";
-	public static final String OPEN_ROOM = "//div[contains(text(),'When opening the webinar room')]";
+	
+	public static final String TRACKING_EVENTS = "//div[contains(text(),'%s')]";
 	
 	public static final String COOKIES = "(//div[@class='v-input__control'])[3]";
 	public static final String COOKIES_YES = "//div[@class='v-list-item__title'][contains(text(),'Yes - also recommended if you are not entirely sur')]";

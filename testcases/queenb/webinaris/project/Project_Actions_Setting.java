@@ -24,6 +24,7 @@ public class Project_Actions_Setting extends AbstractTest {
 
 	String nameTop, nameBottom, nameFullScreen, nameTopRight, nameTransparent;
 	String headcode, bodycodeafter, bodycodebefore;
+	String openLP, submitForm, openConfirm, openComlete, openRoom, openRoomTime, clickButton, clickDownload;
 
 	@Parameters("browser")
 	@BeforeClass
@@ -40,6 +41,15 @@ public class Project_Actions_Setting extends AbstractTest {
 		headcode = "<script>alert('headcode');</script>";
 		bodycodeafter = "<script>alert('bodycodeafter');</script>";
 		bodycodebefore = "<script>alert('bodycodebefore');</script>";
+		
+		openLP = "When opening the registration page";
+		submitForm = "When submitting the registration form";
+		openConfirm = "When opening the Confirmation Required page";
+		openComlete = "When opening the Registration Completed page";
+		openRoom = "When opening the webinar room";
+		openRoomTime = "After a certain amount of time in the webinar room";
+		clickButton = "When the participant clicks a button";
+		clickDownload = "When the participant downloads a download file";
 
 		loginPage = new LoginPageObject(driver);
 		newProject = new NewProjectObject(driver);
@@ -52,7 +62,7 @@ public class Project_Actions_Setting extends AbstractTest {
 		Thread.sleep(2000);
 	}
 
-	@Test
+	//@Test
 	public void TC_01_New_Button_Top() throws Exception {
 		buttonPage.clickMenuButton();
 		buttonPage.clickNewButton();
@@ -69,7 +79,7 @@ public class Project_Actions_Setting extends AbstractTest {
 		buttonPage.clickSaveButton();
 	}
 
-	@Test
+	//@Test
 	public void TC_02_New_Button_Bottom() throws Exception {
 		buttonPage.clickNewButton();
 		buttonPage.inputNameButton(nameBottom);
@@ -85,7 +95,7 @@ public class Project_Actions_Setting extends AbstractTest {
 		buttonPage.clickSaveButton();
 	}
 
-	@Test
+	//@Test
 	public void TC_03_New_Button_FullScreen() throws Exception {
 		buttonPage.clickNewButton();
 		buttonPage.inputNameButton(nameFullScreen);
@@ -101,7 +111,7 @@ public class Project_Actions_Setting extends AbstractTest {
 		buttonPage.clickSaveButton();
 	}
 
-	@Test
+	//@Test
 	public void TC_04_New_Button_Top_Right() throws Exception {
 		buttonPage.clickNewButton();
 		buttonPage.inputNameButton(nameTopRight);
@@ -117,7 +127,7 @@ public class Project_Actions_Setting extends AbstractTest {
 		buttonPage.clickSaveButton();
 	}
 
-	@Test
+	//@Test
 	public void TC_05_New_Button_Transparent() throws Exception {
 		buttonPage.clickNewButton();
 		buttonPage.inputNameButton(nameTransparent);
@@ -138,7 +148,7 @@ public class Project_Actions_Setting extends AbstractTest {
 //		buttonPage.verifyButton(nameTransparent);
 	}
 
-	@Test
+	//@Test
 	public void TC_06_New_Poll_01() throws Exception {
 		pollPage.clickPollMenu();
 		pollPage.clickNewPoll();
@@ -170,7 +180,7 @@ public class Project_Actions_Setting extends AbstractTest {
 
 	}
 
-	@Test
+	//@Test
 	public void TC_07_New_Poll_02() throws Exception {
 
 		pollPage.clickNewPoll();
@@ -203,11 +213,12 @@ public class Project_Actions_Setting extends AbstractTest {
 
 	@Test
 	public void TC_08_New_Tracking_Code_Open_Registration_Page() {
+		pollPage.clickPollMenu();
 		trackingPage.clickTrackingMenu();
 		trackingPage.clickNewTrackingButton();
 		trackingPage.inputTrackingName("Open Registration");
 		trackingPage.clickEvent();
-		trackingPage.selectEventOpenRegistrationPage();
+		trackingPage.selectEvent(openLP);
 		trackingPage.inputTrackingBeforeHead(headcode);
 		trackingPage.inputTrackingAfterBody(bodycodeafter);
 		trackingPage.inputTrackingBeforeBody(bodycodebefore);
@@ -217,11 +228,10 @@ public class Project_Actions_Setting extends AbstractTest {
 
 	@Test
 	public void TC_09_New_Tracking_Code_Submit_Form() {
-		trackingPage.clickTrackingMenu();
 		trackingPage.clickNewTrackingButton();
 		trackingPage.inputTrackingName("Submit Form");
 		trackingPage.clickEvent();
-		trackingPage.selectEventSubmitForm();
+		trackingPage.selectEvent(submitForm);
 		trackingPage.inputTrackingBeforeHead(headcode);
 		trackingPage.inputTrackingAfterBody(bodycodeafter);
 		trackingPage.inputTrackingBeforeBody(bodycodebefore);
@@ -231,11 +241,10 @@ public class Project_Actions_Setting extends AbstractTest {
 
 	@Test
 	public void TC_10_New_Tracking_Code_Open_Comfirmation_Page() {
-		trackingPage.clickTrackingMenu();
 		trackingPage.clickNewTrackingButton();
 		trackingPage.inputTrackingName("Open Comfirm Page");
 		trackingPage.clickEvent();
-		trackingPage.selectEventOpenComfirmationPage();
+		trackingPage.selectEvent(openConfirm);
 		trackingPage.selectCookies();
 		trackingPage.selectCookiesYes();
 		trackingPage.checkCookiesStatistics();
@@ -249,11 +258,10 @@ public class Project_Actions_Setting extends AbstractTest {
 
 	@Test
 	public void TC_11_New_Tracking_Code_Open_Completed_Page() {
-		trackingPage.clickTrackingMenu();
 		trackingPage.clickNewTrackingButton();
 		trackingPage.inputTrackingName("Open Completed Page");
 		trackingPage.clickEvent();
-		trackingPage.selectEventOpenCompletedPage();
+		trackingPage.selectEvent(openComlete);
 		trackingPage.selectCookies();
 		trackingPage.selectCookiesNo();
 		trackingPage.inputTrackingBeforeHead(headcode);
@@ -265,11 +273,10 @@ public class Project_Actions_Setting extends AbstractTest {
 
 	@Test
 	public void TC_12_New_Tracking_Code_Open_Room() {
-		trackingPage.clickTrackingMenu();
 		trackingPage.clickNewTrackingButton();
 		trackingPage.inputTrackingName("Open Room");
 		trackingPage.clickEvent();
-		trackingPage.selectEventOpenRoom();
+		trackingPage.selectEvent(openRoom);
 		trackingPage.selectCookies();
 		trackingPage.selectCookiesYes();
 		trackingPage.checkCookiesStatistics();
