@@ -71,8 +71,13 @@ public class AbstractPage {
 	}
 
 	public boolean isDisplayElement(WebDriver driver, String locator) {
-		element = driver.findElement(By.xpath(locator));
-		return element.isDisplayed();
+		try {
+			element = driver.findElement(By.xpath(locator));
+			return element.isDisplayed();
+		} catch (Exception ex) {
+			System.out.println(ex.getMessage());
+			return false;
+		}
 	}
 
 	public boolean isDisplayElement(WebDriver driver, String locator, String name) {

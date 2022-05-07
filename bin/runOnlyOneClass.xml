@@ -5,7 +5,7 @@
 	<test name="run on CHROME">
 		<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="queenb.webinaris.project.Project_Actions_Setting" />
+			<class name="queenb.webinaris.project.Registration_Lp" />
 		</classes>
 	</test>
 	

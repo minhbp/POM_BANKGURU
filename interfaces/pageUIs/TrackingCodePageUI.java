@@ -26,4 +26,10 @@ public class TrackingCodePageUI {
 	public static final String CLOSE_MESSAGE_ICON = "//i[@class='v-icon notranslate fwbn fwbn-cancel theme--dark']";
 	
 	public static final String VERIFY_TRACKING_CODE = "//p[normalize-space()='%s']";
+	
+	public static final String ROOM_TIME_PICKER = "//div[@class='hms-picker timepicker']";
+	public static final String ROOM_TIME_PICKER_H = "//div[@class='time-wheel hh']//input[@type='text']";
+	public static final String ROOM_TIME_PICKER_M = "//div[@class='time-wheel mm']//input[@type='text']";
+	public static final String ROOM_TIME_PICKER_S = "//div[@class='time-wheel ss']//input[@type='text']";
+	public static final String ROOM_TIME_PICKER_OK = "//span[normalize-space()='OK']";
 }

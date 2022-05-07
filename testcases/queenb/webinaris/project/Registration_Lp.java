@@ -84,7 +84,6 @@ public class Registration_Lp extends AbstractTest {
 		registerPage.inputLastname(lastNam);
 		registerPage.inputEmail(email);
 		registerPage.clickButtonSubmit();
-		Thread.sleep(2000);
 
 		ArrayList<String> newTab = new ArrayList<String>(driver.getWindowHandles());
 		newTab.remove(oldTab);

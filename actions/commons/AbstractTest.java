@@ -18,6 +18,7 @@ public class AbstractTest {
 		if (browserName.equals("chrome")) {
 			System.setProperty("webdriver.chrome.driver", ".\\resources\\chromedriver.exe");
 			driver = new ChromeDriver();
+			driver.manage().window().maximize();
 
 		} else if (browserName.equals("firefox")) {
 			System.setProperty("webdriver.gecko.driver", ".\\resources\\geckodriver.exe");
@@ -44,5 +45,10 @@ public class AbstractTest {
 	public String getCurrentPageUrl(WebDriver driver) {
 		return driver.getCurrentUrl();
 	}
+	
+	public void refreshCurrentPage(WebDriver driver) {
+		driver.navigate().refresh();
+	}
+	
 	WebElement element;
 }

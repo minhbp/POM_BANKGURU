@@ -24,12 +24,14 @@ public class UploadPageObject extends AbstractPage {
 	}
 
 	public void clickVideoButton() throws Exception {
+		scrollToElement(driver, UploadPageUI.BUTTON_VIDEO);
 		waitToEnableButton(driver, UploadPageUI.BUTTON_VIDEO);
 		Thread.sleep(500);
 		clickToElement(driver, UploadPageUI.BUTTON_VIDEO);
 	}
 
 	public void clickVideoSourceButton() throws Exception {
+		scrollToElement(driver, UploadPageUI.BUTTON_VIDEO_SOUCRE);
 		waitToEnableButton(driver, UploadPageUI.BUTTON_VIDEO_SOUCRE);
 		Thread.sleep(500);
 		clickToElement(driver, UploadPageUI.BUTTON_VIDEO_SOUCRE);
@@ -47,13 +49,13 @@ public class UploadPageObject extends AbstractPage {
 
 	public void selectVideolyser() throws Exception {
 		waitToElementVisible(driver, UploadPageUI.VIDEO_SOUCRE_STYLE_VIDEOLYSER);
-		Thread.sleep(1000);
+		Thread.sleep(500);
 		clickToElement(driver, UploadPageUI.VIDEO_SOUCRE_STYLE_VIDEOLYSER);
 	}
 
 	public void selectVideoMp4() throws Exception {
 		waitToElementVisible(driver, UploadPageUI.VIDEO_SOUCRE_STYLE_MP4);
-		Thread.sleep(1000);
+		Thread.sleep(500);
 		clickToElement(driver, UploadPageUI.VIDEO_SOUCRE_STYLE_MP4);
 	}
 
@@ -68,7 +70,7 @@ public class UploadPageObject extends AbstractPage {
 	}
 
 	public void clickButtonSave() {
-		waitToElementVisible(driver, UploadPageUI.BUTTON_VIDEO_SOUCRE_BUTTON_SAVE);
+		scrollToElement(driver, UploadPageUI.BUTTON_VIDEO_SOUCRE_BUTTON_SAVE);
 		waitToEnableButton(driver, UploadPageUI.BUTTON_VIDEO_SOUCRE_BUTTON_SAVE);
 		clickToElement(driver, UploadPageUI.BUTTON_VIDEO_SOUCRE_BUTTON_SAVE);
 		waitToElementVisible(driver, UploadPageUI.UPLOAD_SUCCESS_MESSAGE);
@@ -76,6 +78,7 @@ public class UploadPageObject extends AbstractPage {
 	}
 
 	public void uploadVideoLocal(String urlVideoLocal) {
+		scrollToElement(driver, UploadPageUI.BUTTON_VIDEO_UPLOAD_STEP2);
 		waitToEnableButton(driver, UploadPageUI.BUTTON_VIDEO_UPLOAD_STEP2);
 		clickToElement(driver, UploadPageUI.BUTTON_VIDEO_UPLOAD_STEP2);
 
@@ -101,10 +104,19 @@ public class UploadPageObject extends AbstractPage {
 
 		waitToEnableButton(driver, UploadPageUI.UPLOAD_CONFIRM_BUTTON);
 		clickToElement(driver, UploadPageUI.UPLOAD_CONFIRM_BUTTON);
-
-		waitToElementVisible(driver, UploadPageUI.UPLOAD_SUCCESS_MESSAGE);
-		clickToElement(driver, UploadPageUI.CLOSE_MESSAGE_ICON);
-
+	}
+	
+	public void selectFileStyle() {
+		waitToElementVisible(driver, UploadPageUI.SELECT_FILE_STYLE);
+		clickToElement(driver, UploadPageUI.SELECT_FILE_STYLE);
+	}
+	
+	public void selectItem(String item) {
+		waitToElementVisible(driver, UploadPageUI.CHOOSE_ITEM, item);
+		clickToElement(driver, UploadPageUI.CHOOSE_ITEM, item);
+	}
+	
+	public void loading() {
 		waitToElementVisibleIconLoading(driver);
 		waitToElementInvisibleIconLoading(driver);
 	}

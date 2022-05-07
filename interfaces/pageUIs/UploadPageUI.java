@@ -25,7 +25,7 @@ public class UploadPageUI {
 	public static final String VIDEO_UPLOAD_100 = "//span[normalize-space()='100%']";
 
 	public static final String FILE_UPLOAD_LABEL = "//label[normalize-space()='Select file']";
-	public static final String FILE_UPLOAD_DATA = "//input[@accept='image/*']";
+	public static final String FILE_UPLOAD_DATA = "//input[@id='idFileOther']";
 
 	public static final String UPLOAD_SUCCESS_MESSAGE = "//span[normalize-space()='Awesome - that worked!']";
 	public static final String MEDIA_TEXT = "//p[normalize-space()='Manage your videos, documents and files']";
@@ -34,5 +34,9 @@ public class UploadPageUI {
 	public static final String UPLOAD_ICONS_SELECT = "(//i[@class='_icon fwbn-ellipsis-v'])";
 	public static final String UPLOAD_DELETE_OPTION = "//a[normalize-space()='Delete']";
 	public static final String UPLOAD_CONFIRM_BUTTON = "//button[normalize-space()='Confirm']";
+	
+	public static final String SELECT_FILE_STYLE = "(//div[@class='v-select__slot'])[1]";
+	public static final String CHOOSE_ITEM = "(//div[@class='v-list-item__content'])[%s]";
+	
 
 }

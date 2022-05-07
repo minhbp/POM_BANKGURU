@@ -31,7 +31,7 @@ public class Project_Actions_Setting extends AbstractTest {
 	public void beforeClass(String browserName) throws Exception {
 
 		driver = openMultiBrowser(browserName);
-		
+
 		nameTop = "top 001";
 		nameBottom = "bot 001";
 		nameFullScreen = "full screen 001";
@@ -41,7 +41,7 @@ public class Project_Actions_Setting extends AbstractTest {
 		headcode = "<script>alert('headcode');</script>";
 		bodycodeafter = "<script>alert('bodycodeafter');</script>";
 		bodycodebefore = "<script>alert('bodycodebefore');</script>";
-		
+
 		openLP = "When opening the registration page";
 		submitForm = "When submitting the registration form";
 		openConfirm = "When opening the Confirmation Required page";
@@ -62,7 +62,7 @@ public class Project_Actions_Setting extends AbstractTest {
 		Thread.sleep(2000);
 	}
 
-	//@Test
+	@Test
 	public void TC_01_New_Button_Top() throws Exception {
 		buttonPage.clickMenuButton();
 		buttonPage.clickNewButton();
@@ -79,7 +79,7 @@ public class Project_Actions_Setting extends AbstractTest {
 		buttonPage.clickSaveButton();
 	}
 
-	//@Test
+	@Test
 	public void TC_02_New_Button_Bottom() throws Exception {
 		buttonPage.clickNewButton();
 		buttonPage.inputNameButton(nameBottom);
@@ -95,7 +95,7 @@ public class Project_Actions_Setting extends AbstractTest {
 		buttonPage.clickSaveButton();
 	}
 
-	//@Test
+	@Test
 	public void TC_03_New_Button_FullScreen() throws Exception {
 		buttonPage.clickNewButton();
 		buttonPage.inputNameButton(nameFullScreen);
@@ -111,7 +111,7 @@ public class Project_Actions_Setting extends AbstractTest {
 		buttonPage.clickSaveButton();
 	}
 
-	//@Test
+	@Test
 	public void TC_04_New_Button_Top_Right() throws Exception {
 		buttonPage.clickNewButton();
 		buttonPage.inputNameButton(nameTopRight);
@@ -127,7 +127,7 @@ public class Project_Actions_Setting extends AbstractTest {
 		buttonPage.clickSaveButton();
 	}
 
-	//@Test
+	@Test
 	public void TC_05_New_Button_Transparent() throws Exception {
 		buttonPage.clickNewButton();
 		buttonPage.inputNameButton(nameTransparent);
@@ -141,14 +141,14 @@ public class Project_Actions_Setting extends AbstractTest {
 		buttonPage.clickSaveTime();
 		buttonPage.clickSaveButton();
 //		buttonPage.refreshPage();
-//		buttonPage.verifyButton(nameTop);
-//		buttonPage.verifyButton(nameBottom);
-//		buttonPage.verifyButton(nameFullScreen);
-//		buttonPage.verifyButton(nameTopRight);
-//		buttonPage.verifyButton(nameTransparent);
+		buttonPage.verifyButton(nameTop);
+		buttonPage.verifyButton(nameBottom);
+		buttonPage.verifyButton(nameFullScreen);
+		buttonPage.verifyButton(nameTopRight);
+		buttonPage.verifyButton(nameTransparent);
 	}
 
-	//@Test
+	@Test
 	public void TC_06_New_Poll_01() throws Exception {
 		pollPage.clickPollMenu();
 		pollPage.clickNewPoll();
@@ -180,7 +180,7 @@ public class Project_Actions_Setting extends AbstractTest {
 
 	}
 
-	//@Test
+	@Test
 	public void TC_07_New_Poll_02() throws Exception {
 
 		pollPage.clickNewPoll();
@@ -213,7 +213,6 @@ public class Project_Actions_Setting extends AbstractTest {
 
 	@Test
 	public void TC_08_New_Tracking_Code_Open_Registration_Page() {
-		pollPage.clickPollMenu();
 		trackingPage.clickTrackingMenu();
 		trackingPage.clickNewTrackingButton();
 		trackingPage.inputTrackingName("Open Registration");
@@ -286,6 +285,28 @@ public class Project_Actions_Setting extends AbstractTest {
 		trackingPage.inputTrackingBeforeBody(bodycodebefore);
 		trackingPage.clickSaveButton();
 		trackingPage.verifyTrackingCode("Open Room");
+	}
+	
+	@Test
+	public void TC_13_New_Tracking_Code_Open_Room_Time() {
+		trackingPage.clickNewTrackingButton();
+		trackingPage.inputTrackingName("Open Room Time");
+		trackingPage.clickEvent();
+		trackingPage.selectEvent(openRoomTime);
+		trackingPage.roomTimePicker();
+		trackingPage.roomTimePickerH("0");
+		trackingPage.roomTimePickerM("05");
+		trackingPage.roomTimePickerS("30");
+		trackingPage.roomTimePickerOK();
+		trackingPage.selectCookies();
+		trackingPage.selectCookiesYes();
+		trackingPage.checkCookiesStatistics();
+		trackingPage.checkCookiesMarketing();
+		trackingPage.inputTrackingBeforeHead(headcode);
+		trackingPage.inputTrackingAfterBody(bodycodeafter);
+		trackingPage.inputTrackingBeforeBody(bodycodebefore);
+		trackingPage.clickSaveButton();
+		trackingPage.verifyTrackingCode("Open Room Time");
 	}
 
 	@AfterClass

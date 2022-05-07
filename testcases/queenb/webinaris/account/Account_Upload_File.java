@@ -18,8 +18,8 @@ public class Account_Upload_File extends AbstractTest {
 	public UploadPageObject uploadPage;
 	public LoginPageObject loginPage;
 
-	String VIDEOLYSER_NAME, VIDEOLYSER_LINK, VIMEO_NAME, VIDEOMEO_LINK, MP4_NAME, MP4_LINK, LOCAL_VIDEO_LINK,
-			LOCAL_IMG_LINK;
+	String VIDEOLYSER_NAME, VIDEOLYSER_LINK, VIMEO_NAME, VIDEOMEO_LINK, MP4_NAME, MP4_LINK, LOCAL_VIDEO_URL,
+			LOCAL_IMG_URL, LOCAL_DOCUMENT_URL;
 
 	@Parameters("browser")
 	@BeforeClass
@@ -36,8 +36,13 @@ public class Account_Upload_File extends AbstractTest {
 		MP4_NAME = "mp4 " + randomNumber();
 		MP4_LINK = "https://2bewebinaris-fra.s3.amazonaws.com/20062/1644914150425.mp4";
 
-		LOCAL_VIDEO_LINK = "D:\\videos\\123.mp4";
-		LOCAL_IMG_LINK = "D:\\images\\img01.jpg";
+		LOCAL_VIDEO_URL = "D:\\videos\\123.mp4";
+		LOCAL_IMG_URL = "D:\\images\\img01.jpg \n D:\\images\\img01.jpg";
+		LOCAL_DOCUMENT_URL = "D:\\images\\test1.txt";
+
+		uploadPage = new UploadPageObject(driver);
+		loginPage = new LoginPageObject(driver);
+		loginPage.login();
 
 	}
 
@@ -46,15 +51,8 @@ public class Account_Upload_File extends AbstractTest {
 		return random.nextInt(9999);
 	}
 
-	@Test
-	public void TC_01_Login() {
-		loginPage = new LoginPageObject(driver);
-		loginPage.login();
-	}
-
-	@Test
-	public void TC_02_Upload_Videolyser() throws Exception {
-		uploadPage = new UploadPageObject(driver);
+	//@Test
+	public void TC_01_Upload_Videolyser() throws Exception {
 		uploadPage.getUploadUrl();
 		uploadPage.clickNewFileButton();
 		uploadPage.clickVideoButton();
@@ -67,9 +65,8 @@ public class Account_Upload_File extends AbstractTest {
 		uploadPage.clickButtonSave();
 	}
 
-	@Test
-	public void TC_03_Upload_VimeoM3u8() throws Exception {
-		uploadPage = new UploadPageObject(driver);
+	//@Test
+	public void TC_02_Upload_VimeoM3u8() throws Exception {
 		uploadPage.getUploadUrl();
 		uploadPage.clickNewFileButton();
 		uploadPage.clickVideoButton();
@@ -80,9 +77,8 @@ public class Account_Upload_File extends AbstractTest {
 		uploadPage.clickButtonSave();
 	}
 
-	@Test
-	public void TC_04_Upload_VideoMp4() throws Exception {
-		uploadPage = new UploadPageObject(driver);
+	//@Test
+	public void TC_03_Upload_VideoMp4() throws Exception {
 		uploadPage.getUploadUrl();
 		uploadPage.clickNewFileButton();
 		uploadPage.clickVideoButton();
@@ -95,33 +91,59 @@ public class Account_Upload_File extends AbstractTest {
 		uploadPage.clickButtonSave();
 	}
 
-	@Test
-	public void TC_05_Upload_Local() throws Exception {
-		uploadPage = new UploadPageObject(driver);
+	//@Test
+	public void TC_04_Upload_Local() throws Exception {
 		uploadPage.getUploadUrl();
 		uploadPage.clickNewFileButton();
 		uploadPage.clickVideoButton();
-		uploadPage.uploadVideoLocal(LOCAL_VIDEO_LINK);
+		uploadPage.uploadVideoLocal(LOCAL_VIDEO_URL);
 	}
 
 	@Test
-	public void TC_06_Upload_Image() throws Exception {
-		uploadPage = new UploadPageObject(driver);
+	public void TC_05_Upload_Image() throws Exception {
 		uploadPage.getUploadUrl();
 		uploadPage.clickNewFileButton();
-		uploadPage.uploadImage(LOCAL_IMG_LINK);
+		uploadPage.uploadImage(LOCAL_IMG_URL);
+	}
+
+	@Test
+	public void TC_06_Upload_Document() throws Exception {
+		uploadPage.getUploadUrl();
+		uploadPage.clickNewFileButton();
+		uploadPage.uploadImage(LOCAL_DOCUMENT_URL);
 	}
 
 	public void Delete_Video() {
-		uploadPage = new UploadPageObject(driver);
 		uploadPage.deleteVideo();
+		uploadPage.loading();
 	}
 
 	@Test
 	public void TC_07_Delete_Videos() {
-		uploadPage = new UploadPageObject(driver);
 		uploadPage.getUploadUrl();
 		for (int i = 0, n = 4; i < n; i++) {
+			Delete_Video();
+		}
+	}
+
+	@Test
+	public void TC_08_Delete_image() {
+		uploadPage.selectFileStyle();
+		uploadPage.selectItem("2");
+		uploadPage.loading();
+
+		for (int i = 0, n = 2; i < n; i++) {
+			Delete_Video();
+		}
+	}
+
+	@Test
+	public void TC_09_Delete_Document() {
+		uploadPage.selectFileStyle();
+		uploadPage.selectItem("4");
+		uploadPage.loading();
+
+		for (int i = 0, n = 1; i < n; i++) {
 			Delete_Video();
 		}
 	}
