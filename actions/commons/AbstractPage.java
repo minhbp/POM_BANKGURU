@@ -16,7 +16,7 @@ public class AbstractPage {
 		driver.get(urlValue);
 	}
 
-	public String openPageTitle(WebDriver driver) {
+	public String getPageTitle(WebDriver driver) {
 		return driver.getTitle();
 	}
 
@@ -92,6 +92,13 @@ public class AbstractPage {
 				.invisibilityOfElementLocated(By.xpath("//div[@class='w-loading-overlay']//*[name()='svg']")));
 	}
 
+	public void waitToElementVisibleMessageAndClose(WebDriver driver) {
+		waitExplicit = new WebDriverWait(driver, 30);
+		waitExplicit.until(ExpectedConditions
+				.visibilityOfElementLocated(By.xpath("//span[normalize-space()='Awesome - that worked!']")));
+		driver.findElement(By.xpath("//i[@class='v-icon notranslate fwbn fwbn-cancel theme--dark']")).click();
+	}
+	
 	public void waitToElementVisibleIconLoading(WebDriver driver) {
 		waitExplicit = new WebDriverWait(driver, 30);
 		waitExplicit.until(ExpectedConditions

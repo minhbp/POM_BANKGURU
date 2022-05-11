@@ -2,6 +2,8 @@ package pageUIs;
 
 public class RegisterPageUI {
 
+	public static final String REGISTER_PAGE_HEADER = "//p[@class='header allow-bold allow-color header-context']";
+	public static final String REGISTER_PAGE_TITLE = "//h1[@class='header__h1 header-context']";
 	public static final String REGISTER_PAGE_BUTTON = "//span[@class='header-context']";
 
 	public static final String REGISTER_PAGE_FIRT_NAME = "//input[@placeholder='First name']";

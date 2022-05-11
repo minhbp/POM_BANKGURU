@@ -3,6 +3,7 @@ package queenb.webinaris.project;
 import java.util.ArrayList;
 import java.util.Random;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -11,6 +12,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import commons.AbstractTest;
+import pageObjects.EmailsPageObject;
 import pageObjects.LoginPageObject;
 import pageObjects.NewProjectObject;
 import pageObjects.RegisterPageObject;
@@ -23,6 +25,7 @@ public class Registration_Lp extends AbstractTest {
 	public NewProjectObject newProject;
 	public ShowtimePageObject showtimePage;
 	public RegisterPageObject registerPage;
+	public EmailsPageObject emailsPage;
 
 	String firstName, lastNam, email;
 
@@ -32,6 +35,13 @@ public class Registration_Lp extends AbstractTest {
 
 		driver = openMultiBrowser(browserName);
 
+		loginPage = new LoginPageObject(driver);
+		newProject = new NewProjectObject(driver);
+		showtimePage = new ShowtimePageObject(driver);
+		emailsPage = new EmailsPageObject(driver);
+		loginPage.login();
+		newProject.createNewProject();
+		Thread.sleep(2000);
 	}
 
 	public int randomNumber() {
@@ -40,21 +50,7 @@ public class Registration_Lp extends AbstractTest {
 	}
 
 	@Test
-	public void TC_01_Login() {
-		loginPage = new LoginPageObject(driver);
-		loginPage.login();
-	}
-
-	@Test
-	public void TC_02_New_Project() throws Exception {
-		newProject = new NewProjectObject(driver);
-		newProject.createNewProject();
-		Thread.sleep(2000);
-	}
-
-	@Test
-	public void TC_03_Setting_Showtimes() throws Exception {
-		showtimePage = new ShowtimePageObject(driver);
+	public void TC_01_Setting_Showtimes() {
 		showtimePage.clickShowtimeMenu();
 		showtimePage.clickOption();
 		showtimePage.clickOptionMyself();
@@ -63,18 +59,28 @@ public class Registration_Lp extends AbstractTest {
 		showtimePage.clickOptionNo();
 		showtimePage.clickOptionYes();
 		showtimePage.clickButtonSave();
-		Thread.sleep(6000);
+		showtimePage.closeMessageSuccess();
 	}
-
+	
 	@Test
-	public void TC_04_Register() throws Exception {
+	public void TC_02_Setting_Email() throws Exception {
+		emailsPage.clickEmailMenu();
+		emailsPage.clickSettingMenu();
+		emailsPage.clickDoiOptions();
+		emailsPage.selectDoiIsNo();
+		emailsPage.clickConfirmButton();
+		showtimePage.closeMessageSuccess();
+	}
+	
+	@Test
+	public void TC_03_Register() throws Exception {
 
 		firstName = "automation";
 		lastNam = "testing";
-		email = "minhbp252" + randomNumber() + "@gmail.com";
+		email = "minhbp252+" + randomNumber() + "@gmail.com";
 
 		String urlBasicSetting = getCurrentPageUrl(driver);
-		String fb050 = urlBasicSetting.substring(35);
+		String fb050 = urlBasicSetting.substring(41);
 		openAnyUrl(driver, "https://20071.webinaris.co/" + fb050 + "/selenium.html?mode=N&v=4");
 		String oldTab = driver.getWindowHandle();
 
@@ -90,11 +96,9 @@ public class Registration_Lp extends AbstractTest {
 		// change focus to new tab
 		driver.switchTo().window(newTab.get(0));
 
-		Assert.assertEquals(registerPage.getTitleConfirmPage(), "One last step");
-		Assert.assertEquals(registerPage.getSubTitleConfirmPage(),
-				"Your place has been reserved temporarily. You now have 15 minutes to complete your registration. To do this, please follow the steps below:");
+		Assert.assertEquals(driver.findElement(By.xpath("//h1[@class='allow-color']")).getText(), "Congratulations!");
 
-		driver.close();
+		//driver.close();
 
 		driver.switchTo().window(oldTab);
 

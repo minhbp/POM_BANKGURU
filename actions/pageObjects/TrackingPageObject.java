@@ -89,37 +89,35 @@ public class TrackingPageObject extends AbstractPage {
 		waitToElementVisible(driver, TrackingCodePageUI.SUCCESS_MESSAGE);
 		clickToElement(driver, TrackingCodePageUI.CLOSE_MESSAGE_ICON);
 	}
-	
+
 	public void roomTimePicker() {
 		waitToElementVisible(driver, TrackingCodePageUI.ROOM_TIME_PICKER);
 		clickToElement(driver, TrackingCodePageUI.ROOM_TIME_PICKER);
 	}
-	
+
 	public void roomTimePickerH(String h) {
 		clearElement(driver, TrackingCodePageUI.ROOM_TIME_PICKER_H);
 		waitToElementVisible(driver, TrackingCodePageUI.ROOM_TIME_PICKER_H);
 		sendkeyToElement(driver, TrackingCodePageUI.ROOM_TIME_PICKER_H, h);
 	}
-	
+
 	public void roomTimePickerM(String m) {
 		clearElement(driver, TrackingCodePageUI.ROOM_TIME_PICKER_H);
 		waitToElementVisible(driver, TrackingCodePageUI.ROOM_TIME_PICKER_H);
 		sendkeyToElement(driver, TrackingCodePageUI.ROOM_TIME_PICKER_H, m);
 	}
-	
+
 	public void roomTimePickerS(String s) {
 		clearElement(driver, TrackingCodePageUI.ROOM_TIME_PICKER_H);
 		waitToElementVisible(driver, TrackingCodePageUI.ROOM_TIME_PICKER_H);
 		sendkeyToElement(driver, TrackingCodePageUI.ROOM_TIME_PICKER_H, s);
 	}
-	
+
 	public void roomTimePickerOK() {
 		waitToElementVisible(driver, TrackingCodePageUI.ROOM_TIME_PICKER_OK);
 		clickToElement(driver, TrackingCodePageUI.ROOM_TIME_PICKER_OK);
 	}
-	
-	
-	
+
 	public boolean verifyTrackingCode(String nameTraking) {
 		return isDisplayElement(driver, TrackingCodePageUI.VERIFY_TRACKING_CODE, nameTraking);
 	}

@@ -16,6 +16,8 @@ private WebDriver driver;
 	public void clickShowtimeMenu() {
 		waitToElementVisible(driver, ShowtimePageUI.SHOWTIME_MENU);
 		clickToElement(driver, ShowtimePageUI.SHOWTIME_MENU);
+		waitToElementVisibleIconLoading(driver);
+		waitToElementInvisibleIconLoading(driver);
 	}
 
 	public void clickOption() {
@@ -51,7 +53,10 @@ private WebDriver driver;
 	public void clickButtonSave() {
 		waitToElementVisible(driver, ShowtimePageUI.SHOWTIME_BUTTON_SAVE);
 		clickToElement(driver, ShowtimePageUI.SHOWTIME_BUTTON_SAVE);
-		waitToElementVisible(driver, ShowtimePageUI.SHOWTIME_SUCCESS);
+	}
+	
+	public void closeMessageSuccess() {
+		waitToElementVisibleMessageAndClose(driver);
 	}
 	
 	

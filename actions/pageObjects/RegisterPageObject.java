@@ -48,6 +48,12 @@ public class RegisterPageObject extends AbstractPage {
 		return getTextElement(driver, RegisterPageUI.CONFIRM_PAGE_SUB_TITLE);
 	}
 	
+	public String getTextHeader() {
+		return getTextElement(driver, RegisterPageUI.REGISTER_PAGE_HEADER);
+	}
 	
+	public String getTextTitle() {
+		return getTextElement(driver, RegisterPageUI.REGISTER_PAGE_TITLE);
+	}
 	
 }

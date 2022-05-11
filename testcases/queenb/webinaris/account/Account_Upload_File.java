@@ -37,7 +37,7 @@ public class Account_Upload_File extends AbstractTest {
 		MP4_LINK = "https://2bewebinaris-fra.s3.amazonaws.com/20062/1644914150425.mp4";
 
 		LOCAL_VIDEO_URL = "D:\\videos\\123.mp4";
-		LOCAL_IMG_URL = "D:\\images\\img01.jpg \n D:\\images\\img01.jpg";
+		LOCAL_IMG_URL = "D:\\images\\img01.jpg";
 		LOCAL_DOCUMENT_URL = "D:\\images\\test1.txt";
 
 		uploadPage = new UploadPageObject(driver);
@@ -51,7 +51,7 @@ public class Account_Upload_File extends AbstractTest {
 		return random.nextInt(9999);
 	}
 
-	//@Test
+	@Test
 	public void TC_01_Upload_Videolyser() throws Exception {
 		uploadPage.getUploadUrl();
 		uploadPage.clickNewFileButton();
@@ -65,7 +65,7 @@ public class Account_Upload_File extends AbstractTest {
 		uploadPage.clickButtonSave();
 	}
 
-	//@Test
+	@Test
 	public void TC_02_Upload_VimeoM3u8() throws Exception {
 		uploadPage.getUploadUrl();
 		uploadPage.clickNewFileButton();
@@ -77,7 +77,7 @@ public class Account_Upload_File extends AbstractTest {
 		uploadPage.clickButtonSave();
 	}
 
-	//@Test
+	@Test
 	public void TC_03_Upload_VideoMp4() throws Exception {
 		uploadPage.getUploadUrl();
 		uploadPage.clickNewFileButton();
@@ -91,7 +91,7 @@ public class Account_Upload_File extends AbstractTest {
 		uploadPage.clickButtonSave();
 	}
 
-	//@Test
+	@Test
 	public void TC_04_Upload_Local() throws Exception {
 		uploadPage.getUploadUrl();
 		uploadPage.clickNewFileButton();
