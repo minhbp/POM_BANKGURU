@@ -16,5 +16,9 @@ public class RegisterPageUI {
 
 	public static final String CONFIRM_PAGE_TITLE = "//h1[@class='allow-color']";
 	public static final String CONFIRM_PAGE_SUB_TITLE = "//p[@class='allow-bold']";
-
+	
+	public static final String COMPLETE_PAGE_TITLE = "//h1[@class='allow-color']";
+	
+	public static final String WAITING_PAGE_TITLE = "//article[@class='text-center']/p";
+		
 }
