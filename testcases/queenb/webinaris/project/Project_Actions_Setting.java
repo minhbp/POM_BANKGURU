@@ -86,11 +86,7 @@ public class Project_Actions_Setting extends AbstractTest {
 		buttonPage.clickEndTime();
 		buttonPage.setTime("0", "5", "0");
 		buttonPage.clickSaveTime();
-<<<<<<< HEAD
 		buttonPage.clearAndInputTextButton(buttonTopText);
-=======
-		buttonPage.clearAndInputTextButton("Automation testing");
->>>>>>> 21e834bc473393c323b24ee50770a31af761f2cb
 		buttonPage.clickSaveButton();
 		Thread.sleep(500);
 	}
@@ -102,20 +98,12 @@ public class Project_Actions_Setting extends AbstractTest {
 		buttonPage.inputTargetUrl("google.com");
 		buttonPage.clickPosition("Bottom");
 		buttonPage.clickStartTime();
-<<<<<<< HEAD
 		buttonPage.setTime("0", "0", "0");
-=======
-		buttonPage.setTime("0", "3", "0");
->>>>>>> 21e834bc473393c323b24ee50770a31af761f2cb
 		buttonPage.clickSaveTime();
 		buttonPage.clickEndTime();
 		buttonPage.setTime("0", "15", "0");
 		buttonPage.clickSaveTime();
-<<<<<<< HEAD
 		buttonPage.clearAndInputTextButton(buttonBotText);
-=======
-		buttonPage.clearAndInputTextButton("Automation testing");
->>>>>>> 21e834bc473393c323b24ee50770a31af761f2cb
 		buttonPage.clickSaveButton();
 		Thread.sleep(500);
 	}
@@ -149,11 +137,7 @@ public class Project_Actions_Setting extends AbstractTest {
 		buttonPage.clickEndTime();
 		buttonPage.setTime("0", "5", "0");
 		buttonPage.clickSaveTime();
-<<<<<<< HEAD
 		buttonPage.clearAndInputTextButton(buttonTopRightText);
-=======
-		buttonPage.clearAndInputTextButton("Automation testing");
->>>>>>> 21e834bc473393c323b24ee50770a31af761f2cb
 		buttonPage.clickSaveButton();
 		Thread.sleep(500);
 	}
@@ -165,17 +149,10 @@ public class Project_Actions_Setting extends AbstractTest {
 		buttonPage.inputTargetUrl("google.com");
 		buttonPage.clickPosition("Transparent");
 		buttonPage.clickStartTime();
-<<<<<<< HEAD
 		buttonPage.setTime("0", "5", "0");
 		buttonPage.clickSaveTime();
 		buttonPage.clickEndTime();
 		buttonPage.setTime("0", "15", "0");
-=======
-		buttonPage.setTime("0", "0", "0");
-		buttonPage.clickSaveTime();
-		buttonPage.clickEndTime();
-		buttonPage.setTime("0", "5", "0");
->>>>>>> 21e834bc473393c323b24ee50770a31af761f2cb
 		buttonPage.clickSaveTime();
 		buttonPage.clickSaveButton();
 		Thread.sleep(500);//
@@ -194,11 +171,7 @@ public class Project_Actions_Setting extends AbstractTest {
 		pollPage.inputNamePoll("poll 1");
 
 		pollPage.clickTimeStartQuestion();
-<<<<<<< HEAD
 		pollPage.inputTime("0", "0", "5");
-=======
-		pollPage.inputTime("0", "0", "15");
->>>>>>> 21e834bc473393c323b24ee50770a31af761f2cb
 		pollPage.clickSaveTime();
 
 		pollPage.clickTimeEndQuestion();
@@ -253,10 +226,6 @@ public class Project_Actions_Setting extends AbstractTest {
 		pollPage.inputResultB("100");
 
 		pollPage.clickSavePoll();
-<<<<<<< HEAD
-=======
-		Thread.sleep(500);
->>>>>>> 21e834bc473393c323b24ee50770a31af761f2cb
 	}
 
 	@Test
@@ -271,10 +240,6 @@ public class Project_Actions_Setting extends AbstractTest {
 		trackingPage.inputTrackingBeforeBody(bodycodebefore);
 		trackingPage.clickSaveButton();
 		trackingPage.verifyTrackingCode("Open Registration");
-<<<<<<< HEAD
-=======
-		Thread.sleep(500);
->>>>>>> 21e834bc473393c323b24ee50770a31af761f2cb
 	}
 
 	@Test
@@ -288,11 +253,7 @@ public class Project_Actions_Setting extends AbstractTest {
 		trackingPage.inputTrackingBeforeBody(bodycodebefore);
 		trackingPage.clickSaveButton();
 		trackingPage.verifyTrackingCode("Submit Form");
-<<<<<<< HEAD
 		
-=======
-		Thread.sleep(500);
->>>>>>> 21e834bc473393c323b24ee50770a31af761f2cb
 	}
 
 	@Test
@@ -326,10 +287,6 @@ public class Project_Actions_Setting extends AbstractTest {
 		trackingPage.inputTrackingBeforeBody(bodycodebefore);
 		trackingPage.clickSaveButton();
 		trackingPage.verifyTrackingCode("Open Completed Page");
-<<<<<<< HEAD
-=======
-		Thread.sleep(500);
->>>>>>> 21e834bc473393c323b24ee50770a31af761f2cb
 	}
 
 	@Test
@@ -347,10 +304,6 @@ public class Project_Actions_Setting extends AbstractTest {
 		trackingPage.inputTrackingBeforeBody(bodycodebefore);
 		trackingPage.clickSaveButton();
 		trackingPage.verifyTrackingCode("Open Room");
-<<<<<<< HEAD
-=======
-		Thread.sleep(500);
->>>>>>> 21e834bc473393c323b24ee50770a31af761f2cb
 	}
 
 	@Test
@@ -373,7 +326,6 @@ public class Project_Actions_Setting extends AbstractTest {
 		trackingPage.inputTrackingBeforeBody(bodycodebefore);
 		trackingPage.clickSaveButton();
 		trackingPage.verifyTrackingCode("Open Room Time");
-<<<<<<< HEAD
 	}
 
 	@Test
@@ -401,8 +353,6 @@ public class Project_Actions_Setting extends AbstractTest {
 
 		Thread.sleep(1000);
 
-		Assert.assertTrue(previewPage.isDisplayParticipant());
-
 		previewPage.clickOnSound();
 
 		previewPage.inputChatMessage("Perform a specific action for all customers that are selected via selectbox below");
@@ -429,9 +379,6 @@ public class Project_Actions_Setting extends AbstractTest {
 		driver.switchTo().window(newTab.get(0));
 
 		Thread.sleep(1000);
-=======
-		Thread.sleep(500);
->>>>>>> 21e834bc473393c323b24ee50770a31af761f2cb
 	}
 
 	@AfterClass
