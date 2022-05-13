@@ -50,5 +50,9 @@ public class AbstractTest {
 		driver.navigate().refresh();
 	}
 	
+	public void delay(int x) throws Exception {
+		Thread.sleep(1000*x);
+	}
+	
 	WebElement element;
 }

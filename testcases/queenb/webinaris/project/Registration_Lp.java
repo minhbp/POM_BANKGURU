@@ -81,14 +81,18 @@ public class Registration_Lp extends AbstractTest {
 
 		String urlBasicSetting = getCurrentPageUrl(driver);
 		String fb050 = urlBasicSetting.substring(41);
-		openAnyUrl(driver, "https://20071.webinaris.co/" + fb050 + "/selenium.html?mode=N&v=4");
+		openAnyUrl(driver, "https://20071.webinaris.co/" + fb050 + "/selenium.html?mode=N&v=4"); //20288
 		String oldTab = driver.getWindowHandle();
 
 		registerPage = new RegisterPageObject(driver);
 		registerPage.clickButton();
+		delay(1);
 		registerPage.inputFirtname(firstName);
+		delay(1);
 		registerPage.inputLastname(lastNam);
+		delay(1);
 		registerPage.inputEmail(email);
+		delay(1);
 		registerPage.clickButtonSubmit();
 
 		ArrayList<String> newTab = new ArrayList<String>(driver.getWindowHandles());
@@ -96,12 +100,13 @@ public class Registration_Lp extends AbstractTest {
 		// change focus to new tab
 		driver.switchTo().window(newTab.get(0));
 
+		delay(2);
 		Assert.assertEquals(driver.findElement(By.xpath("//h1[@class='allow-color']")).getText(), "Congratulations!");
-
-		//driver.close();
+		delay(2);
+		driver.close();
 
 		driver.switchTo().window(oldTab);
-
+		delay(2);
 	}
 
 	@AfterClass

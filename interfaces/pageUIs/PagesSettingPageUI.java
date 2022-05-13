@@ -24,6 +24,6 @@ public class PagesSettingPageUI {
 	public static final String LOGO_MENU = "//span[normalize-space()='Logo']";
 	public static final String SELECT_LOGO_BUTTON = "//p[normalize-space()='Recommended resolution: 200x200 px']/parent::div/child::button";
 	public static final String NEW_FILE_BUTTON = "//span[normalize-space()='New file']/parent::button";
-	public static final String LOCATOR_FILE = "//input[@accept='image/*']";
+	public static final String LOCATOR_FILE = "//input[@id='idFileOther']";
 	
 }

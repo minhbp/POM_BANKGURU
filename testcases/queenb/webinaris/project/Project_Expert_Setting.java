@@ -44,19 +44,19 @@ public class Project_Expert_Setting extends AbstractTest {
 		expertPage.clickExpertMenu();
 		expertPage.clickRegionMenu();
 	
-				for (int i = 1, n = 21; i < n; i++) {
-			expertPage.clickLanguage();
-			scrollToElement(driver, "(//div[@role='option'])[" + i + "]");
-			clickToElement(driver, "(//div[@role='option'])[" + i + "]");
-//			expertPage.clickSave();
-		}
-		
-		for (int i = 21, n = 84; i < n; i++) {
-			expertPage.clickTimezone();
-			scrollToElement(driver, "(//div[@role='option'])[" + i + "]");
-			clickToElement(driver, "(//div[@role='option'])[" + i + "]");
-//			expertPage.clickSave();
-		}
+//				for (int i = 1, n = 21; i < n; i++) {
+//			expertPage.clickLanguage();
+//			scrollToElement(driver, "(//div[@role='option'])[" + i + "]");
+//			clickToElement(driver, "(//div[@role='option'])[" + i + "]");
+////			expertPage.clickSave();
+//		}
+//		
+//		for (int i = 21, n = 84; i < n; i++) {
+//			expertPage.clickTimezone();
+//			scrollToElement(driver, "(//div[@role='option'])[" + i + "]");
+//			clickToElement(driver, "(//div[@role='option'])[" + i + "]");
+////			expertPage.clickSave();
+//		}
 		/*
 		expertPage.clickLanguage();
 		expertPage.selectLanguageGerman();

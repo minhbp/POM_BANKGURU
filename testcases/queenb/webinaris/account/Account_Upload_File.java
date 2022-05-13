@@ -55,7 +55,9 @@ public class Account_Upload_File extends AbstractTest {
 	public void TC_01_Upload_Videolyser() throws Exception {
 		uploadPage.getUploadUrl();
 		uploadPage.clickNewFileButton();
+		delay(1);
 		uploadPage.clickVideoButton();
+		delay(1);
 		uploadPage.clickVideoSourceButton();
 		uploadPage.inputNameVideo(VIDEOLYSER_NAME);
 		uploadPage.clickSourceStyle();
@@ -63,25 +65,31 @@ public class Account_Upload_File extends AbstractTest {
 		uploadPage.inputUrlVideo(VIDEOLYSER_LINK);
 		uploadPage.clickIconLoadingDuration();
 		uploadPage.clickButtonSave();
+		delay(2);
 	}
 
 	@Test
 	public void TC_02_Upload_VimeoM3u8() throws Exception {
 		uploadPage.getUploadUrl();
 		uploadPage.clickNewFileButton();
+		delay(1);
 		uploadPage.clickVideoButton();
+		delay(1);
 		uploadPage.clickVideoSourceButton();
 		uploadPage.inputNameVideo(VIMEO_NAME);
 		uploadPage.inputUrlVideo(VIDEOMEO_LINK);
 		uploadPage.clickIconLoadingDuration();
 		uploadPage.clickButtonSave();
+		delay(2);
 	}
 
 	@Test
 	public void TC_03_Upload_VideoMp4() throws Exception {
 		uploadPage.getUploadUrl();
 		uploadPage.clickNewFileButton();
+		delay(1);
 		uploadPage.clickVideoButton();
+		delay(1);
 		uploadPage.clickVideoSourceButton();
 		uploadPage.inputNameVideo(MP4_NAME);
 		uploadPage.clickSourceStyle();
@@ -89,13 +97,16 @@ public class Account_Upload_File extends AbstractTest {
 		uploadPage.inputUrlVideo(MP4_LINK);
 		uploadPage.clickIconLoadingDuration();
 		uploadPage.clickButtonSave();
+		delay(2);
 	}
 
 	@Test
 	public void TC_04_Upload_Local() throws Exception {
 		uploadPage.getUploadUrl();
 		uploadPage.clickNewFileButton();
+		delay(1);
 		uploadPage.clickVideoButton();
+		delay(1);
 		uploadPage.uploadVideoLocal(LOCAL_VIDEO_URL);
 	}
 
@@ -103,42 +114,46 @@ public class Account_Upload_File extends AbstractTest {
 	public void TC_05_Upload_Image() throws Exception {
 		uploadPage.getUploadUrl();
 		uploadPage.clickNewFileButton();
+		delay(1);
 		uploadPage.uploadImage(LOCAL_IMG_URL);
+		delay(2);
 	}
 
 	@Test
 	public void TC_06_Upload_Document() throws Exception {
 		uploadPage.getUploadUrl();
 		uploadPage.clickNewFileButton();
+		delay(1);
 		uploadPage.uploadImage(LOCAL_DOCUMENT_URL);
+		delay(2);
 	}
 
-	public void Delete_Video() {
+	public void Delete_Video() throws Exception {
 		uploadPage.deleteVideo();
-		uploadPage.loading();
+		// uploadPage.loading();
 	}
 
 	@Test
-	public void TC_07_Delete_Videos() {
+	public void TC_07_Delete_Videos() throws Exception {
 		uploadPage.getUploadUrl();
-		for (int i = 0, n = 4; i < n; i++) {
+		for (int i = 0, n = 3; i < n; i++) {
 			Delete_Video();
 		}
 	}
 
 	@Test
-	public void TC_08_Delete_image() {
+	public void TC_08_Delete_image() throws Exception {
 		uploadPage.selectFileStyle();
 		uploadPage.selectItem("2");
 		uploadPage.loading();
 
-		for (int i = 0, n = 2; i < n; i++) {
+		for (int i = 0, n = 1; i < n; i++) {
 			Delete_Video();
 		}
 	}
 
 	@Test
-	public void TC_09_Delete_Document() {
+	public void TC_09_Delete_Document() throws Exception {
 		uploadPage.selectFileStyle();
 		uploadPage.selectItem("4");
 		uploadPage.loading();
