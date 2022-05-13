@@ -74,7 +74,6 @@ public class UploadPageObject extends AbstractPage {
 		waitToEnableButton(driver, UploadPageUI.BUTTON_VIDEO_SOUCRE_BUTTON_SAVE);
 		clickToElement(driver, UploadPageUI.BUTTON_VIDEO_SOUCRE_BUTTON_SAVE);
 		waitToElementVisible(driver, UploadPageUI.UPLOAD_SUCCESS_MESSAGE);
-		clickToElement(driver, UploadPageUI.CLOSE_MESSAGE_ICON);
 	}
 
 	public void uploadVideoLocal(String urlVideoLocal) {
@@ -95,15 +94,18 @@ public class UploadPageObject extends AbstractPage {
 		waitToElementVisible(driver, UploadPageUI.UPLOAD_SUCCESS_MESSAGE);
 	}
 
-	public void deleteVideo() {
+	public void deleteVideo() throws Exception {
 		waitToElementVisible(driver, UploadPageUI.UPLOAD_ICONS_SELECT);
 		clickToElement(driver, UploadPageUI.UPLOAD_ICONS_SELECT);
+		Thread.sleep(500);
 
 		waitToElementVisible(driver, UploadPageUI.UPLOAD_DELETE_OPTION);
 		clickToElement(driver, UploadPageUI.UPLOAD_DELETE_OPTION);
+		Thread.sleep(500);
 
 		waitToEnableButton(driver, UploadPageUI.UPLOAD_CONFIRM_BUTTON);
 		clickToElement(driver, UploadPageUI.UPLOAD_CONFIRM_BUTTON);
+		Thread.sleep(1000);
 	}
 	
 	public void selectFileStyle() {

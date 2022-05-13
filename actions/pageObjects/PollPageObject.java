@@ -12,6 +12,11 @@ public class PollPageObject extends AbstractPage {
 		driver = mappingdriver;
 	}
 
+	public void clickExpertMenu() {
+		waitToElementVisible(driver, PollPageUI.MENU_EXPERT);
+		clickToElement(driver, PollPageUI.MENU_EXPERT);
+	}
+	
 	public void clickPollMenu() {
 		waitToElementVisible(driver, PollPageUI.MENU_EXPERT);
 		clickToElement(driver, PollPageUI.MENU_EXPERT);

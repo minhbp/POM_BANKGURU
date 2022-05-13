@@ -10,6 +10,7 @@ import commons.AbstractTest;
 import pageObjects.ExpertPageObject;
 import pageObjects.LoginPageObject;
 import pageObjects.NewProjectObject;
+import pageObjects.PreviewPageObject;
 
 public class Project_Expert_Setting extends AbstractTest {
 	WebDriver driver;
@@ -18,6 +19,7 @@ public class Project_Expert_Setting extends AbstractTest {
 	public LoginPageObject loginPage;
 	public NewProjectObject newProject;
 	public ExpertPageObject expertPage;
+	public PreviewPageObject previewPage;
 
 	String closeRoom, urlRedirect;
 
@@ -44,19 +46,19 @@ public class Project_Expert_Setting extends AbstractTest {
 		expertPage.clickExpertMenu();
 		expertPage.clickRegionMenu();
 	
-				for (int i = 1, n = 21; i < n; i++) {
-			expertPage.clickLanguage();
-			scrollToElement(driver, "(//div[@role='option'])[" + i + "]");
-			clickToElement(driver, "(//div[@role='option'])[" + i + "]");
-//			expertPage.clickSave();
-		}
-		
-		for (int i = 21, n = 84; i < n; i++) {
-			expertPage.clickTimezone();
-			scrollToElement(driver, "(//div[@role='option'])[" + i + "]");
-			clickToElement(driver, "(//div[@role='option'])[" + i + "]");
-//			expertPage.clickSave();
-		}
+//				for (int i = 1, n = 21; i < n; i++) {
+//			expertPage.clickLanguage();
+//			scrollToElement(driver, "(//div[@role='option'])[" + i + "]");
+//			clickToElement(driver, "(//div[@role='option'])[" + i + "]");
+////			expertPage.clickSave();
+//		}
+//		
+//		for (int i = 21, n = 84; i < n; i++) {
+//			expertPage.clickTimezone();
+//			scrollToElement(driver, "(//div[@role='option'])[" + i + "]");
+//			clickToElement(driver, "(//div[@role='option'])[" + i + "]");
+////			expertPage.clickSave();
+//		}
 		/*
 		expertPage.clickLanguage();
 		expertPage.selectLanguageGerman();
@@ -562,6 +564,11 @@ public class Project_Expert_Setting extends AbstractTest {
 		expertPage.clickListOfParticipantLanguage();
 		expertPage.selectLanguageSpain();
 		expertPage.clickSave();
+		
+	}
+	
+	@Test
+	public void TC_11_Open_Room() {
 		
 	}
 

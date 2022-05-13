@@ -35,6 +35,22 @@ public class AbstractPage {
 	public void forwardToPage(WebDriver driver) {
 		driver.navigate().forward();
 	}
+	
+	public void accepAlert(WebDriver driver) {
+		driver.switchTo().alert().accept();
+	}
+	
+	public void cancelAlert(WebDriver driver) {
+		driver.switchTo().alert().dismiss();;
+	}
+	
+	public String getText(WebDriver driver) {
+		return driver.switchTo().alert().getText();
+	}
+	
+	public void sendkeyAlert(WebDriver driver, String value) {
+		driver.switchTo().alert().sendKeys(value);
+	}
 
 	// web element
 

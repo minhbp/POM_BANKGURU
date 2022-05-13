@@ -23,6 +23,7 @@ public class ClonePageObject extends AbstractPage {
 	}
 
 	public void clickCloneProject() {
+		scrollToElement(driver, ClonePageUI.CLONE_WEBINAR_BUTTON);
 		waitToEnableButton(driver, ClonePageUI.CLONE_WEBINAR_BUTTON);
 		clickToElement(driver, ClonePageUI.CLONE_WEBINAR_BUTTON);
 
@@ -31,6 +32,7 @@ public class ClonePageObject extends AbstractPage {
 	}
 
 	public void clickOpenListProjects() {
+		scrollToElement(driver, ClonePageUI.OPEN_LIST_PROJECTS);
 		waitToElementVisible(driver, ClonePageUI.OPEN_LIST_PROJECTS);
 		clickToElement(driver, ClonePageUI.OPEN_LIST_PROJECTS);
 	}
@@ -41,6 +43,7 @@ public class ClonePageObject extends AbstractPage {
 	}
 
 	public void clickButtonClone() {
+		scrollToElement(driver, ClonePageUI.BUTTON_CLONE);
 		waitToEnableButton(driver, ClonePageUI.BUTTON_CLONE);
 		clickToElement(driver, ClonePageUI.BUTTON_CLONE);
 
@@ -49,6 +52,7 @@ public class ClonePageObject extends AbstractPage {
 	}
 
 	public void clickEnterCodeButton() {
+		scrollToElement(driver, ClonePageUI.ENTER_CODE_WEBINAR_BUTTON);
 		waitToEnableButton(driver, ClonePageUI.ENTER_CODE_WEBINAR_BUTTON);
 		clickToElement(driver, ClonePageUI.ENTER_CODE_WEBINAR_BUTTON);
 	}

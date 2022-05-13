@@ -1,24 +1,47 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite thread-count="1" name="webinaris" parallel="tests">
+<suite name="webinaris">
 
+	<test name="preview">
+	<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="queenb.webinaris.project.Project_Preview" />
+		</classes>
+	</test>
 	
-	<test name="setting email">
+	<test name="register">
+	<parameter name="browser" value="chrome" />
 		<classes>
 			<class name="queenb.webinaris.project.Registration_Lp" />
 		</classes>
 	</test>
-
-	<test name="setting button">
+	
+	<test name="upload">
+	<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="queenb.webinaris.project.Project_Buttons_Setting" />
+			<class name="queenb.webinaris.account.Account_Upload_File" />
 		</classes>
 	</test>
 	
-	<test name="setting poll">
+	<test name="clone and copy project">
+	<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="queenb.webinaris.project.Project_Polls_Setting" />
+			<class name="queenb.webinaris.account.Account_Clone_Copy_Delete_Project" />
 		</classes>
 	</test>
 	
+	<test name="actions">
+	<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="queenb.webinaris.project.Project_Actions_Setting" />
+		</classes>
+	</test>
+	
+	<test name="setting email">
+	<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="queenb.webinaris.project.Project_Mail_Setting" />
+		</classes>
+	</test>
+		
 </suite>

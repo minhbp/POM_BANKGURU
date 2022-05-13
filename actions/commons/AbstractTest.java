@@ -12,7 +12,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AbstractTest {
 	WebDriver driver;
-	WebDriverWait explicitWait;
 	WebDriverWait waitExplicit;
 	public WebDriver openMultiBrowser(String browserName) {
 		if (browserName.equals("chrome")) {
@@ -48,6 +47,26 @@ public class AbstractTest {
 	
 	public void refreshCurrentPage(WebDriver driver) {
 		driver.navigate().refresh();
+	}
+	
+	public void delay(int x) throws Exception {
+		Thread.sleep(1000*x);
+	}
+	
+	public void accepAlert(WebDriver driver) {
+		driver.switchTo().alert().accept();
+	}
+	
+	public void cancelAlert(WebDriver driver) {
+		driver.switchTo().alert().dismiss();;
+	}
+	
+	public String getTextAlert(WebDriver driver) {
+		return driver.switchTo().alert().getText();
+	}
+	
+	public void sendkeyAlert(WebDriver driver, String value) {
+		driver.switchTo().alert().sendKeys(value);
 	}
 	
 	WebElement element;

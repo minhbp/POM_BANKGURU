@@ -23,9 +23,16 @@ public class PreviewPageObject extends AbstractPage{
 		clickToElement(driver, PreviewPageUI.PREVIEW_OPTIONS);
 	}
 	
-	public void selectItemPreview(String item) {
+	public void selectItemPreview(String item) throws Exception {
 		waitToElementVisible(driver, PreviewPageUI.PREVIEW_ITEM, item);
+		Thread.sleep(1000);
 		clickToElement(driver, PreviewPageUI.PREVIEW_ITEM, item);
+	}
+	
+	public void selectItemTextPreview(String text) throws Exception {
+		waitToElementVisible(driver, PreviewPageUI.PREVIEW_ITEM_TEXT, text);
+		Thread.sleep(1000);
+		clickToElement(driver, PreviewPageUI.PREVIEW_ITEM_TEXT, text);
 	}
 	
 	public void clickOpenPreview() {
@@ -57,6 +64,29 @@ public class PreviewPageObject extends AbstractPage{
 	public void clickWebinarisFooter() {
 		waitToElementVisible(driver, PreviewPageUI.WEBINARIS_FOOTER);
 		clickToElement(driver, PreviewPageUI.WEBINARIS_FOOTER);
+	}
+	
+	public void clickAllowAllCookieBanner() throws Exception {
+		waitToEnableButton(driver, PreviewPageUI.ALLOW_ALL_BUTTON);
+		Thread.sleep(1000);
+		clickToElement(driver, PreviewPageUI.ALLOW_ALL_BUTTON);
+	}
+	
+	public void clickAllowSelectionCookieBanner() {
+		waitToEnableButton(driver, PreviewPageUI.ALLOW_SELECTION_BUTTON);
+		clickToElement(driver, PreviewPageUI.ALLOW_SELECTION_BUTTON);
+	}
+	
+	public String getTextButtonTop() {
+		return getTextElement(driver, PreviewPageUI.BUTTON_TOP_VERIFY);
+	}
+	
+	public String getTextButtonTopRight() {
+		return getTextElement(driver, PreviewPageUI.BUTTON_TOP_RIGHT_VERIFY);
+	}
+	
+	public String getTextButtonBottom() {
+		return getTextElement(driver, PreviewPageUI.BUTTON_BOT_VERIFY);
 	}
 	
 }

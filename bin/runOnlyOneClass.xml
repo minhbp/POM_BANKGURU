@@ -6,23 +6,9 @@
 	<test name="preview">
 		<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="queenb.webinaris.project.Project_Preview" />
+			<class name="queenb.webinaris.project.Project_Actions_Setting" />
 		</classes>
 	</test>
 
-<!--
-	<test name="regist">
-		<parameter name="browser" value="chrome" />
-		<classes>
-			<class name="queenb.webinaris.project.Registration_Lp" />
-		</classes>
-	</test>
 	
-	<test name="run on CHROME">
-		<parameter name="browser" value="chrome" />
-		<classes>
-			<class name="queenb.webinaris.account.Account_Clone_Copy_Delete_Project" />
-		</classes>
-	</test>-->
-
 </suite>
