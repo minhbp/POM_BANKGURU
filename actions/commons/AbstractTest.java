@@ -53,6 +53,7 @@ public class AbstractTest {
 		Thread.sleep(1000*x);
 	}
 	
+<<<<<<< HEAD
 	public void accepAlert(WebDriver driver) {
 		driver.switchTo().alert().accept();
 	}
@@ -69,5 +70,7 @@ public class AbstractTest {
 		driver.switchTo().alert().sendKeys(value);
 	}
 	
+=======
+>>>>>>> 21e834bc473393c323b24ee50770a31af761f2cb
 	WebElement element;
 }

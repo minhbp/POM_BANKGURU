@@ -6,7 +6,11 @@
 	<test name="preview">
 		<parameter name="browser" value="chrome" />
 		<classes>
+<<<<<<< HEAD
 			<class name="queenb.webinaris.project.Project_Actions_Setting" />
+=======
+			<class name="queenb.webinaris.account.Account_Clone_Copy_Delete_Project" />
+>>>>>>> 21e834bc473393c323b24ee50770a31af761f2cb
 		</classes>
 	</test>
 
