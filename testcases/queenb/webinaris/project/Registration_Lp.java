@@ -69,7 +69,6 @@ public class Registration_Lp extends AbstractTest {
 		emailsPage.clickDoiOptions();
 		emailsPage.selectDoiIsNo();
 		emailsPage.clickConfirmButton();
-		showtimePage.closeMessageSuccess();
 	}
 	
 	@Test
@@ -86,13 +85,13 @@ public class Registration_Lp extends AbstractTest {
 
 		registerPage = new RegisterPageObject(driver);
 		registerPage.clickButton();
-		delay(1);
+		
 		registerPage.inputFirtname(firstName);
-		delay(1);
+		
 		registerPage.inputLastname(lastNam);
-		delay(1);
+		
 		registerPage.inputEmail(email);
-		delay(1);
+		
 		registerPage.clickButtonSubmit();
 
 		ArrayList<String> newTab = new ArrayList<String>(driver.getWindowHandles());
@@ -100,13 +99,13 @@ public class Registration_Lp extends AbstractTest {
 		// change focus to new tab
 		driver.switchTo().window(newTab.get(0));
 
-		delay(2);
+		
 		Assert.assertEquals(driver.findElement(By.xpath("//h1[@class='allow-color']")).getText(), "Congratulations!");
-		delay(2);
+		
 		driver.close();
 
 		driver.switchTo().window(oldTab);
-		delay(2);
+		
 	}
 
 	@AfterClass

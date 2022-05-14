@@ -1,8 +1,10 @@
 package queenb.webinaris.account;
 
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -14,6 +16,7 @@ import pageObjects.UploadPageObject;
 
 public class Account_Upload_File extends AbstractTest {
 	WebDriver driver;
+	WebDriverWait waitExplicit;
 
 	public UploadPageObject uploadPage;
 	public LoginPageObject loginPage;
@@ -102,6 +105,8 @@ public class Account_Upload_File extends AbstractTest {
 
 	@Test
 	public void TC_04_Upload_Local() throws Exception {
+		waitExplicit = new WebDriverWait(driver, 200);
+		driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
 		uploadPage.getUploadUrl();
 		uploadPage.clickNewFileButton();
 		delay(1);
@@ -112,6 +117,8 @@ public class Account_Upload_File extends AbstractTest {
 
 	@Test
 	public void TC_05_Upload_Image() throws Exception {
+		waitExplicit = new WebDriverWait(driver, 20);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		uploadPage.getUploadUrl();
 		uploadPage.clickNewFileButton();
 		delay(1);

@@ -43,7 +43,7 @@ public class Project_Actions_Setting extends AbstractTest {
 		nameFullScreen = "full screen 001";
 		nameTopRight = "top right 001";
 		nameTransparent = "transparent 001";
-		
+
 		buttonTopText = "button top top";
 		buttonBotText = "button bot bot";
 		buttonTopRightText = "button top right";
@@ -88,7 +88,7 @@ public class Project_Actions_Setting extends AbstractTest {
 		buttonPage.clickSaveTime();
 		buttonPage.clearAndInputTextButton(buttonTopText);
 		buttonPage.clickSaveButton();
-		Thread.sleep(500);
+
 	}
 
 	@Test
@@ -105,7 +105,7 @@ public class Project_Actions_Setting extends AbstractTest {
 		buttonPage.clickSaveTime();
 		buttonPage.clearAndInputTextButton(buttonBotText);
 		buttonPage.clickSaveButton();
-		Thread.sleep(500);
+
 	}
 
 	@Test
@@ -122,7 +122,7 @@ public class Project_Actions_Setting extends AbstractTest {
 		buttonPage.clickSaveTime();
 		buttonPage.clearAndInputTextButton("Automation testing");
 		buttonPage.clickSaveButton();
-		Thread.sleep(500);
+
 	}
 
 	@Test
@@ -139,7 +139,7 @@ public class Project_Actions_Setting extends AbstractTest {
 		buttonPage.clickSaveTime();
 		buttonPage.clearAndInputTextButton(buttonTopRightText);
 		buttonPage.clickSaveButton();
-		Thread.sleep(500);
+
 	}
 
 	@Test
@@ -155,7 +155,7 @@ public class Project_Actions_Setting extends AbstractTest {
 		buttonPage.setTime("0", "15", "0");
 		buttonPage.clickSaveTime();
 		buttonPage.clickSaveButton();
-		Thread.sleep(500);//
+		//
 //		buttonPage.refreshPage();
 //		buttonPage.verifyButton(nameTop);
 //		buttonPage.verifyButton(nameBottom);
@@ -193,7 +193,6 @@ public class Project_Actions_Setting extends AbstractTest {
 		pollPage.inputResultB("10");
 
 		pollPage.clickSavePoll();
-		Thread.sleep(500);
 
 	}
 
@@ -253,7 +252,7 @@ public class Project_Actions_Setting extends AbstractTest {
 		trackingPage.inputTrackingBeforeBody(bodycodebefore);
 		trackingPage.clickSaveButton();
 		trackingPage.verifyTrackingCode("Submit Form");
-		
+
 	}
 
 	@Test
@@ -271,7 +270,7 @@ public class Project_Actions_Setting extends AbstractTest {
 		trackingPage.inputTrackingBeforeBody(bodycodebefore);
 		trackingPage.clickSaveButton();
 		trackingPage.verifyTrackingCode("Open Comfirm Page");
-		Thread.sleep(500);
+
 	}
 
 	@Test
@@ -342,43 +341,38 @@ public class Project_Actions_Setting extends AbstractTest {
 		driver.switchTo().window(newTab.get(1));
 
 		previewPage.clickAllowAllCookieBanner();
-		Thread.sleep(1000);
-
+		delay(1);
 		Assert.assertEquals(getTextAlert(driver), "headcode");
-		Thread.sleep(1000);
-		accepAlert(driver);
-		Thread.sleep(1000);
-		accepAlert(driver);
+
 		accepAlert(driver);
 
-		Thread.sleep(1000);
+		accepAlert(driver);
+		accepAlert(driver);
 
 		previewPage.clickOnSound();
 
-		previewPage.inputChatMessage("Perform a specific action for all customers that are selected via selectbox below");
-		delay(1);
-		previewPage.clickSendButton();
-		delay(1);
+		previewPage
+				.inputChatMessage("Perform a specific action for all customers that are selected via selectbox below");
 
-		previewPage.inputChatMessage("Internal name: Under which internal name do you want to manage the webinar in Webinaris?");
-		delay(1);
 		previewPage.clickSendButton();
-		delay(1);
+
+		previewPage.inputChatMessage(
+				"Internal name: Under which internal name do you want to manage the webinar in Webinaris?");
+
+		previewPage.clickSendButton();
 
 		previewPage.inputChatMessage("Webinar video: Which video do you want to use for your webinar? ");
-		delay(1);
+
 		previewPage.clickSendButton();
-		delay(3);
-		
+
 		Assert.assertEquals(previewPage.getTextButtonTop(), buttonTopText);
 		Assert.assertEquals(previewPage.getTextButtonBottom(), buttonBotText);
 		Assert.assertEquals(previewPage.getTextButtonTopRight(), buttonTopRightText);
-		
+
 		driver.close();
 
 		driver.switchTo().window(newTab.get(0));
 
-		Thread.sleep(1000);
 	}
 
 	@AfterClass

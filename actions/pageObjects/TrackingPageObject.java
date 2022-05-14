@@ -97,8 +97,8 @@ public class TrackingPageObject extends AbstractPage {
 
 	public void roomTimePickerH(String h) {
 		clearElement(driver, TrackingCodePageUI.ROOM_TIME_PICKER_H);
-		waitToElementVisible(driver, TrackingCodePageUI.ROOM_TIME_PICKER_S);
-		sendkeyToElement(driver, TrackingCodePageUI.ROOM_TIME_PICKER_S, h);
+		waitToElementVisible(driver, TrackingCodePageUI.ROOM_TIME_PICKER_H);
+		sendkeyToElement(driver, TrackingCodePageUI.ROOM_TIME_PICKER_H, h);
 	}
 
 	public void roomTimePickerM(String m) {
@@ -109,8 +109,8 @@ public class TrackingPageObject extends AbstractPage {
 
 	public void roomTimePickerS(String s) {
 		clearElement(driver, TrackingCodePageUI.ROOM_TIME_PICKER_H);
-		waitToElementVisible(driver, TrackingCodePageUI.ROOM_TIME_PICKER_H);
-		sendkeyToElement(driver, TrackingCodePageUI.ROOM_TIME_PICKER_H, s);
+		waitToElementVisible(driver, TrackingCodePageUI.ROOM_TIME_PICKER_S);
+		sendkeyToElement(driver, TrackingCodePageUI.ROOM_TIME_PICKER_S, s);
 	}
 
 	public void roomTimePickerOK() {

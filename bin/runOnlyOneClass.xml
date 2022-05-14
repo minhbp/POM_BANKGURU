@@ -2,13 +2,13 @@
 
 <suite name="Suite2">
 
-	
+
 	<test name="preview">
 		<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="queenb.webinaris.project.Project_Actions_Setting" />
+			<class name="queenb.webinaris.account.Account_Upload_File" />
 		</classes>
 	</test>
 
-	
+
 </suite>

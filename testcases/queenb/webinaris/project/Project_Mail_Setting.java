@@ -75,25 +75,25 @@ public class Project_Mail_Setting extends AbstractTest {
 	@Test
 	public void TC_03_Delete_Email_Template() throws Exception {
 		emailsPage.clickEmailEmailMenu();
-		delay(1);
+		
 		emailsPage.clickOptionMailLoginInfo();
-		delay(1);
+		
 		emailsPage.clickDeleteOption();
-		delay(1);
+		
 		emailsPage.clickConfirmDelete();
-		delay(1);
+		
 	}
 
 	@Test
 	public void TC_04_Load_Email_Template() throws Exception {
 		emailsPage.clickNewEmailButton();
-		delay(1);
+		
 		emailsPage.clickSelectTemplateButotn();
-		delay(1);
+		
 		emailsPage.clickLoadTemplateButton();
-		delay(1);
+		
 		emailsPage.clickSave();
-		delay(1);
+		
 	}
 
 	@AfterClass

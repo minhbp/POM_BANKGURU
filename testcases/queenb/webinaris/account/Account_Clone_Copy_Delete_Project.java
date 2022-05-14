@@ -34,31 +34,31 @@ public class Account_Clone_Copy_Delete_Project extends AbstractTest {
 	@Test
 	public void TC_01_Clone_Project() throws Exception {
 		clonePage.getMyWebinar();
-		delay(1);
+		
 		clonePage.clickNewProject();
-		delay(1);
+		
 		clonePage.clickCloneProject();
-		delay(1);
+		
 		clonePage.clickOpenListProjects();
-		delay(1);
+		
 		clonePage.selectFirstProject();
-		delay(1);
+		
 		clonePage.clickButtonClone();
-		delay(1);
+		
 	}
 
 	@Test
 	public void TC_02_Copy_Project() throws Exception {
 		clonePage.getMyWebinar();
-		delay(1);
+		
 		clonePage.clickNewProject();
-		delay(1);
+		
 		clonePage.clickEnterCodeButton();
-		delay(1);
+		
 		clonePage.inputCode("11AC258A6C52E110");
-		delay(1);
+		
 		clonePage.clickCopy();
-		delay(1);
+		
 	}
 
 	@Test
