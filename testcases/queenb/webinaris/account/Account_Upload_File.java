@@ -58,9 +58,9 @@ public class Account_Upload_File extends AbstractTest {
 	public void TC_01_Upload_Videolyser() throws Exception {
 		uploadPage.getUploadUrl();
 		uploadPage.clickNewFileButton();
-		delay(1);
+		
 		uploadPage.clickVideoButton();
-		delay(1);
+		
 		uploadPage.clickVideoSourceButton();
 		uploadPage.inputNameVideo(VIDEOLYSER_NAME);
 		uploadPage.clickSourceStyle();
@@ -68,31 +68,30 @@ public class Account_Upload_File extends AbstractTest {
 		uploadPage.inputUrlVideo(VIDEOLYSER_LINK);
 		uploadPage.clickIconLoadingDuration();
 		uploadPage.clickButtonSave();
-		delay(2);
 	}
 
 	@Test
 	public void TC_02_Upload_VimeoM3u8() throws Exception {
 		uploadPage.getUploadUrl();
 		uploadPage.clickNewFileButton();
-		delay(1);
+		
 		uploadPage.clickVideoButton();
-		delay(1);
+		
 		uploadPage.clickVideoSourceButton();
 		uploadPage.inputNameVideo(VIMEO_NAME);
 		uploadPage.inputUrlVideo(VIDEOMEO_LINK);
 		uploadPage.clickIconLoadingDuration();
 		uploadPage.clickButtonSave();
-		delay(2);
+		
 	}
 
 	@Test
 	public void TC_03_Upload_VideoMp4() throws Exception {
 		uploadPage.getUploadUrl();
 		uploadPage.clickNewFileButton();
-		delay(1);
+		
 		uploadPage.clickVideoButton();
-		delay(1);
+		
 		uploadPage.clickVideoSourceButton();
 		uploadPage.inputNameVideo(MP4_NAME);
 		uploadPage.clickSourceStyle();
@@ -100,7 +99,7 @@ public class Account_Upload_File extends AbstractTest {
 		uploadPage.inputUrlVideo(MP4_LINK);
 		uploadPage.clickIconLoadingDuration();
 		uploadPage.clickButtonSave();
-		delay(2);
+		
 	}
 
 	@Test
@@ -109,9 +108,9 @@ public class Account_Upload_File extends AbstractTest {
 		driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
 		uploadPage.getUploadUrl();
 		uploadPage.clickNewFileButton();
-		delay(1);
+		
 		uploadPage.clickVideoButton();
-		delay(1);
+		
 		uploadPage.uploadVideoLocal(LOCAL_VIDEO_URL);
 	}
 
@@ -121,18 +120,18 @@ public class Account_Upload_File extends AbstractTest {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		uploadPage.getUploadUrl();
 		uploadPage.clickNewFileButton();
-		delay(1);
+		
 		uploadPage.uploadImage(LOCAL_IMG_URL);
-		delay(2);
+		
 	}
 
 	@Test
 	public void TC_06_Upload_Document() throws Exception {
 		uploadPage.getUploadUrl();
 		uploadPage.clickNewFileButton();
-		delay(1);
+		
 		uploadPage.uploadImage(LOCAL_DOCUMENT_URL);
-		delay(2);
+		
 	}
 
 	public void Delete_Video() throws Exception {
