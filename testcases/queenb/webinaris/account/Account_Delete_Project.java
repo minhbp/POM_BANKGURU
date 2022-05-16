@@ -33,7 +33,7 @@ public class Account_Delete_Project extends AbstractTest {
 	public void TC_01_delProject() throws Exception {
 		deletePage.getMyWebinar();
 
-		for (int i = 0, n = 119; i < n; i++) {
+		for (int i = 0, n = 45; i < n; i++) {
 			deletePage.deleteProject();
 		}
 	}

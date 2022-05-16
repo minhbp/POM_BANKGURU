@@ -2,13 +2,19 @@
 
 <suite name="Suite2">
 
-
+	<test name="login">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="queenb.webinaris.account.Account_Login" />
+		</classes>
+	</test>
+	<!-- 
 	<test name="preview">
 		<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="queenb.webinaris.account.Account_Upload_File" />
+			<class name="queenb.webinaris.project.Registration_Lp" />
 		</classes>
 	</test>
-
+-->
 
 </suite>

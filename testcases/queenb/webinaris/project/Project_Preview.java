@@ -166,6 +166,6 @@ public class Project_Preview extends AbstractTest {
 
 	@AfterClass
 	public void afterClass() {
-		driver.close();
+		driver.quit();
 	}
 }
