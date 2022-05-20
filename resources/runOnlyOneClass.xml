@@ -17,9 +17,13 @@
 	</test>
 	<!-- 
 	<test name="preview">
-		<parameter name="browser" value="chrome" />
+		<parameter name="browser" value="firefox" />
 		<classes>
+<<<<<<< Updated upstream
 			<class name="queenb.webinaris.project.Registration_Lp" />
+=======
+			<class name="queenb.webinaris.project.Project_Basic_Page" />
+>>>>>>> Stashed changes
 		</classes>
 	</test>
 -->

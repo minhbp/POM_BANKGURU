@@ -118,6 +118,11 @@ public class Project_Preview extends AbstractTest {
 		
 		previewPage.clickSendButton();
 		 
+<<<<<<< Updated upstream
+=======
+		driver.close();
+
+>>>>>>> Stashed changes
 		driver.switchTo().window(newTab1.get(1));
 		
 		Assert.assertEquals(regist.getTextHeaderLP(), "EXPERT WEBINAR: Learn from the best!");
@@ -138,6 +143,28 @@ public class Project_Preview extends AbstractTest {
 		
 		Assert.assertEquals(regist.getTitleWaitting(), "The webinar starts in:");
 		
+<<<<<<< Updated upstream
+=======
+		/*
+		 * String oldTab1 = driver.getWindowHandle(); ArrayList<String> newTab1 = new
+		 * ArrayList<String>(driver.getWindowHandles()); newTab1.remove(oldTab1); //
+		 * change focus to new tab
+		 * 
+		 * driver.switchTo().window(newTab1.get(1)); Thread.sleep(3000);
+		 * Assert.assertEquals(getCurrentPageUrl(driver), "https://www.webinaris.com/");
+		 * driver.close(); driver.switchTo().window(newTab1.get(0)); driver.close();
+		 * driver.switchTo().window(oldTab);
+		 */
+		driver.switchTo().window(oldTab1);
+		
+	}
+
+	// @Test
+	public void TC_02_Preview_Registration_Page() {
+		refreshCurrentPage(driver);
+		previewPage.clickPreviewMenu();
+		previewPage.clickOpenPreview();
+>>>>>>> Stashed changes
 	}
 
 	@AfterClass
