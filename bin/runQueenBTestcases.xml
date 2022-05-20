@@ -2,6 +2,18 @@
 
 <suite name="webinaris">
 
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+	</listeners>
+
+	<test name="login verify">
+	<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="queenb.webinaris.account.Account_Login_Verify" />
+		</classes>
+	</test>
+	
 	<test name="actions">
 	<parameter name="browser" value="chrome" />
 		<classes>
@@ -36,5 +48,13 @@
 			<class name="queenb.webinaris.project.Project_Mail_Setting" />
 		</classes>
 	</test>
+	
+	<test name="delete projects">
+	<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="queenb.webinaris.account.Account_Delete_Project" />
+		</classes>
+	</test>
+	
 		
 </suite>

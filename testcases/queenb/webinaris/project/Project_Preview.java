@@ -118,8 +118,6 @@ public class Project_Preview extends AbstractTest {
 		
 		previewPage.clickSendButton();
 		 
-		driver.close();
-
 		driver.switchTo().window(newTab1.get(1));
 		
 		Assert.assertEquals(regist.getTextHeaderLP(), "EXPERT WEBINAR: Learn from the best!");
@@ -131,37 +129,15 @@ public class Project_Preview extends AbstractTest {
 		Assert.assertEquals(regist.getTitleConfirmPage(), "One last step");
 		Assert.assertEquals(regist.getSubTitleConfirmPage(),
 				"Your place has been reserved temporarily. You now have 15 minutes to complete your registration. To do this, please follow the steps below:");
-		driver.close();
 		
 		driver.switchTo().window(newTab1.get(3));
 		
 		Assert.assertEquals(regist.getTitleComplete(), "Congratulations!");
-		driver.close();
 		
 		driver.switchTo().window(newTab1.get(4));
 		
 		Assert.assertEquals(regist.getTitleWaitting(), "The webinar starts in:");
-		driver.close();
 		
-		/*
-		 * String oldTab1 = driver.getWindowHandle(); ArrayList<String> newTab1 = new
-		 * ArrayList<String>(driver.getWindowHandles()); newTab1.remove(oldTab1); //
-		 * change focus to new tab
-		 * 
-		 * driver.switchTo().window(newTab1.get(1)); Thread.sleep(3000);
-		 * Assert.assertEquals(getCurrentPageUrl(driver), "https://www.webinaris.com/");
-		 * driver.close(); driver.switchTo().window(newTab1.get(0)); driver.close();
-		 * driver.switchTo().window(oldTab);
-		 */
-		driver.switchTo().window(oldTab1);
-		
-	}
-
-	// @Test
-	public void TC_02_Preview_Registration_Page() {
-		refreshCurrentPage(driver);
-		previewPage.clickPreviewMenu();
-		previewPage.clickOpenPreview();
 	}
 
 	@AfterClass

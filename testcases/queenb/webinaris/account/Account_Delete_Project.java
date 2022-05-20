@@ -33,13 +33,13 @@ public class Account_Delete_Project extends AbstractTest {
 	public void TC_01_delProject() throws Exception {
 		deletePage.getMyWebinar();
 
-		for (int i = 0, n = 45; i < n; i++) {
+		for (int i = 0, n = 1; i < n; i++) {
 			deletePage.deleteProject();
 		}
 	}
 
 	@AfterClass
 	public void afterClass() {
-		driver.close();
+		driver.quit();
 	}
 }

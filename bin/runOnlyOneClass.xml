@@ -2,10 +2,17 @@
 
 <suite name="Suite2">
 
+
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+		<!--<listener class-name="commons.ExtentReportListener" />-->
+	</listeners>
+
 	<test name="login">
 		<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="queenb.webinaris.account.Account_Login" />
+			<class name="queenb.webinaris.account.Account_Login_Verify" />
 		</classes>
 	</test>
 	<!-- 

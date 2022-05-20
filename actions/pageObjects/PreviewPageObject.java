@@ -68,8 +68,9 @@ public class PreviewPageObject extends AbstractPage{
 	
 	public void clickAllowAllCookieBanner() throws Exception {
 		waitToEnableButton(driver, PreviewPageUI.ALLOW_ALL_BUTTON);
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		clickToElement(driver, PreviewPageUI.ALLOW_ALL_BUTTON);
+		Thread.sleep(2000);
 	}
 	
 	public void clickAllowSelectionCookieBanner() {

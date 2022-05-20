@@ -76,9 +76,10 @@ public class UploadPageObject extends AbstractPage {
 		waitToElementVisible(driver, UploadPageUI.UPLOAD_SUCCESS_MESSAGE);
 	}
 
-	public void uploadVideoLocal(String urlVideoLocal) {
+	public void uploadVideoLocal(String urlVideoLocal) throws Exception {
 		scrollToElement(driver, UploadPageUI.BUTTON_VIDEO_UPLOAD_STEP2);
 		waitToEnableButton(driver, UploadPageUI.BUTTON_VIDEO_UPLOAD_STEP2);
+		Thread.sleep(1000);
 		clickToElement(driver, UploadPageUI.BUTTON_VIDEO_UPLOAD_STEP2);
 
 		waitToElementVisible(driver, UploadPageUI.VIDEO_UPLOAD_BUTTON_STEP3);
