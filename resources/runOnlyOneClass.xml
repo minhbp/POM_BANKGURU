@@ -12,17 +12,9 @@
 	<test name="login">
 		<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="queenb.webinaris.project.Project_Actions_Setting" />
+			<class name="queenb.webinaris.account.Account_Upload_File" />
 		</classes>
 	</test>
-	<!-- 
-	<test name="preview">
-		<parameter name="browser" value="firefox" />
-		<classes>
-			<class name="queenb.webinaris.project.Registration_Lp" />
-			<class name="queenb.webinaris.project.Project_Basic_Page" />
-		</classes>
-	</test>
--->
+	
 
 </suite>

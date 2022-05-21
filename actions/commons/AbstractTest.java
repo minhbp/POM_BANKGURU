@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AbstractTest {
 	WebDriver driver;
+	WebElement element;
 	WebDriverWait waitExplicit;
 	public WebDriver openMultiBrowser(String browserName) {
 		if (browserName.equals("chrome")) {
@@ -73,5 +74,8 @@ public class AbstractTest {
 		driver.switchTo().alert().sendKeys(value);
 	}
 	
-	WebElement element;
+	public void log(String text) {
+		System.out.println(text);
+	}
+	
 }

@@ -17,9 +17,10 @@ public class UploadPageObject extends AbstractPage {
 		openAnyUrl(driver, UploadPageUI.UPLOAD_PAGE_URL);
 	}
 
-	public void clickNewFileButton() {
+	public void clickNewFileButton() throws Exception {
 		waitToElementVisible(driver, UploadPageUI.BUTTON_NEW_FILE);
 		waitToEnableButton(driver, UploadPageUI.BUTTON_NEW_FILE);
+		Thread.sleep(500);
 		clickToElement(driver, UploadPageUI.BUTTON_NEW_FILE);
 	}
 

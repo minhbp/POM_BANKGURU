@@ -56,48 +56,73 @@ public class Account_Upload_File extends AbstractTest {
 
 	@Test
 	public void TC_01_Upload_Videolyser() throws Exception {
+		log("===========TC_01_Upload_Videolyser==========");
+		log("step 01: open url login");
 		uploadPage.getUploadUrl();
+		log("step 02: click button new file");
 		uploadPage.clickNewFileButton();
-		
+		log("step 03: click button Video");
 		uploadPage.clickVideoButton();
-		
+		log("step 04: click button External video source");
 		uploadPage.clickVideoSourceButton();
+		log("step 05: input name videolyser");
 		uploadPage.inputNameVideo(VIDEOLYSER_NAME);
+		log("step 06: click source style");
 		uploadPage.clickSourceStyle();
+		log("step 07: select video lyser");
 		uploadPage.selectVideolyser();
+		log("step 08: input url video lyser");
 		uploadPage.inputUrlVideo(VIDEOLYSER_LINK);
+		log("step 09: click icon load duration video");
 		uploadPage.clickIconLoadingDuration();
+		log("step 10: click button save");
 		uploadPage.clickButtonSave();
 	}
 
 	@Test
 	public void TC_02_Upload_VimeoM3u8() throws Exception {
+		log("===========TC_02_Upload_VimeoM3u8==========");
+		log("step 01: open url login");
 		uploadPage.getUploadUrl();
+		log("step 02: click button new file");
 		uploadPage.clickNewFileButton();
-		
+		log("step 03: click button Video");
 		uploadPage.clickVideoButton();
-		
+		log("step 04: click button External video source");
 		uploadPage.clickVideoSourceButton();
+		log("step 05: input name vimeo");
 		uploadPage.inputNameVideo(VIMEO_NAME);
+		log("step 06: input url video lyser");
 		uploadPage.inputUrlVideo(VIDEOMEO_LINK);
+		log("step 07: click icon load duration video");
 		uploadPage.clickIconLoadingDuration();
+		log("step 08: click button save");
 		uploadPage.clickButtonSave();
 		
 	}
 
 	@Test
 	public void TC_03_Upload_VideoMp4() throws Exception {
+		log("===========TC_03_Upload_VideoMp4==========");
+		log("step 01: open url login");
 		uploadPage.getUploadUrl();
+		log("step 02: click button new file");
 		uploadPage.clickNewFileButton();
-		
+		log("step 03: click button Video");
 		uploadPage.clickVideoButton();
-		
+		log("step 04: click button External video source");
 		uploadPage.clickVideoSourceButton();
+		log("step 05: input name video mp4");
 		uploadPage.inputNameVideo(MP4_NAME);
+		log("step 06: click source style");
 		uploadPage.clickSourceStyle();
+		log("step 07: select video mp4");
 		uploadPage.selectVideoMp4();
+		log("step 08: input url video mp4");
 		uploadPage.inputUrlVideo(MP4_LINK);
+		log("step 09: click icon load duration video");
 		uploadPage.clickIconLoadingDuration();
+		log("step 10: click button save");
 		uploadPage.clickButtonSave();
 		
 	}
@@ -106,11 +131,14 @@ public class Account_Upload_File extends AbstractTest {
 	public void TC_04_Upload_Local() throws Exception {
 		waitExplicit = new WebDriverWait(driver, 200);
 		driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
+		log("===========TC_04_Upload_Local==========");
+		log("step 01: open url login");
 		uploadPage.getUploadUrl();
+		log("step 02: click button new file");
 		uploadPage.clickNewFileButton();
-		
+		log("step 03: click button Video");
 		uploadPage.clickVideoButton();
-		
+		log("step 04: input url video local");
 		uploadPage.uploadVideoLocal(LOCAL_VIDEO_URL);
 	}
 
@@ -118,18 +146,24 @@ public class Account_Upload_File extends AbstractTest {
 	public void TC_05_Upload_Image() throws Exception {
 		waitExplicit = new WebDriverWait(driver, 20);
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		log("===========TC_05_Upload_Image==========");
+		log("step 01: open url login");
 		uploadPage.getUploadUrl();
+		log("step 02: click button new file");
 		uploadPage.clickNewFileButton();
-		
+		log("step 03: input url image local");
 		uploadPage.uploadImage(LOCAL_IMG_URL);
 		
 	}
 
 	@Test
 	public void TC_06_Upload_Document() throws Exception {
+		log("===========TC_06_Upload_Document==========");
+		log("step 01: open url login");
 		uploadPage.getUploadUrl();
+		log("step 02: click button new file");
 		uploadPage.clickNewFileButton();
-		
+		log("step 03: input url document local");
 		uploadPage.uploadImage(LOCAL_DOCUMENT_URL);
 		
 	}
