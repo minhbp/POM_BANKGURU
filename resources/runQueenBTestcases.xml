@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="webinaris">
@@ -57,53 +56,6 @@
 		</classes>
 	</test>
 	
-		
-=======
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-
-<suite name="webinaris">
-
-	<test name="verify login">
-	<parameter name="browser" value="chrome" />
-		<classes>
-			<class name="queenb.webinaris.account.Account_Login" />
-		</classes>
-	</test>
-	
-	<test name="actions">
-	<parameter name="browser" value="chrome" />
-		<classes>
-			<class name="queenb.webinaris.project.Project_Actions_Setting" />
-		</classes>
-	</test>
-	
-	<test name="register">
-	<parameter name="browser" value="chrome" />
-		<classes>
-			<class name="queenb.webinaris.project.Registration_Lp" />
-		</classes>
-	</test>
-	
-	<test name="upload">
-	<parameter name="browser" value="chrome" />
-		<classes>
-			<class name="queenb.webinaris.account.Account_Upload_File" />
-		</classes>
-	</test>
-	
-	<test name="clone and copy project">
-	<parameter name="browser" value="chrome" />
-		<classes>
-			<class name="queenb.webinaris.account.Account_Clone_Copy_Delete_Project" />
-		</classes>
-	</test>
-	
-	<test name="setting email">
-	<parameter name="browser" value="chrome" />
-		<classes>
-			<class name="queenb.webinaris.project.Project_Mail_Setting" />
-		</classes>
-	</test>
-		
->>>>>>> Stashed changes
 </suite>
+	
+		

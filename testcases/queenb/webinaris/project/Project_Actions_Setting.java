@@ -341,26 +341,15 @@ public class Project_Actions_Setting extends AbstractTest {
 		driver.switchTo().window(newTab.get(1));
 
 		previewPage.clickAllowAllCookieBanner();
-<<<<<<< Updated upstream
 		delay(3);
 		Assert.assertEquals(getTextAlert(driver), "headcode");
 
 		accepAlert(driver);
 		delay(1);
-=======
-		delay(1);
-		Assert.assertEquals(getTextAlert(driver), "headcode");
-
-		accepAlert(driver);
-
->>>>>>> Stashed changes
 		accepAlert(driver);
 		delay(1);
 		accepAlert(driver);
-<<<<<<< Updated upstream
 		delay(1);
-=======
->>>>>>> Stashed changes
 
 		previewPage.clickOnSound();
 

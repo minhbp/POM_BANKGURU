@@ -97,10 +97,12 @@ public class UploadPageObject extends AbstractPage {
 
 	public void deleteVideo() throws Exception {
 		waitToElementVisible(driver, UploadPageUI.UPLOAD_ICONS_SELECT);
+		Thread.sleep(500);
 		clickToElement(driver, UploadPageUI.UPLOAD_ICONS_SELECT);
 		Thread.sleep(500);
 
 		waitToElementVisible(driver, UploadPageUI.UPLOAD_DELETE_OPTION);
+		Thread.sleep(500);
 		clickToElement(driver, UploadPageUI.UPLOAD_DELETE_OPTION);
 		Thread.sleep(500);
 

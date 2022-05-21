@@ -12,18 +12,15 @@
 	<test name="login">
 		<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="queenb.webinaris.account.Account_Login_Verify" />
+			<class name="queenb.webinaris.project.Project_Actions_Setting" />
 		</classes>
 	</test>
 	<!-- 
 	<test name="preview">
 		<parameter name="browser" value="firefox" />
 		<classes>
-<<<<<<< Updated upstream
 			<class name="queenb.webinaris.project.Registration_Lp" />
-=======
 			<class name="queenb.webinaris.project.Project_Basic_Page" />
->>>>>>> Stashed changes
 		</classes>
 	</test>
 -->
